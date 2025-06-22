@@ -6,7 +6,7 @@ import Skills from '../components/Skills';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white overflow-x-hidden">
+    <div className="min-h-screen text-white overflow-x-hidden" style={{ backgroundColor: '#1A1A1B' }}>
       <Hero />
       <About />
       <Skills />

@@ -9,9 +9,9 @@ const About = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold">
-                About <span className="text-orange-400">Me</span>
+                About <span style={{ color: '#4FD1C7' }}>Me</span>
               </h2>
-              <div className="w-20 h-1 bg-orange-400"></div>
+              <div className="w-20 h-1" style={{ backgroundColor: '#4FD1C7' }}></div>
             </div>
             
             <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
@@ -35,23 +35,27 @@ const About = () => {
           </div>
 
           <div className="relative">
-            <div className="bg-gradient-to-br from-orange-500/20 to-purple-600/20 rounded-2xl p-8 backdrop-blur-sm border border-gray-700">
+            <div className="rounded-2xl p-8 backdrop-blur-sm border"
+                 style={{ 
+                   background: 'linear-gradient(135deg, rgba(79, 209, 199, 0.2) 0%, rgba(175, 235, 231, 0.2) 100%)',
+                   borderColor: 'rgba(79, 209, 199, 0.3)'
+                 }}>
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <span className="text-gray-400">Current Role</span>
-                  <span className="text-orange-400 font-semibold">Product Team @ Slush</span>
+                  <span className="font-semibold" style={{ color: '#4FD1C7' }}>Product Team @ Slush</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-400">Education</span>
-                  <span className="text-orange-400 font-semibold">Hive Helsinki</span>
+                  <span className="font-semibold" style={{ color: '#4FD1C7' }}>Hive Helsinki</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-400">Focus</span>
-                  <span className="text-orange-400 font-semibold">Web Development</span>
+                  <span className="font-semibold" style={{ color: '#4FD1C7' }}>Web Development</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-400">Interests</span>
-                  <span className="text-orange-400 font-semibold">Entrepreneurship</span>
+                  <span className="font-semibold" style={{ color: '#4FD1C7' }}>Entrepreneurship</span>
                 </div>
               </div>
             </div>
