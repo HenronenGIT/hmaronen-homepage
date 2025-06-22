@@ -9,12 +9,12 @@ const About = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold">
-                About <span className="text-teal-400">Me</span>
+                About <span className="text-orange-400">Me</span>
               </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-teal-400"></div>
+              <div className="w-20 h-1 bg-orange-400"></div>
             </div>
             
-            <div className="space-y-6 text-lg text-gray-200 leading-relaxed">
+            <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
               <p>
                 I'm a passionate full-stack developer currently working at Slush, 
                 where I contribute to building innovative products that connect 
@@ -35,23 +35,23 @@ const About = () => {
           </div>
 
           <div className="relative">
-            <div className="bg-gradient-to-br from-purple-600/20 to-teal-400/20 rounded-2xl p-8 backdrop-blur-sm border border-purple-500/30">
+            <div className="bg-gradient-to-br from-orange-500/20 to-purple-600/20 rounded-2xl p-8 backdrop-blur-sm border border-gray-700">
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-300">Current Role</span>
-                  <span className="text-teal-400 font-semibold">Product Team @ Slush</span>
+                  <span className="text-gray-400">Current Role</span>
+                  <span className="text-orange-400 font-semibold">Product Team @ Slush</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-300">Education</span>
-                  <span className="text-teal-400 font-semibold">Hive Helsinki</span>
+                  <span className="text-gray-400">Education</span>
+                  <span className="text-orange-400 font-semibold">Hive Helsinki</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-300">Focus</span>
-                  <span className="text-teal-400 font-semibold">Web Development</span>
+                  <span className="text-gray-400">Focus</span>
+                  <span className="text-orange-400 font-semibold">Web Development</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-300">Interests</span>
-                  <span className="text-teal-400 font-semibold">Entrepreneurship</span>
+                  <span className="text-gray-400">Interests</span>
+                  <span className="text-orange-400 font-semibold">Entrepreneurship</span>
                 </div>
               </div>
             </div>
