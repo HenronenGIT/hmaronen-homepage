@@ -19,12 +19,12 @@ const Hero = () => {
                 className="text-lg md:text-xl font-medium tracking-wide font-sans"
                 style={{ color: "#4FD1C7" }}
               >
-                Software Developer
+                Creative Engineer
               </p>
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tight font-heading">
-                <span className="block">Creative</span>
+                <span className="block">Henri</span>
                 <span className="block" style={{ color: "#4FD1C7" }}>
-                  Developer
+                  Maronen
                 </span>
               </h1>
             </div>
@@ -32,10 +32,6 @@ const Hero = () => {
             <div className="space-y-6 max-w-2xl">
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-sans">
                 Solving real-life problems with the help of software.
-              </p>
-              <p className="text-lg text-gray-400 leading-relaxed font-sans">
-                Product team member with deep passion for entrepreneurship,
-                leadership, and quality UI/UX design. Hive Helsinki alumni.
               </p>
             </div>
 
