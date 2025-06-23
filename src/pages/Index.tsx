@@ -6,6 +6,7 @@ import Hero from "../components/Hero";
 import Navigation from "../components/Navigation";
 import Skills from "../components/Skills";
 import SocialLinks from "../components/SocialLinks";
+import Testimonials from "../components/Testimonials";
 import WorkExperience from "../components/WorkExperience";
 
 const Index = () => {
@@ -27,6 +28,9 @@ const Index = () => {
         </div>
         <div id="skills">
           <Skills />
+        </div>
+        <div id="testimonials">
+          <Testimonials />
         </div>
         <CTA />
       </div>

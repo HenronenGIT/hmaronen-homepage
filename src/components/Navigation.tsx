@@ -8,6 +8,7 @@ const Navigation = () => {
     { name: "About Me", href: "#about" },
     { name: "Experience", href: "#work" },
     { name: "Skills", href: "#skills" },
+    { name: "Testimonials", href: "#testimonials" },
   ];
 
   useEffect(() => {
