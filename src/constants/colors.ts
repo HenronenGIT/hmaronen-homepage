@@ -3,7 +3,7 @@
 
 export const COLORS = {
   // Primary Brand Color
-  primary: "#4FD1C7", // Main teal/turquoise color
+  primary: "#47bfba", // Main teal/turquoise color
   primaryHover: "#3FBDB3", // Darker version for hover states
 
   // Primary color with transparency

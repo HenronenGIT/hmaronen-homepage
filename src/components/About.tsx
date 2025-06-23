@@ -1,5 +1,6 @@
 import { COLORS } from "@/constants/colors";
 import { Briefcase, Code, GraduationCap } from "lucide-react";
+import InfoCard from "./InfoCard";
 
 const About = () => {
   const aboutParagraphs = [
@@ -107,132 +108,25 @@ const About = () => {
 
           <div className="relative">
             <div className="space-y-4">
-              {/* Current Role Card */}
-              <a
+              <InfoCard
+                icon={Briefcase}
+                label="Current Role"
+                value="Product Team, Slush"
                 href="https://www.slush.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div
-                  className="rounded-xl p-6 backdrop-blur-sm border transition-all duration-300 hover:scale-105 hover:shadow-lg group cursor-pointer"
-                  style={{
-                    background: COLORS.gradients.primaryMedium,
-                    borderColor: COLORS.primaryAlpha[30],
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = COLORS.primary;
-                    e.currentTarget.style.boxShadow = COLORS.shadows.primaryMedium;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = COLORS.primaryAlpha[30];
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
-                >
-                  <div className="flex items-center space-x-4">
-                    <div
-                      className="p-3 rounded-lg group-hover:scale-110 transition-transform duration-300"
-                      style={{ backgroundColor: COLORS.primaryAlpha[20] }}
-                    >
-                      <Briefcase
-                        className="w-6 h-6"
-                        style={{ color: COLORS.primary }}
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm text-gray-400 font-sans">
-                        Current Role
-                      </p>
-                      <p
-                        className="font-semibold font-sans text-lg"
-                        style={{ color: COLORS.primary }}
-                      >
-                        Product Team, Slush
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </a>
+              />
 
-              {/* Education Card */}
-              <a
+              <InfoCard
+                icon={GraduationCap}
+                label="Education"
+                value="Hive Helsinki"
                 href="https://www.hive.fi/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div
-                  className="rounded-xl p-6 backdrop-blur-sm border transition-all duration-300 hover:scale-105 hover:shadow-lg group cursor-pointer"
-                  style={{
-                    background: COLORS.gradients.primaryMedium,
-                    borderColor: COLORS.primaryAlpha[30],
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = COLORS.primary;
-                    e.currentTarget.style.boxShadow = COLORS.shadows.primaryMedium;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = COLORS.primaryAlpha[30];
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
-                >
-                  <div className="flex items-center space-x-4">
-                    <div
-                      className="p-3 rounded-lg group-hover:scale-110 transition-transform duration-300"
-                      style={{ backgroundColor: COLORS.primaryAlpha[20] }}
-                    >
-                      <GraduationCap
-                        className="w-6 h-6"
-                        style={{ color: COLORS.primary }}
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm text-gray-400 font-sans">Education</p>
-                      <p
-                        className="font-semibold font-sans text-lg"
-                        style={{ color: COLORS.primary }}
-                      >
-                        Hive Helsinki
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </a>
+              />
 
-              {/* Focus Card */}
-              <div
-                className="rounded-xl p-6 backdrop-blur-sm border transition-all duration-300 hover:scale-105 hover:shadow-lg group cursor-pointer"
-                style={{
-                  background: COLORS.gradients.primaryMedium,
-                  borderColor: COLORS.primaryAlpha[30],
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = COLORS.primary;
-                  e.currentTarget.style.boxShadow = COLORS.shadows.primaryMedium;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = COLORS.primaryAlpha[30];
-                  e.currentTarget.style.boxShadow = "none";
-                }}
-              >
-                <div className="flex items-center space-x-4">
-                  <div
-                    className="p-3 rounded-lg group-hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: COLORS.primaryAlpha[20] }}
-                  >
-                    <Code className="w-6 h-6" style={{ color: COLORS.primary }} />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm text-gray-400 font-sans">Focus</p>
-                    <p
-                      className="font-semibold font-sans text-lg"
-                      style={{ color: COLORS.primary }}
-                    >
-                      Web Development
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <InfoCard
+                icon={Code}
+                label="Focus"
+                value="Web Development"
+              />
             </div>
           </div>
         </div>

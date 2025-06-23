@@ -32,7 +32,7 @@ const Hero = () => {
 
             <div className="space-y-6 max-w-2xl">
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-sans">
-                Solving real-life problems with the help of software.
+                Solving problems with the help of software.
               </p>
             </div>
 
