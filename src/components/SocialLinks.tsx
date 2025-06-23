@@ -1,18 +1,19 @@
 
 import React from 'react';
 import { Github, Linkedin } from 'lucide-react';
+import { SOCIAL_LINKS } from '@/constants';
 
 const SocialLinks = () => {
   const socialLinks = [
     {
       name: 'GitHub',
-      href: 'https://github.com/HenronenGIT',
+      href: SOCIAL_LINKS.github,
       icon: Github,
       color: '#333'
     },
     {
       name: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/henrimaronen/',
+      href: SOCIAL_LINKS.linkedin,
       icon: Linkedin,
       color: '#0077B5'
     }

@@ -1,5 +1,4 @@
-
-import React from 'react';
+import { SOCIAL_LINKS } from '@/constants';
 import { Coffee, MessageCircle } from 'lucide-react';
 
 const CTA = () => {
@@ -28,7 +27,7 @@ const CTA = () => {
                   Connect with me on LinkedIn for professional discussions and opportunities.
                 </p>
                 <a
-                  href="https://linkedin.com/in/your-profile"
+                  href={SOCIAL_LINKS.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg font-semibold font-sans transition-all duration-300 hover:scale-105 hover:shadow-lg"
@@ -61,7 +60,7 @@ const CTA = () => {
                   Scan the QR code to send me a quick message on Telegram.
                 </p>
                 <div className="flex justify-center">
-                  <div 
+                  <div
                     className="p-6 rounded-2xl border backdrop-blur-sm"
                     style={{
                       background: 'linear-gradient(135deg, rgba(79, 209, 199, 0.1) 0%, rgba(175, 235, 231, 0.1) 100%)',
@@ -69,7 +68,7 @@ const CTA = () => {
                     }}
                   >
                     {/* QR Code placeholder - replace with actual QR code */}
-                    <div 
+                    <div
                       className="w-32 h-32 bg-white rounded-lg flex items-center justify-center"
                       style={{ backgroundColor: 'white' }}
                     >
