@@ -1,11 +1,11 @@
-import React from "react";
 import { ArrowDown } from "lucide-react";
+import heroImage from "../assets/images/hmaronen.png";
 
 const Hero = () => {
   const handleReachOutClick = () => {
-    const ctaElement = document.querySelector('#cta');
+    const ctaElement = document.querySelector("#cta");
     if (ctaElement) {
-      ctaElement.scrollIntoView({ behavior: 'smooth' });
+      ctaElement.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -19,7 +19,7 @@ const Hero = () => {
                 className="text-lg md:text-xl font-medium tracking-wide font-sans"
                 style={{ color: "#4FD1C7" }}
               >
-                Full-stack Developer
+                Software Developer
               </p>
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tight font-heading">
                 <span className="block">Creative</span>
@@ -31,10 +31,7 @@ const Hero = () => {
 
             <div className="space-y-6 max-w-2xl">
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-sans">
-                Crafting exceptional web experiences at{" "}
-                <span className="font-semibold" style={{ color: "#4FD1C7" }}>
-                  Slush
-                </span>
+                Solving real-life problems with the help of software.
               </p>
               <p className="text-lg text-gray-400 leading-relaxed font-sans">
                 Product team member with deep passion for entrepreneurship,
@@ -67,32 +64,18 @@ const Hero = () => {
 
           <div className="flex justify-center lg:justify-end">
             <div
-              className="w-80 h-80 md:w-96 md:h-96 rounded-2xl border flex items-center justify-center backdrop-blur-sm"
+              className="w-80 h-80 md:w-96 md:h-96 rounded-2xl border overflow-hidden backdrop-blur-sm"
               style={{
                 background:
                   "linear-gradient(135deg, rgba(79, 209, 199, 0.2) 0%, rgba(175, 235, 231, 0.2) 100%)",
                 borderColor: "rgba(79, 209, 199, 0.3)",
               }}
             >
-              <div className="text-gray-400 text-center">
-                <div
-                  className="w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center"
-                  style={{ backgroundColor: "rgba(79, 209, 199, 0.2)" }}
-                >
-                  <svg
-                    className="w-8 h-8"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
-                <p className="text-sm">Personal Photo</p>
-              </div>
+              <img
+                src={heroImage}
+                alt="Henri Maronen"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
