@@ -8,13 +8,13 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold">
+              <h2 className="text-4xl md:text-5xl font-bold font-heading">
                 About <span style={{ color: '#4FD1C7' }}>Me</span>
               </h2>
               <div className="w-20 h-1" style={{ backgroundColor: '#4FD1C7' }}></div>
             </div>
             
-            <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
+            <div className="space-y-6 text-lg text-gray-300 leading-relaxed font-sans">
               <p>
                 I'm a passionate full-stack developer currently working at Slush, 
                 where I contribute to building innovative products that connect 
@@ -42,20 +42,20 @@ const About = () => {
                  }}>
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-400">Current Role</span>
-                  <span className="font-semibold" style={{ color: '#4FD1C7' }}>Product Team @ Slush</span>
+                  <span className="text-gray-400 font-sans">Current Role</span>
+                  <span className="font-semibold font-sans" style={{ color: '#4FD1C7' }}>Product Team @ Slush</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-400">Education</span>
-                  <span className="font-semibold" style={{ color: '#4FD1C7' }}>Hive Helsinki</span>
+                  <span className="text-gray-400 font-sans">Education</span>
+                  <span className="font-semibold font-sans" style={{ color: '#4FD1C7' }}>Hive Helsinki</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-400">Focus</span>
-                  <span className="font-semibold" style={{ color: '#4FD1C7' }}>Web Development</span>
+                  <span className="text-gray-400 font-sans">Focus</span>
+                  <span className="font-semibold font-sans" style={{ color: '#4FD1C7' }}>Web Development</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-400">Interests</span>
-                  <span className="font-semibold" style={{ color: '#4FD1C7' }}>Entrepreneurship</span>
+                  <span className="text-gray-400 font-sans">Interests</span>
+                  <span className="font-semibold font-sans" style={{ color: '#4FD1C7' }}>Entrepreneurship</span>
                 </div>
               </div>
             </div>

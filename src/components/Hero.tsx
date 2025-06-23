@@ -9,27 +9,27 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
-              <p className="text-lg md:text-xl font-medium tracking-wide" style={{ color: '#4FD1C7' }}>
+              <p className="text-lg md:text-xl font-medium tracking-wide font-sans" style={{ color: '#4FD1C7' }}>
                 Full-stack Developer
               </p>
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tight">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tight font-heading">
                 <span className="block">Creative</span>
                 <span className="block" style={{ color: '#4FD1C7' }}>Developer</span>
               </h1>
             </div>
             
             <div className="space-y-6 max-w-2xl">
-              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-sans">
                 Crafting exceptional web experiences at <span className="font-semibold" style={{ color: '#4FD1C7' }}>Slush</span>
               </p>
-              <p className="text-lg text-gray-400 leading-relaxed">
+              <p className="text-lg text-gray-400 leading-relaxed font-sans">
                 Product team member with deep passion for entrepreneurship, leadership, 
                 and quality UI/UX design. Hive Helsinki alumni.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-4 pt-8">
-              <button className="text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg" 
+              <button className="text-white px-8 py-4 rounded-lg font-semibold font-sans transition-all duration-300 hover:scale-105 hover:shadow-lg" 
                       style={{ 
                         backgroundColor: '#4FD1C7',
                         boxShadow: 'hover:0 10px 25px rgba(79, 209, 199, 0.25)'
@@ -44,7 +44,7 @@ const Hero = () => {
                       }}>
                 View Projects
               </button>
-              <button className="border text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+              <button className="border text-white px-8 py-4 rounded-lg font-semibold font-sans transition-all duration-300 hover:scale-105"
                       style={{ borderColor: '#4FD1C7' }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.borderColor = '#4FD1C7';

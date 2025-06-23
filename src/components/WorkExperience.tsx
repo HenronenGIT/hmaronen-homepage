@@ -32,7 +32,7 @@ const WorkExperience = () => {
       <div className="max-w-4xl mx-auto">
         <div className="space-y-16">
           <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold">
+            <h2 className="text-4xl md:text-5xl font-bold font-heading">
               Work <span style={{ color: '#4FD1C7' }}>Experience</span>
             </h2>
             <div className="w-20 h-1 mx-auto" style={{ backgroundColor: '#4FD1C7' }}></div>
@@ -43,17 +43,17 @@ const WorkExperience = () => {
               <div key={index} className="group">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                   <div className="md:col-span-1">
-                    <p className="text-sm font-medium text-gray-400 uppercase tracking-wider">
+                    <p className="text-sm font-medium text-gray-400 uppercase tracking-wider font-heading">
                       {experience.period}
                     </p>
                   </div>
                   
                   <div className="md:col-span-3 space-y-4">
                     <div className="space-y-2">
-                      <h3 className="text-xl md:text-2xl font-bold text-white group-hover:opacity-80 transition-opacity">
+                      <h3 className="text-xl md:text-2xl font-bold text-white group-hover:opacity-80 transition-opacity font-heading">
                         {experience.title} • <span style={{ color: '#4FD1C7' }}>{experience.company}</span>
                       </h3>
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className="text-gray-300 leading-relaxed font-sans">
                         {experience.description}
                       </p>
                     </div>
@@ -62,7 +62,7 @@ const WorkExperience = () => {
                       {experience.technologies.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-3 py-1 text-sm rounded-full border transition-all duration-300 hover:scale-105"
+                          className="px-3 py-1 text-sm rounded-full border transition-all duration-300 hover:scale-105 font-sans"
                           style={{ 
                             backgroundColor: 'rgba(79, 209, 199, 0.1)',
                             borderColor: 'rgba(79, 209, 199, 0.3)',
