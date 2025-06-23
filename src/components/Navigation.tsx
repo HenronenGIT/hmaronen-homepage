@@ -1,20 +1,16 @@
-
-import React from 'react';
+import React from "react";
 
 const Navigation = () => {
   const navItems = [
-    { name: 'About Me', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Contact Us', href: '#contact' }
+    { name: "About Me", href: "#about" },
+    { name: "Work", href: "#work" },
+    { name: "Skills", href: "#skills" },
   ];
 
   const handleNavClick = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -30,11 +26,11 @@ const Navigation = () => {
             {item.name}
           </button>
         ))}
-        <button 
+        <button
           className="px-6 py-2 rounded-md font-sans text-sm font-medium text-white transition-all duration-300 hover:scale-105"
-          style={{ backgroundColor: '#FF6B35' }}
+          style={{ backgroundColor: "#4FD1C7" }}
         >
-          Hire Me
+          Reach Out
         </button>
       </div>
     </nav>
