@@ -30,7 +30,7 @@ const GlassButton = ({
 }: GlassButtonProps) => {
   // Base styles
   const baseStyles =
-    "group relative transition-all duration-300 border backdrop-blur-sm overflow-hidden font-semibold";
+    "group relative transition-all duration-300 border backdrop-blur-sm overflow-hidden font-semibold inline-flex items-center justify-center no-underline";
 
   // Size variants
   const sizeStyles = {
@@ -108,7 +108,7 @@ const GlassButton = ({
       />
 
       {/* Content container */}
-      <span className="relative z-10 flex items-center gap-2">
+      <span className="relative z-10 flex items-center justify-center gap-2">
         {Icon && iconPosition === "left" && <Icon className="w-5 h-5" />}
         <span>{children}</span>
         {Icon && iconPosition === "right" && <Icon className="w-5 h-5" />}
