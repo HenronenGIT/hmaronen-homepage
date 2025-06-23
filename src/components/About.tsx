@@ -8,11 +8,11 @@ const About = () => {
       id: 1,
       content: (
         <>
-          I'm a passionate problem solver currently contributing to the
-          Product Team at Slush, where I'm responsible for the digital
-          tools used around the year and during the event.
+          I'm a passionate problem solver currently working with the Product
+          Team at Slush, where I contribute as a developer to digital tools
+          used year-round and during the main event.
         </>
-      )
+      ),
     },
     {
       id: 2,
@@ -28,25 +28,24 @@ const About = () => {
           >
             Hive Helsinki
           </a>
-          , that pivotet my career into software development, I've
-          developed a endless curiosity in technology.
+          —the school that pivoted my career into software development—I've
+          developed an endless curiosity for technology.
         </>
-      )
+      ),
     },
     {
       id: 3,
       content: (
         <>
-          Beyond software development, I'm deeply interested in
-          entrepreneurship and leadership.
+          Beyond code, I'm deeply interested in entrepreneurship and leadership.
         </>
-      )
+      ),
     },
     {
       id: 4,
       content: (
         <>
-          Outside the wild, you might see me{" "}
+          When I'm not deep in the digital world, you'll find me behind a{" "}
           <a
             href="https://www.instagram.com/hmaronen/"
             target="_blank"
@@ -54,9 +53,9 @@ const About = () => {
             className="font-semibold hover:underline transition-all duration-300"
             style={{ color: COLORS.primary }}
           >
-            photographing
+            camera
           </a>
-          , hitting furry ball with a padel racket, reading{" "}
+          , chasing furry balls on the padel court, diving into{" "}
           <a
             href="https://www.goodreads.com/review/list/174422574-henri-maronen?shelf=read"
             target="_blank"
@@ -66,7 +65,7 @@ const About = () => {
           >
             non-fiction
           </a>
-          , or{" "}
+          , or carving down{" "}
           <a
             href="https://youtu.be/LfyfiH3_ifQ?si=yfdi_6hi6wyYbCzM"
             target="_blank"
@@ -74,12 +73,12 @@ const About = () => {
             className="font-semibold hover:underline transition-all duration-300"
             style={{ color: COLORS.primary }}
           >
-            snowboarding
+            snowy slopes
           </a>{" "}
           in Northern Finland.
         </>
-      )
-    }
+      ),
+    },
   ];
 
   return (
@@ -99,9 +98,7 @@ const About = () => {
 
             <div className="space-y-6 text-lg text-gray-300 leading-relaxed font-sans">
               {aboutParagraphs.map((paragraph) => (
-                <p key={paragraph.id}>
-                  {paragraph.content}
-                </p>
+                <p key={paragraph.id}>{paragraph.content}</p>
               ))}
             </div>
           </div>
@@ -122,11 +119,7 @@ const About = () => {
                 href="https://www.hive.fi/"
               />
 
-              <InfoCard
-                icon={Code}
-                label="Focus"
-                value="Web Development"
-              />
+              <InfoCard icon={Code} label="Focus" value="Web Development" />
             </div>
           </div>
         </div>
