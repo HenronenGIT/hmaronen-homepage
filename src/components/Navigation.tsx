@@ -15,7 +15,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 right-0 z-50 p-6">
+    <nav className="fixed top-0 right-20 z-50 p-6">
       <div className="flex items-center space-x-8">
         {navItems.map((item, index) => (
           <button
@@ -26,12 +26,6 @@ const Navigation = () => {
             {item.name}
           </button>
         ))}
-        <button
-          className="px-6 py-2 rounded-md font-sans text-sm font-medium text-white transition-all duration-300 hover:scale-105"
-          style={{ backgroundColor: "#4FD1C7" }}
-        >
-          Reach Out
-        </button>
       </div>
     </nav>
   );
