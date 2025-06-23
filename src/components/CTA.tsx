@@ -1,6 +1,7 @@
 import telegramQR from "@/assets/images/hmaronen-telegram.svg";
+import GlassButton from "@/components/ui/GlassButton";
 import { SOCIAL_LINKS } from "@/constants";
-import { Coffee, MessageCircle } from "lucide-react";
+import { Coffee, Linkedin, MessageCircle } from "lucide-react";
 
 const CTA = () => {
   return (
@@ -28,27 +29,17 @@ const CTA = () => {
                   Professional Network
                 </h3>
                 <p className="text-gray-400 font-sans">How could I help you?</p>
-                <a
+                <GlassButton
                   href={SOCIAL_LINKS.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg font-semibold font-sans transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                  style={{
-                    backgroundColor: "#4FD1C7",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = "#3FBDB3";
-                    e.currentTarget.style.boxShadow =
-                      "0 10px 25px rgba(79, 209, 199, 0.25)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "#4FD1C7";
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
+                  icon={Coffee}
+                  iconPosition="left"
+                  variant="primary"
+                  size="md"
                 >
-                  <Coffee className="w-5 h-5" />
                   Connect on LinkedIn
-                </a>
+                </GlassButton>
               </div>
             </div>
 
@@ -64,7 +55,10 @@ const CTA = () => {
                 <h3 className="text-2xl font-bold font-heading">
                   Direct Message
                 </h3>
-                <p className="text-gray-400 font-sans">Need to reach me quickly? Scan the QR code for instant messaging.</p>
+                <p className="text-gray-400 font-sans">
+                  Need to reach me quickly? Scan the QR code for instant
+                  messaging.
+                </p>
                 <div className="flex justify-center">
                   <div
                     className="p-6 rounded-2xl border backdrop-blur-sm"
