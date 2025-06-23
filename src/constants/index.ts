@@ -1,15 +1,8 @@
 // Project Constants§
 export const SITE_CONFIG = {
-  name: "Henri Maronen",  title: "Henri Maronen - Portfolio",
+  name: "Henri Maronen", title: "Henri Maronen - Portfolio",
   description: "Personal portfolio and homepage",
   url: "https://henrimaronen.com", // Update with your actual domain
-} as const;
-
-// Social Media Links
-export const SOCIAL_LINKS = {
-  github: "https://github.com/HenronenGIT",
-  linkedin: "https://www.linkedin.com/in/henrimaronen/",
-  medium: "https://medium.com/@henrimaronen",
 } as const;
 
 
@@ -20,3 +13,9 @@ export const NAVIGATION_ITEMS = [
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ] as const;
+
+// Re-export colors for easy access
+export * from "./colors";
+
+// Re-export links for easy access
+export * from "./links";

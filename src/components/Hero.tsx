@@ -1,3 +1,4 @@
+import { COLORS } from "@/constants/colors";
 import { ArrowDown } from "lucide-react";
 import heroImage from "../assets/images/hmaronen.png";
 
@@ -17,13 +18,13 @@ const Hero = () => {
             <div className="space-y-4">
               <p
                 className="text-lg md:text-xl font-medium tracking-wide font-sans"
-                style={{ color: "#4FD1C7" }}
+                style={{ color: COLORS.primary }}
               >
                 Creative Engineer
               </p>
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tight font-heading">
                 <span className="block">Henri</span>
-                <span className="block" style={{ color: "#4FD1C7" }}>
+                <span className="block" style={{ color: COLORS.primary }}>
                   Maronen
                 </span>
               </h1>
@@ -40,16 +41,14 @@ const Hero = () => {
                 onClick={handleReachOutClick}
                 className="text-white px-8 py-4 rounded-lg font-semibold font-sans transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 style={{
-                  backgroundColor: "#4FD1C7",
-                  boxShadow: "hover:0 10px 25px rgba(79, 209, 199, 0.25)",
+                  backgroundColor: COLORS.primary,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "#3FBDB3";
-                  e.currentTarget.style.boxShadow =
-                    "0 10px 25px rgba(79, 209, 199, 0.25)";
+                  e.currentTarget.style.backgroundColor = COLORS.primaryHover;
+                  e.currentTarget.style.boxShadow = COLORS.shadows.primary;
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "#4FD1C7";
+                  e.currentTarget.style.backgroundColor = COLORS.primary;
                   e.currentTarget.style.boxShadow = "none";
                 }}
               >
@@ -62,9 +61,8 @@ const Hero = () => {
             <div
               className="w-80 h-80 md:w-96 md:h-96 rounded-2xl border overflow-hidden backdrop-blur-sm"
               style={{
-                background:
-                  "linear-gradient(135deg, rgba(79, 209, 199, 0.2) 0%, rgba(175, 235, 231, 0.2) 100%)",
-                borderColor: "rgba(79, 209, 199, 0.3)",
+                background: COLORS.gradients.primaryStrong,
+                borderColor: COLORS.primaryAlpha[30],
               }}
             >
               <img

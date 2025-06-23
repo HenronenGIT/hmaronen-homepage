@@ -1,18 +1,17 @@
-
-import React from "react";
-import Navigation from "../components/Navigation";
-import Hero from "../components/Hero";
+import { COLORS } from "@/constants/colors";
 import About from "../components/About";
-import WorkExperience from "../components/WorkExperience";
+import CTA from "../components/CTA";
+import Hero from "../components/Hero";
+import Navigation from "../components/Navigation";
 import Skills from "../components/Skills";
 import SocialLinks from "../components/SocialLinks";
-import CTA from "../components/CTA";
+import WorkExperience from "../components/WorkExperience";
 
 const Index = () => {
   return (
     <div
       className="min-h-screen text-white overflow-x-hidden"
-      style={{ backgroundColor: "#1A1A1B" }}
+      style={{ backgroundColor: COLORS.background.main }}
     >
       <Navigation />
       <SocialLinks />
