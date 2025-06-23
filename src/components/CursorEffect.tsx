@@ -42,7 +42,7 @@ const CursorEffect = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full h-full pointer-events-none z-30 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full h-full pointer-events-none z-0 transition-all duration-300 ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       style={{

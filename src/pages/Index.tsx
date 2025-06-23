@@ -15,19 +15,21 @@ const Index = () => {
       style={{ backgroundColor: COLORS.background.main }}
     >
       <CursorEffect />
-      <Navigation />
-      <SocialLinks />
-      <Hero />
-      <div id="about">
-        <About />
+      <div className="relative z-10">
+        <Navigation />
+        <SocialLinks />
+        <Hero />
+        <div id="about">
+          <About />
+        </div>
+        <div id="work">
+          <WorkExperience />
+        </div>
+        <div id="skills">
+          <Skills />
+        </div>
+        <CTA />
       </div>
-      <div id="work">
-        <WorkExperience />
-      </div>
-      <div id="skills">
-        <Skills />
-      </div>
-      <CTA />
     </div>
   );
 };
