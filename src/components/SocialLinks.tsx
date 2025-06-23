@@ -1,22 +1,27 @@
-
-import React from 'react';
-import { Github, Linkedin } from 'lucide-react';
-import { SOCIAL_LINKS } from '@/constants';
+import React from "react";
+import { Github, Linkedin, Instagram } from "lucide-react";
+import { SOCIAL_LINKS } from "@/constants";
 
 const SocialLinks = () => {
   const socialLinks = [
     {
-      name: 'GitHub',
-      href: SOCIAL_LINKS.github,
-      icon: Github,
-      color: '#333'
-    },
-    {
-      name: 'LinkedIn',
+      name: "LinkedIn",
       href: SOCIAL_LINKS.linkedin,
       icon: Linkedin,
-      color: '#0077B5'
-    }
+      color: "#0077B5",
+    },
+    {
+      name: "GitHub",
+      href: SOCIAL_LINKS.github,
+      icon: Github,
+      color: "#333",
+    },
+    {
+      name: "Instagram",
+      href: SOCIAL_LINKS.instagram,
+      icon: Instagram,
+      color: "#E1306C",
+    },
   ];
 
   return (

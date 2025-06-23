@@ -3,4 +3,5 @@ export const SOCIAL_LINKS = {
     github: "https://github.com/HenronenGIT",
     linkedin: "https://www.linkedin.com/in/henrimaronen/",
     medium: "https://medium.com/@henrimaronen",
+    instagram: "https://www.instagram.com/hmaronen/",
 } as const;
