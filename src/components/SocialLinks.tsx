@@ -6,13 +6,13 @@ const SocialLinks = () => {
   const socialLinks = [
     {
       name: 'GitHub',
-      href: 'https://github.com',
+      href: 'https://github.com/HenronenGIT',
       icon: Github,
       color: '#333'
     },
     {
       name: 'LinkedIn',
-      href: 'https://linkedin.com',
+      href: 'https://www.linkedin.com/in/henrimaronen/',
       icon: Linkedin,
       color: '#0077B5'
     }
