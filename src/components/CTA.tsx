@@ -1,0 +1,102 @@
+
+import React from 'react';
+import { Coffee, MessageCircle } from 'lucide-react';
+
+const CTA = () => {
+  return (
+    <section id="cta" className="py-24 px-6 md:px-12 lg:px-24" style={{ backgroundColor: 'rgba(79, 209, 199, 0.05)' }}>
+      <div className="max-w-4xl mx-auto text-center">
+        <div className="space-y-8">
+          <div className="space-y-4">
+            <h2 className="text-4xl md:text-5xl font-bold font-heading">
+              Let's Work <span style={{ color: '#4FD1C7' }}>Together</span>
+            </h2>
+            <p className="text-xl text-gray-300 font-sans">
+              Ready to bring your ideas to life? I'd love to hear about your project.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-3xl mx-auto">
+            {/* LinkedIn CTA */}
+            <div className="space-y-6">
+              <div className="flex justify-center">
+                <Coffee className="w-12 h-12" style={{ color: '#4FD1C7' }} />
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold font-heading">Professional Chat</h3>
+                <p className="text-gray-400 font-sans">
+                  Connect with me on LinkedIn for professional discussions and opportunities.
+                </p>
+                <a
+                  href="https://linkedin.com/in/your-profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg font-semibold font-sans transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  style={{
+                    backgroundColor: '#4FD1C7',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#3FBDB3';
+                    e.currentTarget.style.boxShadow = '0 10px 25px rgba(79, 209, 199, 0.25)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#4FD1C7';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  <Coffee className="w-5 h-5" />
+                  Let's chat over coffee
+                </a>
+              </div>
+            </div>
+
+            {/* Telegram QR Code */}
+            <div className="space-y-6">
+              <div className="flex justify-center">
+                <MessageCircle className="w-12 h-12" style={{ color: '#4FD1C7' }} />
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold font-heading">Quick Message</h3>
+                <p className="text-gray-400 font-sans">
+                  Scan the QR code to send me a quick message on Telegram.
+                </p>
+                <div className="flex justify-center">
+                  <div 
+                    className="p-6 rounded-2xl border backdrop-blur-sm"
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(79, 209, 199, 0.1) 0%, rgba(175, 235, 231, 0.1) 100%)',
+                      borderColor: 'rgba(79, 209, 199, 0.3)',
+                    }}
+                  >
+                    {/* QR Code placeholder - replace with actual QR code */}
+                    <div 
+                      className="w-32 h-32 bg-white rounded-lg flex items-center justify-center"
+                      style={{ backgroundColor: 'white' }}
+                    >
+                      <div className="grid grid-cols-8 gap-1 p-2">
+                        {/* Simple QR code pattern */}
+                        {Array.from({ length: 64 }, (_, i) => (
+                          <div
+                            key={i}
+                            className={`w-2 h-2 ${
+                              Math.random() > 0.5 ? 'bg-black' : 'bg-white'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-400 mt-2 text-center">
+                      Scan for Telegram
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CTA;

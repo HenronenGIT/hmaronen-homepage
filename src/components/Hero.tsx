@@ -2,6 +2,13 @@ import React from "react";
 import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
+  const handleReachOutClick = () => {
+    const ctaElement = document.querySelector('#cta');
+    if (ctaElement) {
+      ctaElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="min-h-screen flex flex-col justify-center items-start px-6 md:px-12 lg:px-24 relative">
       <div className="max-w-6xl mx-auto w-full">
@@ -37,6 +44,7 @@ const Hero = () => {
 
             <div className="flex flex-wrap gap-4 pt-8">
               <button
+                onClick={handleReachOutClick}
                 className="text-white px-8 py-4 rounded-lg font-semibold font-sans transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 style={{
                   backgroundColor: "#4FD1C7",
