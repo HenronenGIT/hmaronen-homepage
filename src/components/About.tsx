@@ -41,8 +41,37 @@ const About = () => {
                 entrepreneurship and leadership.
               </p>
               <p>
-                Outside of work, you might see me photographing, hitting furry
-                ball with a padel racket or snowboarding in North Finland.
+                Outside the wild, you might see me{" "}
+                <a
+                  href="https://www.instagram.com/hmaronen/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold hover:underline transition-all duration-300"
+                  style={{ color: "#4FD1C7" }}
+                >
+                  photographing
+                </a>
+                , hitting furry ball with a padel racket, reading{" "}
+                <a
+                  href="https://www.goodreads.com/review/list/174422574-henri-maronen?shelf=read"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold hover:underline transition-all duration-300"
+                  style={{ color: "#4FD1C7" }}
+                >
+                  non-fiction
+                </a>
+                , or{" "}
+                <a
+                  href="https://youtu.be/LfyfiH3_ifQ?si=yfdi_6hi6wyYbCzM"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold hover:underline transition-all duration-300"
+                  style={{ color: "#4FD1C7" }}
+                >
+                  snowboarding
+                </a>{" "}
+                in Northern Finland.
               </p>
             </div>
           </div>
@@ -59,7 +88,8 @@ const About = () => {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = "#4FD1C7";
-                  e.currentTarget.style.boxShadow = "0 10px 25px rgba(79, 209, 199, 0.2)";
+                  e.currentTarget.style.boxShadow =
+                    "0 10px 25px rgba(79, 209, 199, 0.2)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = "rgba(79, 209, 199, 0.3)";
@@ -71,15 +101,29 @@ const About = () => {
                     className="p-3 rounded-lg group-hover:scale-110 transition-transform duration-300"
                     style={{ backgroundColor: "rgba(79, 209, 199, 0.2)" }}
                   >
-                    <Briefcase className="w-6 h-6" style={{ color: "#4FD1C7" }} />
+                    <Briefcase
+                      className="w-6 h-6"
+                      style={{ color: "#4FD1C7" }}
+                    />
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm text-gray-400 font-sans">Current Role</p>
+                    <p className="text-sm text-gray-400 font-sans">
+                      Current Role
+                    </p>
                     <p
                       className="font-semibold font-sans text-lg"
                       style={{ color: "#4FD1C7" }}
                     >
-                      Product Team @ Slush
+                      Product Team,{" "}
+                      <a
+                        href="https://www.hive.fi/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold font-sans text-lg hover:underline transition-all duration-300"
+                        style={{ color: "#4FD1C7" }}
+                      >
+                        Slush
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -95,7 +139,8 @@ const About = () => {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = "#4FD1C7";
-                  e.currentTarget.style.boxShadow = "0 10px 25px rgba(79, 209, 199, 0.2)";
+                  e.currentTarget.style.boxShadow =
+                    "0 10px 25px rgba(79, 209, 199, 0.2)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = "rgba(79, 209, 199, 0.3)";
@@ -107,7 +152,10 @@ const About = () => {
                     className="p-3 rounded-lg group-hover:scale-110 transition-transform duration-300"
                     style={{ backgroundColor: "rgba(79, 209, 199, 0.2)" }}
                   >
-                    <GraduationCap className="w-6 h-6" style={{ color: "#4FD1C7" }} />
+                    <GraduationCap
+                      className="w-6 h-6"
+                      style={{ color: "#4FD1C7" }}
+                    />
                   </div>
                   <div className="flex-1">
                     <p className="text-sm text-gray-400 font-sans">Education</p>
@@ -134,7 +182,8 @@ const About = () => {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = "#4FD1C7";
-                  e.currentTarget.style.boxShadow = "0 10px 25px rgba(79, 209, 199, 0.2)";
+                  e.currentTarget.style.boxShadow =
+                    "0 10px 25px rgba(79, 209, 199, 0.2)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = "rgba(79, 209, 199, 0.3)";
