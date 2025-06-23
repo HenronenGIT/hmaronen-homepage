@@ -25,12 +25,9 @@ const CTA = () => {
               </div>
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold font-heading">
-                  Professional Chat
+                  Professional Network
                 </h3>
-                <p className="text-gray-400 font-sans">
-                  Connect with me on LinkedIn for professional discussions and
-                  opportunities.
-                </p>
+                <p className="text-gray-400 font-sans">How could I help you?</p>
                 <a
                   href={SOCIAL_LINKS.linkedin}
                   target="_blank"
@@ -50,7 +47,7 @@ const CTA = () => {
                   }}
                 >
                   <Coffee className="w-5 h-5" />
-                  Let's chat over coffee
+                  Connect on LinkedIn
                 </a>
               </div>
             </div>
@@ -65,8 +62,9 @@ const CTA = () => {
               </div>
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold font-heading">
-                  Quick Message
+                  Direct Message
                 </h3>
+                <p className="text-gray-400 font-sans">Need to reach me quickly? Scan the QR code for instant messaging.</p>
                 <div className="flex justify-center">
                   <div
                     className="p-6 rounded-2xl border backdrop-blur-sm"

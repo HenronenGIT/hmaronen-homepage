@@ -114,6 +114,7 @@ const Skills = () => {
     { name: "Padel", icon: "🎾" },
     { name: "Snowboarding", icon: "🏂" },
     { name: "Entrepreneurship", icon: "🚀" },
+    { name: "Reading", icon: "📚" },
   ];
 
   return (
