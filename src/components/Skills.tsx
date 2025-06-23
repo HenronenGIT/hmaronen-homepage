@@ -1,22 +1,40 @@
 
 import React from 'react';
+import { Code, Users, Lightbulb, Target } from 'lucide-react';
 
 const Skills = () => {
-  const skills = [
+  const technicalSkills = [
     {
       category: "Frontend",
-      items: ["React", "TypeScript", "Next.js", "Tailwind CSS"]
+      icon: Code,
+      items: [
+        { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+        { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+        { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" }
+      ]
     },
     {
       category: "Backend", 
-      items: ["Node.js", "Python", "PostgreSQL", "REST APIs"]
-    },
+      icon: Code,
+      items: [
+        { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+        { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+        { name: "PostgreSQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+        { name: "REST APIs", logo: null }
+      ]
+    }
+  ];
+
+  const softSkills = [
     {
       category: "Leadership",
+      icon: Users,
       items: ["Product Strategy", "Team Collaboration", "Mentoring", "Problem Solving"]
     },
     {
       category: "Design",
+      icon: Lightbulb,
       items: ["UI/UX Design", "User Research", "Prototyping", "Design Systems"]
     }
   ];
@@ -41,35 +59,94 @@ const Skills = () => {
             <div className="w-20 h-1 mx-auto" style={{ backgroundColor: '#4FD1C7' }}></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {skills.map((skill, index) => (
-              <div 
-                key={skill.category}
-                className="group p-6 rounded-xl border transition-all duration-300 hover:transform hover:scale-105"
-                style={{ 
-                  backgroundColor: 'rgba(79, 209, 199, 0.05)',
-                  borderColor: 'rgba(79, 209, 199, 0.2)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(79, 209, 199, 0.5)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(79, 209, 199, 0.2)';
-                }}
-              >
-                <h3 className="text-xl font-bold mb-4 group-hover:opacity-80 transition-colors font-heading" 
-                    style={{ color: '#4FD1C7' }}>
-                  {skill.category}
-                </h3>
-                <ul className="space-y-2">
-                  {skill.items.map((item) => (
-                    <li key={item} className="text-gray-300 group-hover:text-white transition-colors font-sans">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          {/* Technical Skills */}
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold text-center font-heading">
+              Technical <span style={{ color: '#4FD1C7' }}>Skills</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {technicalSkills.map((skill, index) => (
+                <div 
+                  key={skill.category}
+                  className="group p-6 rounded-xl border transition-all duration-300 hover:transform hover:scale-105"
+                  style={{ 
+                    backgroundColor: 'rgba(79, 209, 199, 0.05)',
+                    borderColor: 'rgba(79, 209, 199, 0.2)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(79, 209, 199, 0.5)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(79, 209, 199, 0.2)';
+                  }}
+                >
+                  <div className="flex items-center mb-4">
+                    <skill.icon className="w-6 h-6 mr-3" style={{ color: '#4FD1C7' }} />
+                    <h4 className="text-xl font-bold group-hover:opacity-80 transition-colors font-heading" 
+                        style={{ color: '#4FD1C7' }}>
+                      {skill.category}
+                    </h4>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    {skill.items.map((item) => (
+                      <div key={typeof item === 'string' ? item : item.name} 
+                           className="flex items-center space-x-2 p-2 rounded-lg transition-colors hover:bg-gray-800/30">
+                        {typeof item === 'object' && item.logo ? (
+                          <img src={item.logo} alt={item.name} className="w-5 h-5" />
+                        ) : (
+                          <div className="w-5 h-5 rounded bg-gray-600 flex items-center justify-center">
+                            <span className="text-xs font-bold">API</span>
+                          </div>
+                        )}
+                        <span className="text-gray-300 group-hover:text-white transition-colors font-sans text-sm">
+                          {typeof item === 'string' ? item : item.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Soft Skills */}
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold text-center font-heading">
+              Soft <span style={{ color: '#4FD1C7' }}>Skills</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {softSkills.map((skill, index) => (
+                <div 
+                  key={skill.category}
+                  className="group p-6 rounded-xl border transition-all duration-300 hover:transform hover:scale-105"
+                  style={{ 
+                    backgroundColor: 'rgba(79, 209, 199, 0.05)',
+                    borderColor: 'rgba(79, 209, 199, 0.2)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(79, 209, 199, 0.5)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(79, 209, 199, 0.2)';
+                  }}
+                >
+                  <div className="flex items-center mb-4">
+                    <skill.icon className="w-6 h-6 mr-3" style={{ color: '#4FD1C7' }} />
+                    <h4 className="text-xl font-bold group-hover:opacity-80 transition-colors font-heading" 
+                        style={{ color: '#4FD1C7' }}>
+                      {skill.category}
+                    </h4>
+                  </div>
+                  <ul className="space-y-2">
+                    {skill.items.map((item) => (
+                      <li key={item} className="text-gray-300 group-hover:text-white transition-colors font-sans">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="space-y-8">
