@@ -5,7 +5,6 @@ export const SITE_CONFIG = {
   url: "https://henrimaronen.com", // Update with your actual domain
 } as const;
 
-
 // Navigation
 export const NAVIGATION_ITEMS = [
   { label: "About", href: "#about" },
@@ -19,3 +18,6 @@ export * from "./colors";
 
 // Re-export links for easy access
 export * from "./links";
+
+// Export all constants
+export * from './typography';

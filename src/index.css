@@ -102,6 +102,102 @@
   }
 }
 
+/* Typography component classes */
+@layer components {
+  /* Heading presets */
+  .text-h1 {
+    @apply text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tight font-heading;
+  }
+
+  .text-h2 {
+    @apply text-4xl md:text-5xl font-bold font-heading;
+  }
+
+  .text-h3 {
+    @apply text-3xl font-bold font-heading;
+  }
+
+  .text-h4 {
+    @apply text-2xl font-bold font-heading;
+  }
+
+  .text-h5 {
+    @apply text-xl font-bold font-heading;
+  }
+
+  .text-h6 {
+    @apply text-lg font-bold font-heading;
+  }
+
+  /* Section headings */
+  .text-section-title {
+    @apply text-5xl md:text-6xl font-bold font-heading;
+  }
+
+  .text-section-subtitle {
+    @apply text-3xl font-bold text-center font-heading;
+  }
+
+  /* Body text variants */
+  .text-body-large {
+    @apply text-xl md:text-2xl text-gray-300 leading-relaxed font-sans;
+  }
+
+  .text-body {
+    @apply text-lg text-gray-300 leading-relaxed font-sans;
+  }
+
+  .text-body-small {
+    @apply text-base text-gray-300 leading-relaxed font-sans;
+  }
+
+  .text-caption {
+    @apply text-sm text-gray-400 font-sans;
+  }
+
+  .text-micro {
+    @apply text-xs text-gray-400 font-sans;
+  }
+
+  /* Interactive elements */
+  .text-button {
+    @apply font-semibold font-sans;
+  }
+
+  .text-button-small {
+    @apply text-sm font-medium font-sans;
+  }
+
+  .text-link {
+    @apply font-semibold hover:underline transition-all duration-300;
+  }
+
+  .text-nav-link {
+    @apply text-sm font-medium font-sans;
+  }
+
+  /* Special text styles */
+  .text-tag {
+    @apply text-sm font-medium font-sans;
+  }
+
+  .text-badge {
+    @apply text-xs font-bold font-sans;
+  }
+
+  .text-label {
+    @apply text-sm font-medium font-sans;
+  }
+
+  .text-metadata {
+    @apply text-sm font-medium text-gray-400 uppercase tracking-wider font-heading;
+  }
+
+  .text-logo {
+    @apply font-bold text-lg font-heading;
+  }
+}
+
 /* Cursor effect styles */
 @layer utilities {
   .cursor-interactive {
