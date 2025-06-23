@@ -55,7 +55,7 @@ const Hero = () => {
               </div>
 
               <div className="space-y-6 max-w-2xl">
-                <BodyLarge>
+                <BodyLarge className=" text-white font-heading text-sm font-medium">
                   Building digital tools that make ideas happen.
                 </BodyLarge>
 

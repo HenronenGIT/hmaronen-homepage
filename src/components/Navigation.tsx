@@ -28,8 +28,8 @@ const Navigation = () => {
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', controlNavbar);
-    return () => window.removeEventListener('scroll', controlNavbar);
+    window.addEventListener("scroll", controlNavbar);
+    return () => window.removeEventListener("scroll", controlNavbar);
   }, [lastScrollY]);
 
   const handleNavClick = (href: string) => {
@@ -46,7 +46,7 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
+        isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
       {/* Glass morphism container */}
@@ -56,7 +56,8 @@ const Navigation = () => {
           style={{
             background: "rgba(255, 255, 255, 0.05)",
             borderColor: "rgba(255, 255, 255, 0.1)",
-            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+            boxShadow:
+              "0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
           }}
         >
           {/* Logo */}
@@ -64,12 +65,14 @@ const Navigation = () => {
             onClick={handleLogoClick}
             className="group flex items-center justify-center w-12 h-12 rounded-xl border backdrop-blur-sm transition-all duration-300 hover:scale-110"
             style={{
-              background: "linear-gradient(135deg, rgba(79, 209, 199, 0.2) 0%, rgba(175, 235, 231, 0.2) 100%)",
+              background:
+                "linear-gradient(135deg, rgba(79, 209, 199, 0.2) 0%, rgba(175, 235, 231, 0.2) 100%)",
               borderColor: "rgba(79, 209, 199, 0.3)",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.borderColor = "#4FD1C7";
-              e.currentTarget.style.boxShadow = "0 10px 25px rgba(79, 209, 199, 0.25)";
+              e.currentTarget.style.boxShadow =
+                "0 10px 25px rgba(79, 209, 199, 0.25)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.borderColor = "rgba(79, 209, 199, 0.3)";
@@ -90,7 +93,7 @@ const Navigation = () => {
               <button
                 key={index}
                 onClick={() => handleNavClick(item.href)}
-                className="relative group text-white hover:text-teal-400 transition-all duration-300 font-sans text-sm font-medium py-2 px-1"
+                className="relative group text-white hover:text-teal-400 transition-all duration-300 font-heading text-sm font-medium py-2 px-1"
               >
                 {item.name}
                 {/* Animated underline */}
@@ -104,7 +107,8 @@ const Navigation = () => {
                 <span
                   className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300"
                   style={{
-                    background: "radial-gradient(circle, rgba(79, 209, 199, 0.3) 0%, transparent 70%)",
+                    background:
+                      "radial-gradient(circle, rgba(79, 209, 199, 0.3) 0%, transparent 70%)",
                   }}
                 />
               </button>
