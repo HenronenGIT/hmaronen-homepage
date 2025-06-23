@@ -97,8 +97,14 @@
     @apply border-border;
   }
 
-  body {
+  html, body {
     @apply bg-background text-foreground;
+    background-color: #1A1A1B; /* Ensure consistent dark background for overscroll */
+  }
+
+  body {
+    /* Prevent overscroll on mobile Safari */
+    overscroll-behavior: none;
   }
 }
 
