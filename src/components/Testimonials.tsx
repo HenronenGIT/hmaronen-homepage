@@ -1,3 +1,4 @@
+
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "./ui/card";
@@ -51,7 +52,7 @@ const testimonials: Testimonial[] = [
 const Testimonials = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
-  const plugin = useRef(
+  const autoplay = useRef(
     Autoplay({ delay: 4000, stopOnInteraction: true, stopOnMouseEnter: true })
   );
 
@@ -92,14 +93,14 @@ const Testimonials = () => {
         <Carousel
           setApi={setApi}
           className="w-full max-w-5xl mx-auto"
-          plugins={[plugin.current]}
+          plugins={[autoplay.current]}
           opts={{
             align: "start",
             loop: true,
             dragFree: true,
           }}
-          onMouseEnter={plugin.current.stop}
-          onMouseLeave={plugin.current.reset}
+          onMouseEnter={() => autoplay.current.stop()}
+          onMouseLeave={() => autoplay.current.reset()}
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {testimonials.map((testimonial) => (
