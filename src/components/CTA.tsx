@@ -30,7 +30,7 @@ const CTA = () => {
                   Professional Network
                 </h3>
                 <p className="text-gray-400 font-sans">
-                  Connect with me professionally. Scan the QR code to visit my LinkedIn profile.
+                  Let's build something amazing together.
                 </p>
                 <div className="flex justify-center">
                   <div
@@ -79,8 +79,7 @@ const CTA = () => {
                   Direct Message
                 </h3>
                 <p className="text-gray-400 font-sans">
-                  Need to reach me quickly? Scan the QR code for instant
-                  messaging.
+                  Need to reach me quickly? Telegram is the way to go.
                 </p>
                 <div className="flex justify-center">
                   <div
