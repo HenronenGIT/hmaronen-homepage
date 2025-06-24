@@ -42,26 +42,27 @@ const CTA = () => {
                     }}
                   >
                     {/* LinkedIn QR Code */}
-                    <div className="w-32 h-32 bg-white rounded-lg flex items-center justify-center p-2">
+                    <div className="w-32 h-32 bg-white rounded-lg flex items-center justify-center p-2 mb-4">
                       <img
                         src={linkedinQR}
                         alt="LinkedIn QR Code"
                         className="w-full h-full object-contain"
                       />
                     </div>
+                    <GlassButton
+                      href={SOCIAL_LINKS.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      icon={Linkedin}
+                      iconPosition="left"
+                      variant="secondary"
+                      size="sm"
+                      className="w-full"
+                    >
+                      Connect
+                    </GlassButton>
                   </div>
                 </div>
-                <GlassButton
-                  href={SOCIAL_LINKS.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  icon={Linkedin}
-                  iconPosition="left"
-                  variant="primary"
-                  size="md"
-                >
-                  Connect on LinkedIn
-                </GlassButton>
               </div>
             </div>
 
@@ -91,26 +92,27 @@ const CTA = () => {
                     }}
                   >
                     {/* Telegram QR Code */}
-                    <div className="w-32 h-32 bg-white rounded-lg flex items-center justify-center p-2">
+                    <div className="w-32 h-32 bg-white rounded-lg flex items-center justify-center p-2 mb-4">
                       <img
                         src={telegramQR}
                         alt="Telegram QR Code"
                         className="w-full h-full object-contain"
                       />
                     </div>
+                    <GlassButton
+                      href={SOCIAL_LINKS.telegram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      icon={MessageCircle}
+                      iconPosition="left"
+                      variant="secondary"
+                      size="sm"
+                      className="w-full"
+                    >
+                      Message
+                    </GlassButton>
                   </div>
                 </div>
-                <GlassButton
-                  href={SOCIAL_LINKS.telegram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  icon={MessageCircle}
-                  iconPosition="left"
-                  variant="primary"
-                  size="md"
-                >
-                  Message on Telegram
-                </GlassButton>
               </div>
             </div>
           </div>
