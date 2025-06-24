@@ -56,7 +56,7 @@ const SocialLinks = () => {
       </div>
 
       {/* Mobile version - glassmorphism style with touch support */}
-      <div className="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 flex space-x-4 bg-white/10 backdrop-blur-xl px-6 py-3 rounded-2xl border border-white/20 shadow-2xl">
+      {/* <div className="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 flex space-x-4 bg-white/10 backdrop-blur-xl px-6 py-3 rounded-2xl border border-white/20 shadow-2xl">
         {socialLinks.map((link, index) => (
           <a
             key={index}
@@ -89,7 +89,7 @@ const SocialLinks = () => {
             <link.icon size={20} />
           </a>
         ))}
-      </div>
+      </div> */}
     </>
   );
 };

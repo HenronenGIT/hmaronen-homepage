@@ -25,7 +25,7 @@ const Skills = () => {
         },
         {
           name: "Vite",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg",
         },
         {
           name: "Tailwind CSS",
