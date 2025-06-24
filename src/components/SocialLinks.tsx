@@ -1,7 +1,18 @@
 import { SOCIAL_LINKS } from "@/constants";
 import { Github, Instagram, Linkedin } from "lucide-react";
+import { useState } from 'react';
 
 const SocialLinks = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleTouchStart = (index) => {
+    setActiveIndex(index);
+  };
+
+  const handleTouchEnd = () => {
+    setActiveIndex(null);
+  };
+
   const socialLinks = [
     {
       name: "LinkedIn",
@@ -56,40 +67,27 @@ const SocialLinks = () => {
       </div>
 
       {/* Mobile version - glassmorphism style with touch support */}
-      {/* <div className="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 flex space-x-4 bg-white/10 backdrop-blur-xl px-6 py-3 rounded-2xl border border-white/20 shadow-2xl">
+      <div className="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 flex space-x-4 bg-white/10 backdrop-blur-xl px-6 py-3 rounded-2xl border border-white/20 shadow-2xl">
         {socialLinks.map((link, index) => (
           <a
             key={index}
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative w-12 h-12 rounded-xl flex items-center justify-center text-white transition-all duration-300 active:scale-95 overflow-hidden group"
+            className={`relative w-12 h-12 rounded-xl flex items-center justify-center text-white transition-all duration-300 active:scale-95 overflow-hidden group ${
+              activeIndex === index ? 'bg-opacity-40 border-opacity-60 text-current' : 'bg-opacity-15 border-opacity-20 text-white'
+            }`}
             style={{
-              background:
-                "linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)",
-              backdropFilter: "blur(10px)",
-              border: "1px solid rgba(255, 255, 255, 0.2)",
+              background: activeIndex === index ? `${link.color}40` : 'rgba(255, 255, 255, 0.15)',
+              borderColor: activeIndex === index ? `${link.color}60` : 'rgba(255, 255, 255, 0.2)',
             }}
-            onTouchStart={(e) => {
-              e.currentTarget.style.background = `linear-gradient(135deg, ${link.color}40 0%, ${link.color}20 100%)`;
-              e.currentTarget.style.borderColor = `${link.color}60`;
-              e.currentTarget.style.color = link.color;
-              e.currentTarget.style.transform = "scale(0.95)";
-            }}
-            onTouchEnd={(e) => {
-              setTimeout(() => {
-                e.currentTarget.style.background =
-                  "linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)";
-                e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
-                e.currentTarget.style.color = "white";
-                e.currentTarget.style.transform = "scale(1)";
-              }, 150);
-            }}
+            onTouchStart={() => handleTouchStart(index)}
+            onTouchEnd={handleTouchEnd}
           >
             <link.icon size={20} />
           </a>
         ))}
-      </div> */}
+      </div>
     </>
   );
 };
