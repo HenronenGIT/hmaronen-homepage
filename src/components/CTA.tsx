@@ -100,6 +100,17 @@ const CTA = () => {
                     </div>
                   </div>
                 </div>
+                <GlassButton
+                  href={SOCIAL_LINKS.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  icon={MessageCircle}
+                  iconPosition="left"
+                  variant="primary"
+                  size="md"
+                >
+                  Message on Telegram
+                </GlassButton>
               </div>
             </div>
           </div>

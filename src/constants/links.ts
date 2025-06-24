@@ -4,4 +4,5 @@ export const SOCIAL_LINKS = {
     linkedin: "https://www.linkedin.com/in/henrimaronen/",
     medium: "https://medium.com/@henrimaronen",
     instagram: "https://www.instagram.com/hmaronen/",
+    telegram: "https://t.me/hmaronen",
 } as const;
