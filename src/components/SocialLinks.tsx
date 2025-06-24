@@ -55,7 +55,7 @@ const SocialLinks = () => {
         ))}
       </div>
 
-      {/* Mobile version - glassmorphism style */}
+      {/* Mobile version - glassmorphism style with touch support */}
       <div className="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 flex space-x-4 bg-white/10 backdrop-blur-xl px-6 py-3 rounded-2xl border border-white/20 shadow-2xl">
         {socialLinks.map((link, index) => (
           <a
@@ -63,21 +63,25 @@ const SocialLinks = () => {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative w-12 h-12 rounded-xl flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg overflow-hidden group"
+            className="relative w-12 h-12 rounded-xl flex items-center justify-center text-white transition-all duration-300 active:scale-95 overflow-hidden group"
             style={{
               background:
                 "linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)",
               backdropFilter: "blur(10px)",
               border: "1px solid rgba(255, 255, 255, 0.2)",
             }}
-            onMouseEnter={(e) => {
+            onTouchStart={(e) => {
               e.currentTarget.style.background = `linear-gradient(135deg, ${link.color}40 0%, ${link.color}20 100%)`;
               e.currentTarget.style.borderColor = `${link.color}60`;
+              e.currentTarget.style.transform = "scale(0.95)";
             }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background =
-                "linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+            onTouchEnd={(e) => {
+              setTimeout(() => {
+                e.currentTarget.style.background =
+                  "linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)";
+                e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+                e.currentTarget.style.transform = "scale(1)";
+              }, 150);
             }}
           >
             <link.icon size={20} />
