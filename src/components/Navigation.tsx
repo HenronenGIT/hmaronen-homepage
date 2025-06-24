@@ -3,9 +3,10 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Navigation = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   const navItems = [
     { name: "Who am I", href: "#about" },
@@ -18,15 +19,24 @@ const Navigation = () => {
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY < 100) {
-        // Always show when near top
+      // Mark that user has scrolled and show navigation
+      if (!hasScrolled && currentScrollY > 50) {
+        setHasScrolled(true);
         setIsVisible(true);
-      } else if (currentScrollY > lastScrollY) {
-        // Scrolling down
-        setIsVisible(false);
-      } else {
-        // Scrolling up
-        setIsVisible(true);
+      }
+
+      // Only apply hide/show logic after user has scrolled once
+      if (hasScrolled) {
+        if (currentScrollY < 100) {
+          // Always show when near top
+          setIsVisible(true);
+        } else if (currentScrollY > lastScrollY) {
+          // Scrolling down
+          setIsVisible(false);
+        } else {
+          // Scrolling up
+          setIsVisible(true);
+        }
       }
 
       setLastScrollY(currentScrollY);
@@ -34,7 +44,7 @@ const Navigation = () => {
 
     window.addEventListener("scroll", controlNavbar);
     return () => window.removeEventListener("scroll", controlNavbar);
-  }, [lastScrollY]);
+  }, [lastScrollY, hasScrolled]);
 
   const handleNavClick = (href: string) => {
     const element = document.querySelector(href);
