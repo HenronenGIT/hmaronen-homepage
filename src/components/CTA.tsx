@@ -1,7 +1,8 @@
+import linkedinQR from "@/assets/images/hmaronen-linkedin.svg";
 import telegramQR from "@/assets/images/hmaronen-telegram.svg";
 import GlassButton from "@/components/ui/GlassButton";
 import { SOCIAL_LINKS } from "@/constants";
-import { Coffee, Linkedin, MessageCircle } from "lucide-react";
+import { Linkedin, MessageCircle } from "lucide-react";
 
 const CTA = () => {
   return (
@@ -14,7 +15,7 @@ const CTA = () => {
         <div className="space-y-8">
           <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold font-heading">
-              Let's Work <span style={{ color: "#4FD1C7" }}>Together</span>
+              Let's <span style={{ color: "#4FD1C7" }}>connect</span>
             </h2>
           </div>
 
@@ -22,18 +23,39 @@ const CTA = () => {
             {/* LinkedIn CTA */}
             <div className="space-y-6">
               <div className="flex justify-center">
-                <Coffee className="w-12 h-12" style={{ color: "#4FD1C7" }} />
+                <Linkedin className="w-12 h-12" style={{ color: "#4FD1C7" }} />
               </div>
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold font-heading">
                   Professional Network
                 </h3>
-                <p className="text-gray-400 font-sans">How could I help you?</p>
+                <p className="text-gray-400 font-sans">
+                  Connect with me professionally. Scan the QR code to visit my LinkedIn profile.
+                </p>
+                <div className="flex justify-center">
+                  <div
+                    className="p-6 rounded-2xl border backdrop-blur-sm"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, rgba(79, 209, 199, 0.1) 0%, rgba(175, 235, 231, 0.1) 100%)",
+                      borderColor: "rgba(79, 209, 199, 0.3)",
+                    }}
+                  >
+                    {/* LinkedIn QR Code */}
+                    <div className="w-32 h-32 bg-white rounded-lg flex items-center justify-center p-2">
+                      <img
+                        src={linkedinQR}
+                        alt="LinkedIn QR Code"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </div>
+                </div>
                 <GlassButton
                   href={SOCIAL_LINKS.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  icon={Coffee}
+                  icon={Linkedin}
                   iconPosition="left"
                   variant="primary"
                   size="md"
