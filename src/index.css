@@ -219,5 +219,22 @@
   * {
     @apply transition-colors duration-200;
   }
+
+  /* Pulsing glow animation for "life" text */
+  @keyframes pulse-glow {
+    0%, 100% {
+      text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+      transform: scale(1);
+    }
+    50% {
+      text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+    display: inline-block;
+  }
 }
 

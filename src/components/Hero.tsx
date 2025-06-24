@@ -58,7 +58,11 @@ const Hero = () => {
 
             <div className="space-y-4 sm:space-y-6 max-w-2xl">
               <BodyLarge className="text-white font-heading text-base sm:text-lg font-medium leading-relaxed">
-                Crafting software that brings ideas to life.
+                Crafting software that brings ideas to{" "}
+                <span className="animate-pulse-glow" style={{ color: COLORS.primary }}>
+                  life
+                </span>
+                .
               </BodyLarge>
 
               {/* Mobile-first button positioning */}
