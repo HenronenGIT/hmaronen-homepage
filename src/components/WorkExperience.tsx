@@ -14,8 +14,10 @@ const WorkExperience = () => {
       period: "2023 — PRESENT",
       title: "Full-stack Developer",
       company: "Slush",
+      // description:
+      //   "Part of the Product Team at Slush, the world's leading startup event with over 13 000 attendees. Product Team is responsible for the digital tools used around the year and during the event.",
       description:
-        "Part of the Product Team at Slush, the world's leading startup event with over 13 000 attendees. Product Team is responsible for the digital tools used around the year and during the event.",
+        "Build and maintain scalable full-stack applications serving Slush's 13,000+ attendee ecosystem. Developed  products including Media Bank (media attendees), Talent Tool (volunteer recruitment), and Slush Online (year-round founder-investor networking platform), delivering end-to-end digital tools.",
       technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Express"],
     },
   ];
