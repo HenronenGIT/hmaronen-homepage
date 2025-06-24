@@ -1,8 +1,11 @@
+
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Navigation = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
     { name: "About Me", href: "#about" },
@@ -38,10 +41,16 @@ const Navigation = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+    setIsMobileMenuOpen(false); // Close mobile menu after navigation
   };
 
   const handleLogoClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    setIsMobileMenuOpen(false);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
@@ -51,9 +60,9 @@ const Navigation = () => {
       }`}
     >
       {/* Glass morphism container */}
-      <div className="mx-6 mt-6 mb-2">
+      <div className="mx-4 sm:mx-6 mt-4 sm:mt-6 mb-2">
         <div
-          className="flex items-center justify-between px-6 py-4 rounded-2xl border backdrop-blur-xl transition-all duration-300 hover:backdrop-blur-2xl"
+          className="flex items-center justify-between px-4 sm:px-6 py-4 rounded-2xl border backdrop-blur-xl transition-all duration-300 hover:backdrop-blur-2xl"
           style={{
             background: "rgba(255, 255, 255, 0.05)",
             borderColor: "rgba(255, 255, 255, 0.1)",
@@ -64,7 +73,7 @@ const Navigation = () => {
           {/* Logo */}
           <button
             onClick={handleLogoClick}
-            className="group flex items-center justify-center w-12 h-12 rounded-xl border backdrop-blur-sm transition-all duration-300 hover:scale-110"
+            className="group flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl border backdrop-blur-sm transition-all duration-300 hover:scale-110"
             style={{
               background:
                 "linear-gradient(135deg, rgba(79, 209, 199, 0.2) 0%, rgba(175, 235, 231, 0.2) 100%)",
@@ -81,15 +90,15 @@ const Navigation = () => {
             }}
           >
             <span
-              className="font-bold text-lg font-heading group-hover:scale-110 transition-transform duration-300"
+              className="font-bold text-base sm:text-lg font-heading group-hover:scale-110 transition-transform duration-300"
               style={{ color: "#4FD1C7" }}
             >
               HM
             </span>
           </button>
 
-          {/* Navigation items */}
-          <div className="flex items-center space-x-8">
+          {/* Desktop Navigation items */}
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
               <button
                 key={index}
@@ -115,7 +124,44 @@ const Navigation = () => {
               </button>
             ))}
           </div>
+
+          {/* Mobile Hamburger Menu Button */}
+          <button
+            onClick={toggleMobileMenu}
+            className="md:hidden p-2 text-white hover:text-teal-400 transition-colors duration-300"
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div
+            className="md:hidden mt-2 rounded-2xl border backdrop-blur-xl transition-all duration-300"
+            style={{
+              background: "rgba(255, 255, 255, 0.05)",
+              borderColor: "rgba(255, 255, 255, 0.1)",
+              boxShadow:
+                "0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+            }}
+          >
+            <div className="flex flex-col space-y-2 p-4">
+              {navItems.map((item, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleNavClick(item.href)}
+                  className="text-left text-white hover:text-teal-400 transition-all duration-300 font-heading text-sm font-medium py-3 px-2 rounded-lg hover:bg-white/5"
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
