@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 import { COLORS, withAlpha } from "../constants/colors";
+import { useIsMobile } from "../hooks/use-mobile";
 
 const CursorEffect = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
+    // Don't add event listeners on mobile devices
+    if (isMobile) return;
+
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
       setIsVisible(true);
@@ -28,7 +33,12 @@ const CursorEffect = () => {
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
     };
-  }, []);
+  }, [isMobile]);
+
+  // Don't render anything on mobile devices
+  if (isMobile) {
+    return null;
+  }
 
   return (
     <div
