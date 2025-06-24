@@ -1,3 +1,4 @@
+
 import GlassButton from "@/components/ui/GlassButton";
 import { BodyLarge, H1, Metadata } from "@/components/ui/Typography";
 import { COLORS } from "@/constants/colors";
@@ -14,7 +15,7 @@ const Hero = () => {
 
   return (
     <section
-      className="min-h-screen flex flex-col justify-center items-start px-6 md:px-12 lg:px-24 relative overflow-hidden"
+      className="min-h-screen flex flex-col justify-center items-start px-4 sm:px-6 md:px-12 lg:px-24 relative overflow-hidden"
       style={{
         background: `
           radial-gradient(circle at 20% 80%, ${COLORS.primary}15 0%, transparent 50%),
@@ -36,41 +37,70 @@ const Hero = () => {
       ></div>
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
-        <div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-fade-in">
-              <div className="space-y-4">
-                <Metadata
-                  style={{ color: COLORS.primary }}
-                  className="tracking-wide"
-                >
-                  Creative Engineer
-                </Metadata>
-                <H1>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Content Section */}
+          <div className="space-y-6 sm:space-y-8 animate-fade-in order-2 lg:order-1">
+            <div className="space-y-3 sm:space-y-4">
+              <Metadata
+                style={{ color: COLORS.primary }}
+                className="tracking-wide text-sm sm:text-base"
+              >
+                Creative Engineer
+              </Metadata>
+              <div className="space-y-2">
+                <H1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                   <span className="block">Henri</span>
                   <span className="block" style={{ color: COLORS.primary }}>
                     Maronen
                   </span>
                 </H1>
               </div>
+            </div>
 
-              <div className="space-y-6 max-w-2xl">
-                <BodyLarge className=" text-white font-heading text-sm font-medium">
-                  Building digital tools that make ideas happen.
-                </BodyLarge>
+            <div className="space-y-4 sm:space-y-6 max-w-2xl">
+              <BodyLarge className="text-white font-heading text-base sm:text-lg font-medium leading-relaxed">
+                Building digital tools that make ideas happen.
+              </BodyLarge>
 
+              {/* Mobile-first button positioning */}
+              <div className="pt-2">
                 <GlassButton
                   onClick={handleReachOutClick}
                   variant="primary"
                   size="md"
+                  className="w-full sm:w-auto"
                 >
                   Let's work together
                 </GlassButton>
               </div>
             </div>
 
-            <div className="relative lg:justify-self-end">
-              <div className="relative p-6 rounded-3xl  backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:backdrop-blur-2xl">
+            {/* Additional skills info for mobile */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 lg:hidden">
+              <div className="space-y-2">
+                <h4 className="text-sm font-semibold text-white font-heading">
+                  Highly skilled at
+                </h4>
+                <p className="text-xs text-gray-300 leading-relaxed">
+                  Progressive enhancement, design systems & UI Engineering.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <h4 className="text-sm font-semibold text-white font-heading">
+                  Proven experience
+                </h4>
+                <p className="text-xs text-gray-300 leading-relaxed">
+                  Building successful products for clients across several countries.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Image Section */}
+          <div className="relative lg:justify-self-end order-1 lg:order-2">
+            <div className="relative max-w-sm sm:max-w-md mx-auto lg:max-w-lg">
+              {/* Mobile-optimized image container */}
+              <div className="relative p-4 sm:p-6 rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:backdrop-blur-2xl">
                 {/* Background glow */}
                 <div
                   className="absolute inset-0 rounded-3xl blur-3xl opacity-20"
@@ -83,29 +113,53 @@ const Hero = () => {
                   <img
                     src={heroImage}
                     alt="Henri Maronen"
-                    className="w-full max-w-md lg:max-w-lg rounded-2xl"
+                    className="w-full rounded-2xl"
                     style={{
                       filter: "drop-shadow(0 8px 25px rgba(79, 209, 199, 0.2))",
                     }}
                   />
                 </div>
               </div>
+
+              {/* Decorative elements for mobile */}
+              <div className="absolute -top-4 -right-4 w-16 h-16 border border-teal-400/20 rounded-lg rotate-12 lg:hidden"></div>
+              <div className="absolute -bottom-6 -left-6 w-12 h-12 border border-teal-400/20 rounded-lg -rotate-12 lg:hidden"></div>
             </div>
+          </div>
+        </div>
+
+        {/* Desktop skills info */}
+        <div className="hidden lg:grid grid-cols-2 gap-8 pt-12 max-w-4xl">
+          <div className="space-y-3">
+            <h4 className="text-base font-semibold text-white font-heading">
+              Highly skilled at
+            </h4>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              Progressive enhancement, design systems & UI Engineering.
+            </p>
+          </div>
+          <div className="space-y-3">
+            <h4 className="text-base font-semibold text-white font-heading">
+              Proven experience
+            </h4>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              Building successful products for clients across several countries.
+            </p>
           </div>
         </div>
       </div>
 
-      {/* Enhanced scroll indicator with glass morphism */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+      {/* Enhanced scroll indicator with mobile optimization */}
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
         <div
-          className="p-3 rounded-full border backdrop-blur-sm"
+          className="p-2 sm:p-3 rounded-full border backdrop-blur-sm"
           style={{
             background: "rgba(255, 255, 255, 0.05)",
             borderColor: "rgba(255, 255, 255, 0.1)",
             boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1)",
           }}
         >
-          <ArrowDown className="w-6 h-6 text-gray-400" />
+          <ArrowDown className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
         </div>
       </div>
     </section>
