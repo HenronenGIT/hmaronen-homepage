@@ -1,23 +1,58 @@
-import React from "react";
-
 interface WorkExperienceItem {
   period: string;
   title: string;
   company: string;
-  description: string;
+  description: string[];
   technologies: string[];
 }
 
 const WorkExperience = () => {
   const experiences: WorkExperienceItem[] = [
     {
-      period: "2023 — PRESENT",
+      period: "2025 - PRESENT",
+      title: "Senior Full-stack Developer",
+      company: "Slush",
+      description: [
+        "Build and maintain scalable full-stack applications serving Slush's 13,000+ attendees.",
+      ],
+      technologies: [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "PostgreSQL",
+        "Express",
+        "Google Cloud Platform",
+      ],
+    },
+    {
+      period: "2024",
       title: "Full-stack Developer",
       company: "Slush",
-      // description:
-      //   "Part of the Product Team at Slush, the world's leading startup event with over 13 000 attendees. Product Team is responsible for the digital tools used around the year and during the event.",
-      description:
-        "Build and maintain scalable full-stack applications serving Slush's 13,000+ attendee ecosystem. Developed  products including Media Bank (media attendees), Talent Tool (volunteer recruitment), and Slush Online (year-round founder-investor networking platform), delivering end-to-end digital tools.",
+      description: [
+        "Built internal tools that improved workflows for the Slush team.",
+        "Project owner of Slush Online, a year-round platform helping founders share insights and connect with investors.",
+        "Project owner of Media Bank, enabling media attendees to access press releases and media kits with ease.",
+        "Contributed to the Activities Tool, supporting the creation of 500+ side events via a dynamic submission form I was responsible for.",
+        "Initiated and built 'Knowledge' — a chatbot for info volunteers to access real-time information about Slush and the event.",
+      ],
+      technologies: [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "PostgreSQL",
+        "Express",
+        "Google Cloud Platform",
+      ],
+    },
+    {
+      period: "2023",
+      title: "Junior Full-stack Developer",
+      company: "Slush",
+      description: [
+        "Developed and maintained internal tools that streamlined operations for the Slush team.",
+        "Implemented new features for the Talent Tool, supporting the recruitment of over 1,000 volunteers.",
+        "Co-developed the Media Bank, providing an organized tool for press materials and resources.",
+      ],
       technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Express"],
     },
   ];
@@ -54,9 +89,18 @@ const WorkExperience = () => {
                           {experience.company}
                         </span>
                       </h3>
-                      <p className="text-gray-300 leading-relaxed font-sans">
-                        {experience.description}
-                      </p>
+                      <div className="space-y-3">
+                        {experience.description.map(
+                          (paragraph, paragraphIndex) => (
+                            <p
+                              key={paragraphIndex}
+                              className="text-gray-300 leading-relaxed font-sans"
+                            >
+                              {paragraph}
+                            </p>
+                          )
+                        )}
+                      </div>
                     </div>
 
                     <div className="flex flex-wrap gap-2">
