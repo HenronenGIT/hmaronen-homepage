@@ -1,8 +1,5 @@
-
-
-import React from "react";
-import { Github, Linkedin, Instagram } from "lucide-react";
 import { SOCIAL_LINKS } from "@/constants";
+import { Github, Instagram, Linkedin } from "lucide-react";
 
 const SocialLinks = () => {
   const socialLinks = [
@@ -36,8 +33,22 @@ const SocialLinks = () => {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg"
-            style={{ backgroundColor: link.color }}
+            className="relative w-12 h-12 rounded-xl flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg overflow-hidden group"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)",
+              backdropFilter: "blur(10px)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = `linear-gradient(135deg, ${link.color}40 0%, ${link.color}20 100%)`;
+              e.currentTarget.style.borderColor = `${link.color}60`;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background =
+                "linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+            }}
           >
             <link.icon size={20} />
           </a>
@@ -54,17 +65,19 @@ const SocialLinks = () => {
             rel="noopener noreferrer"
             className="relative w-12 h-12 rounded-xl flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg overflow-hidden group"
             style={{
-              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)',
-              backdropFilter: 'blur(10px)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
+              background:
+                "linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)",
+              backdropFilter: "blur(10px)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = `linear-gradient(135deg, ${link.color}40 0%, ${link.color}20 100%)`;
               e.currentTarget.style.borderColor = `${link.color}60`;
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)';
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+              e.currentTarget.style.background =
+                "linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
             }}
           >
             <link.icon size={20} />
@@ -76,4 +89,3 @@ const SocialLinks = () => {
 };
 
 export default SocialLinks;
-

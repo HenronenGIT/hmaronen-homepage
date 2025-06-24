@@ -1,4 +1,3 @@
-
 import GlassButton from "@/components/ui/GlassButton";
 import { BodyLarge, H1, Metadata } from "@/components/ui/Typography";
 import { COLORS } from "@/constants/colors";
@@ -59,7 +58,7 @@ const Hero = () => {
 
             <div className="space-y-4 sm:space-y-6 max-w-2xl">
               <BodyLarge className="text-white font-heading text-base sm:text-lg font-medium leading-relaxed">
-                Building digital tools that make ideas happen.
+                Crafting software that brings ideas to life.
               </BodyLarge>
 
               {/* Mobile-first button positioning */}
@@ -67,10 +66,10 @@ const Hero = () => {
                 <GlassButton
                   onClick={handleReachOutClick}
                   variant="primary"
-                  size="md"
-                  className="w-full sm:w-auto"
+                  size="sm"
+                  className="sm:w-auto"
                 >
-                  Let's work together
+                  Let's connect
                 </GlassButton>
               </div>
             </div>
@@ -78,7 +77,7 @@ const Hero = () => {
             {/* Additional skills info for mobile */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 lg:hidden">
               <div className="space-y-2">
-                <h4 className="text-sm font-semibold text-white font-heading">
+                {/* <h4 className="text-sm font-semibold text-white font-heading">
                   Highly skilled at
                 </h4>
                 <p className="text-xs text-gray-300 leading-relaxed">
@@ -88,10 +87,7 @@ const Hero = () => {
               <div className="space-y-2">
                 <h4 className="text-sm font-semibold text-white font-heading">
                   Proven experience
-                </h4>
-                <p className="text-xs text-gray-300 leading-relaxed">
-                  Building successful products for clients across several countries.
-                </p>
+                </h4> */}
               </div>
             </div>
           </div>
@@ -120,10 +116,6 @@ const Hero = () => {
                   />
                 </div>
               </div>
-
-              {/* Decorative elements for mobile */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 border border-teal-400/20 rounded-lg rotate-12 lg:hidden"></div>
-              <div className="absolute -bottom-6 -left-6 w-12 h-12 border border-teal-400/20 rounded-lg -rotate-12 lg:hidden"></div>
             </div>
           </div>
         </div>

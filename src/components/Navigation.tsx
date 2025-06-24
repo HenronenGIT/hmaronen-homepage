@@ -8,7 +8,7 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "About Me", href: "#about" },
+    { name: "Who am I", href: "#about" },
     { name: "Experience", href: "#work" },
     { name: "Skills", href: "#skills" },
     { name: "Testimonials", href: "#testimonials" },

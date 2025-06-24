@@ -88,7 +88,7 @@ const About = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold font-heading">
-                About <span style={{ color: COLORS.primary }}>Me</span>
+                Who am <span style={{ color: COLORS.primary }}>I</span>
               </h2>
               <div
                 className="w-20 h-1"
