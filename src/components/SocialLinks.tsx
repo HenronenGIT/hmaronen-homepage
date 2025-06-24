@@ -1,4 +1,5 @@
 
+
 import React from "react";
 import { Github, Linkedin, Instagram } from "lucide-react";
 import { SOCIAL_LINKS } from "@/constants";
@@ -43,18 +44,30 @@ const SocialLinks = () => {
         ))}
       </div>
 
-      {/* Mobile version - compact horizontal at bottom */}
-      <div className="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 flex space-x-3 bg-black/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-700">
+      {/* Mobile version - glassmorphism style */}
+      <div className="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 flex space-x-4 bg-white/10 backdrop-blur-xl px-6 py-3 rounded-2xl border border-white/20 shadow-2xl">
         {socialLinks.map((link, index) => (
           <a
             key={index}
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
-            style={{ backgroundColor: link.color }}
+            className="relative w-12 h-12 rounded-xl flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg overflow-hidden group"
+            style={{
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = `linear-gradient(135deg, ${link.color}40 0%, ${link.color}20 100%)`;
+              e.currentTarget.style.borderColor = `${link.color}60`;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+            }}
           >
-            <link.icon size={16} />
+            <link.icon size={20} />
           </a>
         ))}
       </div>
@@ -63,3 +76,4 @@ const SocialLinks = () => {
 };
 
 export default SocialLinks;
+
