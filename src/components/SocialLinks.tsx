@@ -1,9 +1,24 @@
 import { SOCIAL_LINKS } from "@/constants";
 import { Github, Instagram, Linkedin } from "lucide-react";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const SocialLinks = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleTouchStart = (index) => {
     setActiveIndex(index);
@@ -67,7 +82,11 @@ const SocialLinks = () => {
       </div>
 
       {/* Mobile version - glassmorphism style with touch support */}
-      <div className="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 flex space-x-4 bg-white/10 backdrop-blur-xl px-6 py-3 rounded-2xl border border-white/20 shadow-2xl">
+      <div
+        className={`md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 flex space-x-4 bg-white/10 backdrop-blur-xl px-6 py-3 rounded-2xl border border-white/20 shadow-2xl transition-opacity duration-300 ${
+          isVisible ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
         {socialLinks.map((link, index) => (
           <a
             key={index}
