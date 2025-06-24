@@ -44,8 +44,12 @@ This is Henri Maronen's personal portfolio website - a modern, minimalistic, and
 
 - **[React Router](https://reactrouter.com/)** - Declarative routing for React
 
-### Development Tools
+### Design & Project Management
+- **[Figma](https://figma.com/)** - Design system, UI/UX design, and prototyping
+- **[Linear](https://linear.app/)** - Task planning, issue tracking, and idea management
 
+### Development Tools
+- **[ESLint](https://eslint.org/)** - Code linting and formatting
 - **[pnpm](https://pnpm.io/)** - Fast package manager
 
 ## 🚀 Quick Start
@@ -115,6 +119,26 @@ hmaronen-homepage/
 ├── vite.config.ts        # Vite configuration
 └── tsconfig.json         # TypeScript configuration
 ```
+
+## 🎨 Design Process
+
+This project follows a design-first approach using modern design and project management tools:
+
+### Design System
+- **Figma**: Used for creating the complete design system, including:
+  - Typography scale and font pairings
+  - Color palette and brand guidelines
+  - Component library and variants
+  - Responsive breakpoints and layouts
+  - Interactive prototypes and user flows
+
+### Project Management
+- **Linear**: Used throughout development for:
+  - Breaking down design concepts into actionable tasks
+  - Tracking feature implementation progress
+  - Managing bug reports and enhancements
+  - Capturing and organizing creative ideas that emerge during development
+  - Sprint planning and milestone tracking
 
 ## 🎨 Customization
 
