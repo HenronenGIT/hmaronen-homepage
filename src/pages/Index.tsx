@@ -12,29 +12,31 @@ import { Analytics } from "@vercel/analytics/react";
 
 const Index = () => {
   return (
-    <div
-      className="min-h-screen text-white overflow-x-hidden relative"
-      style={{ backgroundColor: COLORS.background.main }}
-    >
+    <div>
       <Analytics />
-      <CursorEffect />
-      <div className="relative z-10">
-        <Navigation />
-        <SocialLinks />
-        <Hero />
-        <div id="about">
-          <About />
+      <div
+        className="min-h-screen text-white overflow-x-hidden relative"
+        style={{ backgroundColor: COLORS.background.main }}
+      >
+        <CursorEffect />
+        <div className="relative z-10">
+          <Navigation />
+          <SocialLinks />
+          <Hero />
+          <div id="about">
+            <About />
+          </div>
+          <div id="work">
+            <WorkExperience />
+          </div>
+          <div id="skills">
+            <Skills />
+          </div>
+          <div id="testimonials">
+            <Testimonials />
+          </div>
+          <CTA />
         </div>
-        <div id="work">
-          <WorkExperience />
-        </div>
-        <div id="skills">
-          <Skills />
-        </div>
-        <div id="testimonials">
-          <Testimonials />
-        </div>
-        <CTA />
       </div>
     </div>
   );
