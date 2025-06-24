@@ -1,8 +1,8 @@
-
 import {
   Briefcase,
   Code2,
   Database,
+  Eye,
   Lightbulb,
   Users,
   Wrench,
@@ -86,27 +86,26 @@ const Skills = () => {
       title: "Leadership",
       icon: Users,
       description:
-        "Mentoring individuals, sharing knowledge and experiences to help them grow.",
-      highlights: ["Mentoring", "Sharing Knowledge", "Teamwork"],
+        "Empowering others through mentorship, knowledge-sharing, and collaborative teamwork.",
+      highlights: ["Mentorship", "Knowledge Sharing", "Team Collaboration"],
     },
     {
       title: "Innovation",
       icon: Lightbulb,
       description:
-        "Challenging existing solutions and exploring new ways to solve problems.",
+        "Constantly rethinking the status quo and experimenting with new solutions to drive progress.",
       highlights: [
         "Creative Problem Solving",
         "Product Innovation",
+        "Prototyping",
       ],
     },
     {
-      title: "Business Focus",
-      icon: Briefcase,
+      title: "Attention to Detail",
+      icon: Eye,
       description:
-        "Taking head out side of the code and thinking about the bigger picture.",
-      highlights: [
-        "Business Thinking",
-      ],
+        "Pixel-level care for design and usability. I obsess over the small things and get excited about the details.",
+      highlights: ["UI/UX Design", "Interaction Design"],
     },
   ];
 
