@@ -119,26 +119,6 @@ const Hero = () => {
             </div>
           </div>
         </div>
-
-        {/* Desktop skills info */}
-        <div className="hidden lg:grid grid-cols-2 gap-8 pt-12 max-w-4xl">
-          <div className="space-y-3">
-            <h4 className="text-base font-semibold text-white font-heading">
-              Highly skilled at
-            </h4>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              Progressive enhancement, design systems & UI Engineering.
-            </p>
-          </div>
-          <div className="space-y-3">
-            <h4 className="text-base font-semibold text-white font-heading">
-              Proven experience
-            </h4>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              Building successful products for clients across several countries.
-            </p>
-          </div>
-        </div>
       </div>
 
       {/* Enhanced scroll indicator with mobile optimization */}

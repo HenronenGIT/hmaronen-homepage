@@ -10,7 +10,7 @@ const Navigation = () => {
   const navItems = [
     { name: "Who am I", href: "#about" },
     { name: "Experience", href: "#work" },
-    { name: "Skills", href: "#skills" },
+    { name: "Skillset", href: "#skills" },
     { name: "Testimonials", href: "#testimonials" },
   ];
 
