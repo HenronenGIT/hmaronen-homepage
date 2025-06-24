@@ -8,6 +8,7 @@ import Skills from "../components/Skills";
 import SocialLinks from "../components/SocialLinks";
 import Testimonials from "../components/Testimonials";
 import WorkExperience from "../components/WorkExperience";
+import { Analytics } from "@vercel/analytics/react";
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
       className="min-h-screen text-white overflow-x-hidden relative"
       style={{ backgroundColor: COLORS.background.main }}
     >
+      <Analytics />
       <CursorEffect />
       <div className="relative z-10">
         <Navigation />
