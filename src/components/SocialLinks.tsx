@@ -73,6 +73,7 @@ const SocialLinks = () => {
             onTouchStart={(e) => {
               e.currentTarget.style.background = `linear-gradient(135deg, ${link.color}40 0%, ${link.color}20 100%)`;
               e.currentTarget.style.borderColor = `${link.color}60`;
+              e.currentTarget.style.color = link.color;
               e.currentTarget.style.transform = "scale(0.95)";
             }}
             onTouchEnd={(e) => {
@@ -80,6 +81,7 @@ const SocialLinks = () => {
                 e.currentTarget.style.background =
                   "linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)";
                 e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+                e.currentTarget.style.color = "white";
                 e.currentTarget.style.transform = "scale(1)";
               }, 150);
             }}
