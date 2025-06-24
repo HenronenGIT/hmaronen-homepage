@@ -2,8 +2,6 @@
 
 <div align="center">
 
-![Henri Maronen](src/assets/images/hmaronen.png)
-
 **A modern, responsive portfolio website showcasing creative engineering excellence**
 
 [![React](https://img.shields.io/badge/React-18.3.1-blue.svg)](https://reactjs.org/)
@@ -26,7 +24,6 @@ This is Henri Maronen's personal portfolio website - a modern, minimalistic, and
 - **📊 Analytics Integration** - Vercel Analytics for performance monitoring.
 - **🎨 Modern Design** - Modern, minimalistic, and clean design.
 - **🚀 Fast Performance** - Built with Vite for lightning-fast development and production builds.
-- **🎯 SEO Optimized** - Proper meta tags and semantic HTML structure.
 
 ## 🛠️ Tech Stack
 
@@ -43,7 +40,7 @@ This is Henri Maronen's personal portfolio website - a modern, minimalistic, and
 - **[Radix UI](https://www.radix-ui.com/)** - Low-level UI primitives
 - **[Lucide React](https://lucide.dev/)** - Beautiful, customizable icons
 
-### State Management & Routing
+### Routing
 
 - **[React Router](https://reactrouter.com/)** - Declarative routing for React
 
@@ -88,11 +85,11 @@ This is Henri Maronen's personal portfolio website - a modern, minimalistic, and
 
 ## 📜 Available Scripts
 
-| Script      | Description                              |
-| ----------- | ---------------------------------------- |
-| `dev`       | Start development server with hot reload |
-| `build`     | Build the project for production         |
-| `preview`   | Preview the production build locally     |
+| Script    | Description                              |
+| --------- | ---------------------------------------- |
+| `dev`     | Start development server with hot reload |
+| `build`   | Build the project for production         |
+| `preview` | Preview the production build locally     |
 
 ## 📁 Project Structure
 
@@ -135,15 +132,6 @@ export const COLORS = {
   },
 };
 ```
-
-### Content
-
-Update the personal information, work experience, and skills in their respective component files:
-
-- Hero content: `src/components/Hero.tsx`
-- About section: `src/components/About.tsx`
-- Work experience: `src/components/WorkExperience.tsx`
-- Skills: `src/components/Skills.tsx`
 
 ## 🚀 Deployment
 
