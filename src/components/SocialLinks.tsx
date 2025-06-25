@@ -14,7 +14,7 @@ const SOCIAL_LINKS_DATA = [
     name: "GitHub",
     href: SOCIAL_LINKS.github,
     icon: Github,
-    color: "#333",
+    color: "#9c39b5",
   },
   {
     name: "Instagram",
