@@ -13,7 +13,7 @@ const InfoCard = ({ icon: Icon, label, value, href }: InfoCardProps) => {
     <div
       className="rounded-xl p-6 backdrop-blur-sm border transition-all duration-300 hover:scale-105 hover:shadow-lg group cursor-pointer"
       style={{
-        background: COLORS.gradients.primaryMedium,
+        background: COLORS.gradients.primary,
         borderColor: COLORS.primaryAlpha[30],
       }}
       onMouseEnter={(e) => {
