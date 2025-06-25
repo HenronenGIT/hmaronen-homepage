@@ -69,6 +69,7 @@ const AnimatedTestimonialCard = ({
           borderImageSlice: 1,
           transition: "border-image 0.3s ease-in-out",
           borderWidth: "1px",
+          cursor: "grab",
         }}
       >
         <Card
