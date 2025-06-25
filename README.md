@@ -45,11 +45,16 @@ This is Henri Maronen's personal portfolio website - a modern, minimalistic, and
 - **[React Router](https://reactrouter.com/)** - Declarative routing for React
 
 ### Design & Project Management
+
 - **[Figma](https://figma.com/)** - Design system, UI/UX design, and prototyping
 - **[Linear](https://linear.app/)** - Task planning, issue tracking, and idea management
 
 ### Development Tools
-- **[ESLint](https://eslint.org/)** - Code linting and formatting
+
+- **[ESLint](https://eslint.org/)** - Code linting and quality assurance
+- **[Prettier](https://prettier.io/)** - Code formatting and style consistency
+- **[Commitizen](https://commitizen.github.io/cz-cli/)** - Conventional commit message formatting
+- **[Husky](https://typicode.github.io/husky/)** - Git hooks for pre-commit quality checks
 - **[pnpm](https://pnpm.io/)** - Fast package manager
 
 ## 🚀 Quick Start
@@ -125,6 +130,7 @@ hmaronen-homepage/
 This project follows a design-first approach using modern design and project management tools:
 
 ### Design System
+
 - **Figma**: Used for creating the complete design system, including:
   - Typography scale and font pairings
   - Color palette and brand guidelines
@@ -133,6 +139,7 @@ This project follows a design-first approach using modern design and project man
   - Interactive prototypes and user flows
 
 ### Project Management
+
 - **Linear**: Used throughout development for:
   - Breaking down design concepts into actionable tasks
   - Tracking feature implementation progress
