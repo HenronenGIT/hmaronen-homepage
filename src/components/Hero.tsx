@@ -1,6 +1,7 @@
 import GlassButton from "@/components/ui/GlassButton";
 import { BodyLarge, H1, Metadata } from "@/components/ui/Typography";
 import { COLORS } from "@/constants/colors";
+import { useTypewriter } from "@/hooks/use-typewriter";
 import { ArrowDown } from "lucide-react";
 import heroImage from "../assets/images/hmaronen.png";
 
@@ -36,6 +37,13 @@ const IMAGE_FILTER_STYLES = {
 };
 
 const Hero = () => {
+  // Typewriter effect for "Maronen"
+  const { displayText: maronenText, isComplete } = useTypewriter({
+    text: "Maronen",
+    speed: 150,
+    delay: 500,
+  });
+
   // Event handlers
   const handleReachOutClick = () => {
     const ctaElement = document.querySelector("#cta");
@@ -59,7 +67,10 @@ const Hero = () => {
           <H1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
             <span className="block">Henri</span>
             <span className="block" style={{ color: COLORS.primary }}>
-              Maronen
+              {maronenText}
+              {!isComplete && (
+                <span className="animate-pulse ml-1 opacity-75">|</span>
+              )}
             </span>
           </H1>
         </div>
