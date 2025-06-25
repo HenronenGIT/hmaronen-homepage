@@ -203,10 +203,6 @@ const SectionHeader = () => (
     <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold font-heading">
       Skills & <span style={{ color: COLORS.primary }}>Expertise</span>
     </h2>
-    <p className="text-base md:text-xl text-gray-400 max-w-3xl mx-auto font-sans">
-      A comprehensive overview of my technical capabilities, leadership
-      experience, and personal interests
-    </p>
     <div
       className="w-20 h-1 mx-auto"
       style={{ backgroundColor: COLORS.primary }}
