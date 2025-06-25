@@ -111,7 +111,7 @@ const Testimonials = () => {
               >
                 <div className="h-full">
                   <Card
-                    className="h-full border-0 shadow-none transition-all duration-300 hover:scale-105"
+                    className="h-full border-0 shadow-none transition-all duration-300"
                     style={{
                       background: "rgba(255, 255, 255, 0.05)",
                       borderColor: "rgba(255, 255, 255, 0.1)",
