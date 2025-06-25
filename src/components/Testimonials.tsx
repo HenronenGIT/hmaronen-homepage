@@ -56,12 +56,10 @@ const AnimatedTestimonialCard = ({
 }) => {
   const [isHovering, setIsHovering] = useState(false);
 
-  //   'linear-gradient(90deg, rgb(33, 33, 36) 0%, rgb(30, 133, 30) 100%)'
-
   return (
     <div className="h-full">
       <div
-        className="h-full rounded-lg border-2"
+        className="h-full"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
         style={{
@@ -70,12 +68,11 @@ const AnimatedTestimonialCard = ({
             : "linear-gradient(90deg, rgb(79, 209, 199, 0.8) 0%, rgb(79, 209, 199, 0.2)) 1",
           borderImageSlice: 1,
           transition: "border-image 0.3s ease-in-out",
-          borderRadius: "5px",
           borderWidth: "1px",
         }}
       >
         <Card
-          className="h-full border-0 shadow-none transition-all duration-300 rounded-lg"
+          className="h-full border-0 shadow-none transition-all duration-300 rounded-none"
           style={{
             background: "rgba(255, 255, 255, 0.05)",
             backdropFilter: "blur(12px)",
