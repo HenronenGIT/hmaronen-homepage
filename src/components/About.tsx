@@ -9,8 +9,8 @@ const About = () => {
       content: (
         <>
           I'm a passionate problem solver currently working with the Product
-          Team at Slush, where I contribute as a developer to digital tools
-          used year-round and during the main event.
+          Team at Slush, where I contribute as a developer to digital tools used
+          year-round and during the main event.
         </>
       ),
     },

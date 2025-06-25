@@ -1,5 +1,5 @@
 import { COLORS } from "@/constants/colors";
-import { ExternalLink, LucideIcon } from "lucide-react";
+import { ExternalLink, type LucideIcon } from "lucide-react";
 
 interface InfoCardProps {
   icon: LucideIcon;

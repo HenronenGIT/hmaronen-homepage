@@ -1,6 +1,7 @@
 // Project Constants§
 export const SITE_CONFIG = {
-  name: "Henri Maronen", title: "Henri Maronen - Portfolio",
+  name: "Henri Maronen",
+  title: "Henri Maronen - Portfolio",
   description: "Personal portfolio and homepage",
   url: "https://henrimaronen.com", // Update with your actual domain
 } as const;
@@ -20,4 +21,4 @@ export * from "./colors";
 export * from "./links";
 
 // Export all constants
-export * from './typography';
+export * from "./typography";

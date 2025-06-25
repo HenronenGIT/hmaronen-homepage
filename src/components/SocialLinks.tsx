@@ -1,6 +1,6 @@
 import { SOCIAL_LINKS } from "@/constants";
 import { Github, Instagram, Linkedin } from "lucide-react";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const SocialLinks = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -13,10 +13,10 @@ const SocialLinks = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -84,7 +84,7 @@ const SocialLinks = () => {
       {/* Mobile version - glassmorphism style with touch support */}
       <div
         className={`md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 flex space-x-4 bg-white/10 backdrop-blur-xl px-6 py-3 rounded-2xl border border-white/20 shadow-2xl transition-opacity duration-300 ${
-          isVisible ? 'opacity-100' : 'opacity-0'
+          isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
         {socialLinks.map((link, index) => (
@@ -94,11 +94,19 @@ const SocialLinks = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={`relative w-12 h-12 rounded-xl flex items-center justify-center text-white transition-all duration-300 active:scale-95 overflow-hidden group ${
-              activeIndex === index ? 'bg-opacity-40 border-opacity-60 text-current' : 'bg-opacity-15 border-opacity-20 text-white'
+              activeIndex === index
+                ? "bg-opacity-40 border-opacity-60 text-current"
+                : "bg-opacity-15 border-opacity-20 text-white"
             }`}
             style={{
-              background: activeIndex === index ? `${link.color}40` : 'rgba(255, 255, 255, 0.15)',
-              borderColor: activeIndex === index ? `${link.color}60` : 'rgba(255, 255, 255, 0.2)',
+              background:
+                activeIndex === index
+                  ? `${link.color}40`
+                  : "rgba(255, 255, 255, 0.15)",
+              borderColor:
+                activeIndex === index
+                  ? `${link.color}60`
+                  : "rgba(255, 255, 255, 0.2)",
             }}
             onTouchStart={() => handleTouchStart(index)}
             onTouchEnd={handleTouchEnd}

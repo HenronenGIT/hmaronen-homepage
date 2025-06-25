@@ -1,12 +1,11 @@
-
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "./ui/card";
 import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    type CarouselApi,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
 } from "./ui/carousel";
 
 interface Testimonial {
