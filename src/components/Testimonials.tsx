@@ -96,7 +96,9 @@ const Testimonials = () => {
           opts={{
             align: "start",
             loop: true,
-            dragFree: true,
+            dragFree: false,
+            containScroll: "trimSnaps",
+            skipSnaps: false,
           }}
           onMouseEnter={() => autoplay.current.stop()}
           onMouseLeave={() => autoplay.current.reset()}
