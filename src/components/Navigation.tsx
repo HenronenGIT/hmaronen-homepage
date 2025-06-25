@@ -12,11 +12,13 @@ const NAV_ITEMS = [
 const GLASS_CONTAINER_STYLES = {
   background: "rgba(255, 255, 255, 0.05)",
   borderColor: "rgba(255, 255, 255, 0.1)",
-  boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+  boxShadow:
+    "0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
 };
 
 const LOGO_STYLES = {
-  background: "linear-gradient(135deg, rgba(79, 209, 199, 0.2) 0%, rgba(175, 235, 231, 0.2) 100%)",
+  background:
+    "linear-gradient(135deg, rgba(79, 209, 199, 0.2) 0%, rgba(175, 235, 231, 0.2) 100%)",
   borderColor: "rgba(79, 209, 199, 0.3)",
 };
 
@@ -84,7 +86,10 @@ const Navigation = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleLogoHover = (e: React.MouseEvent<HTMLButtonElement>, isEntering: boolean) => {
+  const handleLogoHover = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    isEntering: boolean
+  ) => {
     if (isEntering) {
       e.currentTarget.style.borderColor = LOGO_HOVER_STYLES.borderColor;
       e.currentTarget.style.boxShadow = LOGO_HOVER_STYLES.boxShadow;
@@ -132,7 +137,8 @@ const Navigation = () => {
           <span
             className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300"
             style={{
-              background: "radial-gradient(circle, rgba(79, 209, 199, 0.3) 0%, transparent 70%)",
+              background:
+                "radial-gradient(circle, rgba(79, 209, 199, 0.3) 0%, transparent 70%)",
             }}
           />
         </button>
@@ -145,7 +151,11 @@ const Navigation = () => {
       onClick={toggleMobileMenu}
       className="md:hidden p-2 text-white hover:text-teal-400 transition-colors duration-300"
     >
-      {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+      {isMobileMenuOpen ? (
+        <X className="w-6 h-6" />
+      ) : (
+        <Menu className="w-6 h-6" />
+      )}
     </button>
   );
 

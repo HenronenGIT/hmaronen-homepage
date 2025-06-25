@@ -16,6 +16,7 @@ The typography system provides a centralized way to manage all text styles acros
 ### 1. Typography Constants (`typography.ts`)
 
 The `TYPOGRAPHY` object contains:
+
 - Font families
 - Font weights
 - Text sizes (including responsive variants)
@@ -55,6 +56,7 @@ CSS utility classes for direct usage:
 ## Usage Examples
 
 ### Component-based approach (Recommended)
+
 ```tsx
 import { H2, Body, Metadata } from '@/components/ui/Typography';
 
@@ -64,6 +66,7 @@ import { H2, Body, Metadata } from '@/components/ui/Typography';
 ```
 
 ### Class-based approach
+
 ```tsx
 <h2 className="text-h2" style={{ color: COLORS.primary }}>About Me</h2>
 <p className="text-body">This is a paragraph with consistent styling.</p>
@@ -71,11 +74,12 @@ import { H2, Body, Metadata } from '@/components/ui/Typography';
 ```
 
 ### Manual combination
-```tsx
-import { TYPOGRAPHY, getTypographyPreset } from '@/constants/typography';
 
-const customClasses = getTypographyPreset('h2', 'text-center mb-4');
-<h2 className={customClasses}>Centered heading with margin</h2>
+```tsx
+import { TYPOGRAPHY, getTypographyPreset } from "@/constants/typography";
+
+const customClasses = getTypographyPreset("h2", "text-center mb-4");
+<h2 className={customClasses}>Centered heading with margin</h2>;
 ```
 
 ## Benefits
@@ -91,6 +95,7 @@ const customClasses = getTypographyPreset('h2', 'text-center mb-4');
 When refactoring existing components:
 
 ### Before:
+
 ```tsx
 <h2 className="text-4xl md:text-5xl font-bold font-heading">
   About <span style={{ color: COLORS.primary }}>Me</span>
@@ -98,6 +103,7 @@ When refactoring existing components:
 ```
 
 ### After:
+
 ```tsx
 <H2>About <span style={{ color: COLORS.primary }}>Me</span></H2>
 // OR
@@ -121,10 +127,12 @@ import { primary, primaryAlpha, gradients } from "@/constants/colors";
 ## Available Colors
 
 ### Primary Brand Color
+
 - `COLORS.primary` - Main teal color (#4FD1C7)
 - `COLORS.primaryHover` - Darker version for hover states (#3FBDB3)
 
 ### Primary with Transparency
+
 - `COLORS.primaryAlpha[5]` - 5% opacity
 - `COLORS.primaryAlpha[10]` - 10% opacity
 - `COLORS.primaryAlpha[15]` - 15% opacity
@@ -133,25 +141,30 @@ import { primary, primaryAlpha, gradients } from "@/constants/colors";
 - `COLORS.primaryAlpha[30]` - 30% opacity
 
 ### Gradients
+
 - `COLORS.gradients.primary` - Light gradient
 - `COLORS.gradients.primaryMedium` - Medium gradient
 - `COLORS.gradients.primaryStrong` - Strong gradient
 
 ### Backgrounds
+
 - `COLORS.background.main` - Main dark background
 - `COLORS.background.section` - Light section background
 
 ### Shadows
+
 - `COLORS.shadows.primary` - Standard shadow
 - `COLORS.shadows.primaryMedium` - Medium shadow
 - `COLORS.shadows.primaryStrong` - Strong shadow
 
 ### Social Media Colors
+
 - `COLORS.social.linkedin` - LinkedIn brand color
 
 ## Helper Functions
 
 ### withAlpha
+
 Convert any hex color to rgba with custom alpha:
 
 ```typescript

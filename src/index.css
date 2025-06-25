@@ -97,9 +97,10 @@
     @apply border-border;
   }
 
-  html, body {
+  html,
+  body {
     @apply bg-background text-foreground;
-    background-color: #1A1A1B; /* Ensure consistent dark background for overscroll */
+    background-color: #1a1a1b; /* Ensure consistent dark background for overscroll */
   }
 
   body {
@@ -211,7 +212,10 @@
   }
 
   /* Hide default cursor on interactive elements for better effect */
-  button, a, [role="button"], .cursor-pointer {
+  button,
+  a,
+  [role="button"],
+  .cursor-pointer {
     @apply cursor-none;
   }
 
@@ -222,12 +226,19 @@
 
   /* Pulsing glow animation for "life" text */
   @keyframes pulse-glow {
-    0%, 100% {
-      text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+    0%,
+    100% {
+      text-shadow:
+        0 0 5px currentColor,
+        0 0 10px currentColor,
+        0 0 15px currentColor;
       transform: scale(1);
     }
     50% {
-      text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+      text-shadow:
+        0 0 10px currentColor,
+        0 0 20px currentColor,
+        0 0 30px currentColor;
       transform: scale(1.05);
     }
   }
@@ -237,4 +248,3 @@
     display: inline-block;
   }
 }
-

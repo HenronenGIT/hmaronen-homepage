@@ -1,4 +1,4 @@
-import { COLORS } from '../constants/colors';
+import { COLORS } from "../constants/colors";
 
 interface WorkExperienceItem {
   period: string;
@@ -46,9 +46,7 @@ const ExperienceCard = ({ experience, index, isLast }: ExperienceCardProps) => (
         <div className="space-y-2">
           <h3 className="text-xl md:text-2xl font-bold text-white group-hover:opacity-80 transition-opacity font-heading">
             {experience.title} •{" "}
-            <span style={{ color: COLORS.primary }}>
-              {experience.company}
-            </span>
+            <span style={{ color: COLORS.primary }}>{experience.company}</span>
           </h3>
 
           <div className="space-y-3">

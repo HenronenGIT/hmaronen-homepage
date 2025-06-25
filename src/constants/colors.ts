@@ -18,9 +18,12 @@ export const COLORS = {
 
   // Gradient variations
   gradients: {
-    primary: "linear-gradient(135deg, rgba(79, 209, 199, 0.1) 0%, rgba(175, 235, 231, 0.05) 100%)",
-    primaryMedium: "linear-gradient(135deg, rgba(79, 209, 199, 0.15) 0%, rgba(175, 235, 231, 0.15) 100%)",
-    primaryStrong: "linear-gradient(135deg, rgba(79, 209, 199, 0.2) 0%, rgba(175, 235, 231, 0.2) 100%)",
+    primary:
+      "linear-gradient(135deg, rgba(79, 209, 199, 0.1) 0%, rgba(175, 235, 231, 0.05) 100%)",
+    primaryMedium:
+      "linear-gradient(135deg, rgba(79, 209, 199, 0.15) 0%, rgba(175, 235, 231, 0.15) 100%)",
+    primaryStrong:
+      "linear-gradient(135deg, rgba(79, 209, 199, 0.2) 0%, rgba(175, 235, 231, 0.2) 100%)",
   },
 
   // Background colors

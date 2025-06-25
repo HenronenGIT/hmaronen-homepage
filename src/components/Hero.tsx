@@ -68,7 +68,10 @@ const Hero = () => {
       <div className="space-y-4 sm:space-y-6 max-w-2xl">
         <BodyLarge className="text-white font-heading text-base sm:text-lg font-medium leading-relaxed">
           Crafting software that brings ideas to{" "}
-          <span className="animate-pulse-glow" style={{ color: COLORS.primary }}>
+          <span
+            className="animate-pulse-glow"
+            style={{ color: COLORS.primary }}
+          >
             life
           </span>
           .
@@ -128,7 +131,10 @@ const Hero = () => {
       style={HERO_BACKGROUND_STYLES}
     >
       {/* Animated gradient overlay */}
-      <div className="absolute inset-0 opacity-30" style={ANIMATED_OVERLAY_STYLES} />
+      <div
+        className="absolute inset-0 opacity-30"
+        style={ANIMATED_OVERLAY_STYLES}
+      />
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
