@@ -1,6 +1,5 @@
 import { COLORS } from "@/constants/colors";
-import type { TYPOGRAPHY } from "@/constants/typography";
-import { getTypographyPreset } from "@/constants/typography";
+import { getTypographyPreset, type TYPOGRAPHY } from "@/constants/typography";
 import { cn } from "@/lib/utils";
 import React from "react";
 

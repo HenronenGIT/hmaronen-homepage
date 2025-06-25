@@ -1,5 +1,12 @@
-import type { LucideIcon } from "lucide-react";
-import { Code2, Database, Eye, Lightbulb, Users, Wrench } from "lucide-react";
+import {
+  Code2,
+  Database,
+  Eye,
+  Lightbulb,
+  Users,
+  Wrench,
+  type LucideIcon,
+} from "lucide-react";
 import { COLORS } from "../constants/colors";
 
 interface Skill {
