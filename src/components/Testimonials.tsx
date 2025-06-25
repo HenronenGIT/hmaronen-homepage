@@ -48,6 +48,102 @@ const testimonials: Testimonial[] = [
   },
 ];
 
+// AnimatedTestimonialCard component
+const AnimatedTestimonialCard = ({
+  testimonial,
+}: {
+  testimonial: Testimonial;
+}) => {
+  const [isHovering, setIsHovering] = useState(false);
+
+  //   'linear-gradient(90deg, rgb(33, 33, 36) 0%, rgb(30, 133, 30) 100%)'
+
+  return (
+    <div className="h-full">
+      <div
+        className="h-full rounded-lg border-2"
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+        style={{
+          borderImage: isHovering
+            ? "linear-gradient(90deg, rgb(79, 209, 199, 0.1) 0%, rgb(79, 209, 199, 0.8) 100%) 1"
+            : "linear-gradient(90deg, rgb(79, 209, 199, 0.8) 0%, rgb(79, 209, 199, 0.2)) 1",
+          borderImageSlice: 1,
+          transition: "border-image 0.3s ease-in-out",
+          borderRadius: "5px",
+          borderWidth: "1px",
+        }}
+      >
+        <Card
+          className="h-full border-0 shadow-none transition-all duration-300 rounded-lg"
+          style={{
+            background: "rgba(255, 255, 255, 0.05)",
+            backdropFilter: "blur(12px)",
+          }}
+        >
+          <CardContent className="p-6">
+            {/* Quote */}
+            <div className="mb-6">
+              {/* Quote icon */}
+              <div
+                className="w-8 h-8 mb-4 rounded-full flex items-center justify-center"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(79, 209, 199, 0.2) 0%, rgba(175, 235, 231, 0.2) 100%)",
+                  border: "1px solid rgba(79, 209, 199, 0.3)",
+                }}
+              >
+                <span className="text-teal-400 text-lg font-bold">"</span>
+              </div>
+
+              <p className="text-gray-200 text-sm leading-relaxed font-body italic">
+                {testimonial.quote}
+              </p>
+            </div>
+
+            {/* Author info */}
+            <div className="pt-4 border-t border-white/10">
+              <div className="flex items-center space-x-3">
+                {/* Avatar placeholder */}
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(79, 209, 199, 0.3) 0%, rgba(175, 235, 231, 0.3) 100%)",
+                    border: "1px solid rgba(79, 209, 199, 0.4)",
+                    color: "rgb(79, 209, 199)",
+                  }}
+                >
+                  {testimonial.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
+                </div>
+
+                <div className="flex-1 min-h-[2.5rem] flex flex-col justify-center">
+                  <h4 className="text-white font-semibold text-sm font-heading leading-tight">
+                    {testimonial.name}
+                  </h4>
+                  <div className="flex flex-col space-y-0.5">
+                    {testimonial.position && (
+                      <p className="text-gray-400 text-xs font-body leading-tight">
+                        {testimonial.position}
+                      </p>
+                    )}
+                    <p className="text-teal-400 text-xs font-body leading-tight">
+                      {testimonial.company}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+};
+
 const Testimonials = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
@@ -109,78 +205,7 @@ const Testimonials = () => {
                 key={testimonial.id}
                 className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3"
               >
-                <div className="h-full">
-                  <Card
-                    className="h-full border-0 shadow-none transition-all duration-300"
-                    style={{
-                      background: "rgba(255, 255, 255, 0.05)",
-                      borderColor: "rgba(255, 255, 255, 0.1)",
-                      boxShadow:
-                        "0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
-                      backdropFilter: "blur(12px)",
-                    }}
-                  >
-                    <CardContent className="p-6">
-                      {/* Quote */}
-                      <div className="mb-6">
-                        {/* Quote icon */}
-                        <div
-                          className="w-8 h-8 mb-4 rounded-full flex items-center justify-center"
-                          style={{
-                            background:
-                              "linear-gradient(135deg, rgba(79, 209, 199, 0.2) 0%, rgba(175, 235, 231, 0.2) 100%)",
-                            border: "1px solid rgba(79, 209, 199, 0.3)",
-                          }}
-                        >
-                          <span className="text-teal-400 text-lg font-bold">
-                            "
-                          </span>
-                        </div>
-
-                        <p className="text-gray-200 text-sm leading-relaxed font-body italic">
-                          {testimonial.quote}
-                        </p>
-                      </div>
-
-                      {/* Author info */}
-                      <div className="pt-4 border-t border-white/10">
-                        <div className="flex items-center space-x-3">
-                          {/* Avatar placeholder */}
-                          <div
-                            className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold"
-                            style={{
-                              background:
-                                "linear-gradient(135deg, rgba(79, 209, 199, 0.3) 0%, rgba(175, 235, 231, 0.3) 100%)",
-                              border: "1px solid rgba(79, 209, 199, 0.4)",
-                              color: "#4FD1C7",
-                            }}
-                          >
-                            {testimonial.name
-                              .split(" ")
-                              .map((n) => n[0])
-                              .join("")}
-                          </div>
-
-                          <div className="flex-1 min-h-[2.5rem] flex flex-col justify-center">
-                            <h4 className="text-white font-semibold text-sm font-heading leading-tight">
-                              {testimonial.name}
-                            </h4>
-                            <div className="flex flex-col space-y-0.5">
-                              {testimonial.position && (
-                                <p className="text-gray-400 text-xs font-body leading-tight">
-                                  {testimonial.position}
-                                </p>
-                              )}
-                              <p className="text-teal-400 text-xs font-body leading-tight">
-                                {testimonial.company}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                <AnimatedTestimonialCard testimonial={testimonial} />
               </CarouselItem>
             ))}
           </CarouselContent>
