@@ -36,7 +36,7 @@ const InfoCard = ({ icon: Icon, label, value, href }: InfoCardProps) => {
           <p className="text-sm text-gray-400 font-sans">{label}</p>
           <p
             className="font-semibold font-sans text-lg"
-            style={{ color: COLORS.primary }}
+            style={{ color: COLORS.text.primary }}
           >
             {value}
           </p>

@@ -77,7 +77,10 @@ const Hero = () => {
       </div>
 
       <div className="space-y-4 sm:space-y-6 max-w-2xl">
-        <BodyLarge className="text-white font-heading text-base sm:text-lg font-medium leading-relaxed">
+        <BodyLarge
+          className="font-heading text-base sm:text-lg font-medium leading-relaxed"
+          style={{ color: COLORS.text.primary }}
+        >
           Crafting software that brings ideas to{" "}
           <span
             className="animate-pulse-glow"

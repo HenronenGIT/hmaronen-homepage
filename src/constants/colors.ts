@@ -1,9 +1,8 @@
 // Color System Configuration
 // This file contains all colors used throughout the project
-
 export const COLORS = {
   // Primary Brand Color
-  primary: "#47bfba", // Main teal/turquoise color
+  primary: "#47bfba",
   secondary: "#323f44",
   primaryHover: "#3FBDB3", // Darker version for hover states
 
@@ -15,6 +14,10 @@ export const COLORS = {
     20: "rgba(79, 209, 199, 0.2)",
     25: "rgba(79, 209, 199, 0.25)",
     30: "rgba(79, 209, 199, 0.3)",
+  },
+
+  text: {
+    primary: "#fff",
   },
 
   // Gradient variations

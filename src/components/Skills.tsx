@@ -142,7 +142,7 @@ const PersonalAttributeCard = ({ attribute }: PersonalAttributeCardProps) => (
       </div>
       <h4
         className="text-lg md:text-xl font-bold font-heading"
-        style={{ color: COLORS.primary }}
+        style={{ color: COLORS.text.primary }}
       >
         {attribute.title}
       </h4>
@@ -190,7 +190,7 @@ const PassionCard = ({ passion }: PassionCardProps) => (
       <span className="text-xl md:text-2xl">{passion.icon}</span>
       <span
         className="font-semibold font-sans group-hover:text-white transition-colors text-sm md:text-base"
-        style={{ color: COLORS.primary }}
+        style={{ color: COLORS.text.primary }}
       >
         {passion.name}
       </span>
