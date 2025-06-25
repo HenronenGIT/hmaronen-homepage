@@ -93,6 +93,17 @@ const SectionHeader = () => (
 );
 
 const WorkExperience = () => {
+  const slushMainTechStack = [
+    "React",
+    "TypeScript",
+    "Node.js",
+    "PostgreSQL",
+    "Express",
+    "CSS",
+    "Google Cloud Platform",
+    "Zod",
+  ];
+
   const experiences: WorkExperienceItem[] = [
     {
       period: "2025 - PRESENT",
@@ -101,14 +112,7 @@ const WorkExperience = () => {
       description: [
         "Build and maintain scalable full-stack applications serving Slush's 13,000+ attendees.",
       ],
-      technologies: [
-        "React",
-        "TypeScript",
-        "Node.js",
-        "PostgreSQL",
-        "Express",
-        "Google Cloud Platform",
-      ],
+      technologies: [...slushMainTechStack, "Elasticsearch"],
     },
     {
       period: "2024",
@@ -121,14 +125,7 @@ const WorkExperience = () => {
         "Contributed to the Activities Tool, supporting the creation of 500+ side events via a dynamic submission form I was responsible for.",
         "Initiated and built 'Knowledge' — a chatbot for info volunteers to access real-time information about Slush and the event.",
       ],
-      technologies: [
-        "React",
-        "TypeScript",
-        "Node.js",
-        "PostgreSQL",
-        "Express",
-        "Google Cloud Platform",
-      ],
+      technologies: [...slushMainTechStack, "AI Agent"],
     },
     {
       period: "2023",
@@ -139,7 +136,7 @@ const WorkExperience = () => {
         "Implemented new features for the Talent Tool, supporting the recruitment of over 1,000 volunteers.",
         "Co-developed the Media Bank, providing an organized tool for press materials and resources.",
       ],
-      technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Express"],
+      technologies: [...slushMainTechStack],
     },
   ];
 
