@@ -1,25 +1,6 @@
-import {
-  Code2,
-  Database,
-  Eye,
-  Lightbulb,
-  Users,
-  Wrench,
-  type LucideIcon,
-} from "lucide-react";
+import { Eye, Lightbulb, Users, type LucideIcon } from "lucide-react";
 import { COLORS } from "../constants/colors";
-
-interface Skill {
-  name: string;
-  logo: string | null;
-}
-
-interface SkillCategory {
-  title: string;
-  icon: LucideIcon;
-  color: string;
-  skills: Skill[];
-}
+import TechnicalSkills from "./TechnicalSkills";
 
 interface PersonalAttribute {
   title: string;
@@ -33,14 +14,6 @@ interface Passion {
   icon: string;
 }
 
-interface SkillItemProps {
-  skill: Skill;
-}
-
-interface SkillCategoryCardProps {
-  category: SkillCategory;
-}
-
 interface PersonalAttributeCardProps {
   attribute: PersonalAttribute;
 }
@@ -48,71 +21,6 @@ interface PersonalAttributeCardProps {
 interface PassionCardProps {
   passion: Passion;
 }
-
-const SkillItem = ({ skill }: SkillItemProps) => (
-  <div className="flex items-center space-x-3 p-2 md:p-3 rounded-lg transition-all duration-300 hover:bg-gray-800/30 hover:scale-105">
-    {skill.logo ? (
-      <img
-        src={skill.logo}
-        alt={skill.name}
-        className="w-5 h-5 md:w-6 md:h-6"
-      />
-    ) : (
-      <div className="w-5 h-5 md:w-6 md:h-6 rounded bg-gray-600 flex items-center justify-center">
-        <span className="text-xs font-bold text-gray-300">API</span>
-      </div>
-    )}
-    <span className="font-medium text-gray-300 font-sans group-hover:text-white transition-colors text-sm md:text-base">
-      {skill.name}
-    </span>
-  </div>
-);
-
-const SkillCategoryCard = ({ category }: SkillCategoryCardProps) => (
-  <div
-    className="group relative overflow-hidden rounded-2xl border backdrop-blur-sm transition-all duration-500 hover:scale-105"
-    style={{
-      background: COLORS.gradients.primary,
-      borderColor: COLORS.primaryAlpha[20],
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.borderColor = COLORS.primary;
-      e.currentTarget.style.boxShadow = COLORS.shadows.primaryStrong;
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.borderColor = COLORS.primaryAlpha[20];
-      e.currentTarget.style.boxShadow = "none";
-    }}
-  >
-    {/* Category Header */}
-    <div className="p-4 md:p-6 border-b border-gray-700/50">
-      <div className="flex items-center space-x-3">
-        <div
-          className="p-2 md:p-3 rounded-xl group-hover:scale-110 transition-transform duration-300"
-          style={{ backgroundColor: COLORS.primaryAlpha[20] }}
-        >
-          <category.icon
-            className="w-5 h-5 md:w-6 md:h-6"
-            style={{ color: COLORS.primary }}
-          />
-        </div>
-        <h4
-          className="text-lg md:text-xl font-bold font-heading"
-          style={{ color: COLORS.primary }}
-        >
-          {category.title}
-        </h4>
-      </div>
-    </div>
-
-    {/* Skills List */}
-    <div className="p-4 md:p-6 space-y-2 md:space-y-4">
-      {category.skills.map((skill, skillIndex) => (
-        <SkillItem key={skillIndex} skill={skill} />
-      ))}
-    </div>
-  </div>
-);
 
 const PersonalAttributeCard = ({ attribute }: PersonalAttributeCardProps) => (
   <div
@@ -223,78 +131,6 @@ const SubsectionHeader = ({
 );
 
 const Skills = () => {
-  const skillCategories: SkillCategory[] = [
-    {
-      title: "Frontend Development",
-      icon: Code2,
-      color: COLORS.primary,
-      skills: [
-        {
-          name: "React",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-        },
-        {
-          name: "TypeScript",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-        },
-        {
-          name: "Vite",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg",
-        },
-        {
-          name: "Tailwind CSS",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-        },
-      ],
-    },
-    {
-      title: "Backend Development",
-      icon: Database,
-      color: COLORS.primary,
-      skills: [
-        {
-          name: "Node.js",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-        },
-        {
-          name: "Python",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-        },
-        {
-          name: "PostgreSQL",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-        },
-        {
-          name: "REST APIs",
-          logo: null,
-        },
-      ],
-    },
-    {
-      title: "Tools & Workflow",
-      icon: Wrench,
-      color: COLORS.primary,
-      skills: [
-        {
-          name: "Git",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-        },
-        {
-          name: "Docker",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-        },
-        {
-          name: "Figma",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
-        },
-        {
-          name: "VS Code",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-        },
-      ],
-    },
-  ];
-
   const personalAttributes: PersonalAttribute[] = [
     {
       title: "Leadership",
@@ -338,14 +174,7 @@ const Skills = () => {
           <SectionHeader />
 
           {/* Technical Skills */}
-          <div className="space-y-8 md:space-y-12">
-            <SubsectionHeader title="Technical" coloredWord="Arsenal" />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-              {skillCategories.map((category, categoryIndex) => (
-                <SkillCategoryCard key={categoryIndex} category={category} />
-              ))}
-            </div>
-          </div>
+          <TechnicalSkills />
 
           {/* Personal Attributes */}
           <div className="space-y-8 md:space-y-12">

@@ -248,3 +248,38 @@
     display: inline-block;
   }
 }
+
+/* Skills Blob Animations */
+@keyframes float-up {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(4px) rotate(-1deg);
+  }
+}
+
+@keyframes float-down {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(6px) rotate(-1deg);
+  }
+  66% {
+    transform: translateY(-4px) rotate(1deg);
+  }
+}
+
+.float-up {
+  animation: float-up 6s ease-in-out infinite;
+}
+
+.float-down {
+  animation: float-down 6s ease-in-out infinite;
+}
