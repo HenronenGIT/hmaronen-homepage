@@ -136,25 +136,21 @@ const Skills = () => {
       title: "Leadership",
       icon: Users,
       description:
-        "Empowering others through mentorship, knowledge-sharing, and collaborative teamwork.",
+        "Helping teammates grow through mentoring, sharing what I’ve learned, and building together.",
       highlights: ["Mentorship", "Knowledge Sharing", "Team Collaboration"],
     },
     {
       title: "Innovation",
       icon: Lightbulb,
       description:
-        "Constantly rethinking the status quo and experimenting with new solutions to drive progress.",
-      highlights: [
-        "Creative Problem Solving",
-        "Product Innovation",
-        "Prototyping",
-      ],
+        "I look for better ways to solve problems by experimenting and challenging assumptions.",
+      highlights: ["Creative Problem Solving", "Product Innovation"],
     },
     {
       title: "Attention to Detail",
       icon: Eye,
       description:
-        "Pixel-level care for design and usability. I obsess over the small things and get excited about the details.",
+        "I sweat the small stuff — especially in design and UX — to make things feel just right.",
       highlights: ["UI/UX Design", "Interaction Design"],
     },
   ];
