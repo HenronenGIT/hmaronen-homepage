@@ -45,14 +45,6 @@ const QRCard = ({ data }: QRCardProps) => {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-center" role="presentation">
-        <Icon
-          className={DIMENSIONS.iconSize}
-          style={{ color: COLORS.primary }}
-          aria-hidden="true"
-        />
-      </div>
-
       <div className="space-y-4">
         <h3 className="text-2xl font-bold font-heading">{title}</h3>
         <p className="text-gray-400 font-sans">{description}</p>
