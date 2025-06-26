@@ -1,5 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import logo from "../../public/favicon.svg";
 
 // Constants
 const NAV_ITEMS = [
@@ -108,10 +109,7 @@ const Navigation = () => {
       onMouseEnter={(e) => handleLogoHover(e, true)}
       onMouseLeave={(e) => handleLogoHover(e, false)}
     >
-      <span
-        className="font-bold text-base sm:text-lg font-heading group-hover:scale-110 transition-transform duration-300"
-        style={{ color: "#4FD1C7" }}
-      >
+      <span className="font-bold text-base sm:text-lg font-heading group-hover:scale-110 transition-transform duration-300">
         HM
       </span>
     </button>
