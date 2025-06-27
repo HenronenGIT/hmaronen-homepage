@@ -8,37 +8,31 @@ import Skills from "../components/Skills";
 import SocialLinks from "../components/SocialLinks";
 import Testimonials from "../components/Testimonials";
 import WorkExperience from "../components/WorkExperience";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const Index = () => {
   return (
-    <div>
-      <Analytics />
-      <SpeedInsights />
-      <div
-        className="min-h-screen text-white overflow-x-hidden relative"
-        style={{ backgroundColor: COLORS.background.main }}
-      >
-        <CursorEffect />
-        <div className="relative z-10">
-          <Navigation />
-          <SocialLinks />
-          <Hero />
-          <div id="about">
-            <About />
-          </div>
-          <div id="work">
-            <WorkExperience />
-          </div>
-          <div id="skills">
-            <Skills />
-          </div>
-          <div id="testimonials">
-            <Testimonials />
-          </div>
-          <CTA />
+    <div
+      className="min-h-screen text-white overflow-x-hidden relative"
+      style={{ backgroundColor: COLORS.background.main }}
+    >
+      <CursorEffect />
+      <div className="relative z-10">
+        <Navigation />
+        <SocialLinks />
+        <Hero />
+        <div id="about">
+          <About />
         </div>
+        <div id="work">
+          <WorkExperience />
+        </div>
+        <div id="skills">
+          <Skills />
+        </div>
+        <div id="testimonials">
+          <Testimonials />
+        </div>
+        <CTA />
       </div>
     </div>
   );
