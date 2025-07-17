@@ -5,7 +5,7 @@ import { COLORS } from "../constants/colors";
 interface Skill {
   name: string;
   logo: string | null;
-  category: "frontend" | "backend" | "tools";
+  category: "frontend" | "backend" | "tools" | string[];
 }
 
 interface SkillBlobProps {
@@ -145,7 +145,7 @@ const TechnicalSkills = () => {
     {
       name: "TypeScript",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-      category: "frontend",
+      category: ["frontend", "backend"],
     },
     {
       name: "Docker",
@@ -170,6 +170,11 @@ const TechnicalSkills = () => {
     {
       name: "React",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      category: "frontend",
+    },
+    {
+      name: "Next.js",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
       category: "frontend",
     },
     {
@@ -198,9 +203,34 @@ const TechnicalSkills = () => {
       category: "backend",
     },
     {
+      name: "Google Cloud",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
+      category: "backend",
+    },
+    {
       name: "Tailwind CSS",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
       category: "frontend",
+    },
+    {
+      name: "Postman",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
+      category: "tools",
+    },
+    {
+      name: "DataGrip",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/datagrip/datagrip-original.svg",
+      category: "tools",
+    },
+    {
+      name: "Notion",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg",
+      category: "tools",
+    },
+    {
+      name: "Cursor",
+      logo: "https://cursor.sh/brand/icon.svg",
+      category: "tools",
     },
   ];
 
@@ -236,7 +266,11 @@ const TechnicalSkills = () => {
             skill={skill}
             isActive={
               activeFilter === "" ||
-              skill.category === activeFilter.toLowerCase()
+              (Array.isArray(skill.category)
+                ? skill.category.some(
+                    (cat) => cat.toLowerCase() === activeFilter.toLowerCase()
+                  )
+                : skill.category === activeFilter.toLowerCase())
             }
             index={index}
           />
