@@ -1,6 +1,5 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import logo from "../../public/favicon.svg";
 
 // Constants
 const NAV_ITEMS = [
@@ -100,21 +99,6 @@ const Navigation = () => {
     }
   };
 
-  // Component parts
-  const renderLogo = () => (
-    <button
-      onClick={handleLogoClick}
-      className="group flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl border backdrop-blur-sm transition-all duration-300 hover:scale-110"
-      style={LOGO_STYLES}
-      onMouseEnter={(e) => handleLogoHover(e, true)}
-      onMouseLeave={(e) => handleLogoHover(e, false)}
-    >
-      <span className="font-bold text-base sm:text-lg font-heading group-hover:scale-110 transition-transform duration-300">
-        HM
-      </span>
-    </button>
-  );
-
   const renderDesktopNavigation = () => (
     <div className="hidden md:flex items-center space-x-8">
       {NAV_ITEMS.map((item, index) => (
@@ -189,10 +173,9 @@ const Navigation = () => {
       <div className="mx-4 sm:mx-6 mt-4 sm:mt-6 mb-2">
         {/* Main navigation container */}
         <div
-          className="flex items-center justify-between px-4 sm:px-6 py-4 rounded-2xl border backdrop-blur-xl transition-all duration-300 hover:backdrop-blur-2xl"
+          className="flex items-center justify-end px-4 sm:px-6 py-4 rounded-2xl border backdrop-blur-xl transition-all duration-300 hover:backdrop-blur-2xl"
           style={GLASS_CONTAINER_STYLES}
         >
-          {renderLogo()}
           {renderDesktopNavigation()}
           {renderMobileMenuButton()}
         </div>
