@@ -211,14 +211,6 @@
     @apply transition-transform duration-200 hover:scale-105;
   }
 
-  /* Hide default cursor on interactive elements for better effect */
-  button,
-  a,
-  [role="button"],
-  .cursor-pointer {
-    @apply cursor-none;
-  }
-
   /* Smooth transitions for hover effects */
   * {
     @apply transition-colors duration-200;
