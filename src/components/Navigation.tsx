@@ -1,13 +1,13 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // Constants
 const NAV_ITEMS = [
-  { name: "Who am I", href: "/#about" },
-  { name: "Experience", href: "/#work" },
-  { name: "Skillset", href: "/#skills" },
-  { name: "Testimonials", href: "/#testimonials" },
+  { name: "Who am I", href: "#about" },
+  { name: "Experience", href: "#work" },
+  { name: "Skillset", href: "#skills" },
+  { name: "Testimonials", href: "#testimonials" },
   { name: "Thoughts", href: "/thoughts" },
 ];
 
@@ -34,15 +34,8 @@ const useNavigationVisibility = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [hasScrolled, setHasScrolled] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
-    // Always show navigation on the blog page
-    if (location.pathname === "/thoughts") {
-      setIsVisible(true);
-      return;
-    }
-
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
 
@@ -68,7 +61,7 @@ const useNavigationVisibility = () => {
 
     window.addEventListener("scroll", controlNavbar);
     return () => window.removeEventListener("scroll", controlNavbar);
-  }, [lastScrollY, hasScrolled, location.pathname]);
+  }, [lastScrollY, hasScrolled]);
 
   return isVisible;
 };
@@ -76,13 +69,35 @@ const useNavigationVisibility = () => {
 const Navigation = () => {
   const isVisible = useNavigationVisibility();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
   const navigate = useNavigate();
+  const location = useLocation();
 
   // Event handlers
+  const handleNavClick = (href: string) => {
+    if (href.startsWith("/")) {
+      // Route link (like /thoughts)
+      navigate(href);
+    } else if (location.pathname === "/") {
+      // On homepage, scroll to section
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // On other pages, navigate to homepage with section
+      navigate(`/${href}`);
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   const handleLogoClick = () => {
-    navigate("/");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (location.pathname === "/") {
+      // On homepage, scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // On other pages, navigate to homepage
+      navigate("/");
+    }
     setIsMobileMenuOpen(false);
   };
 
@@ -103,12 +118,27 @@ const Navigation = () => {
     }
   };
 
+  // Component parts
+  const renderLogo = () => (
+    <button
+      onClick={handleLogoClick}
+      className="group flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl border backdrop-blur-sm transition-all duration-300 hover:scale-110"
+      style={LOGO_STYLES}
+      onMouseEnter={(e) => handleLogoHover(e, true)}
+      onMouseLeave={(e) => handleLogoHover(e, false)}
+    >
+      <span className="font-bold text-base sm:text-lg font-heading group-hover:scale-110 transition-transform duration-300">
+        HM
+      </span>
+    </button>
+  );
+
   const renderDesktopNavigation = () => (
     <div className="hidden md:flex items-center space-x-8">
       {NAV_ITEMS.map((item, index) => (
-        <Link
-          to={item.href}
+        <button
           key={index}
+          onClick={() => handleNavClick(item.href)}
           className="relative group text-white hover:text-teal-400 transition-all duration-300 font-heading text-sm font-medium py-2 px-1"
         >
           {item.name}
@@ -121,13 +151,13 @@ const Navigation = () => {
 
           {/* Glow effect on hover */}
           <span
-            className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"
+            className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300"
             style={{
               background:
                 "radial-gradient(circle, rgba(79, 209, 199, 0.3) 0%, transparent 70%)",
             }}
           />
-        </Link>
+        </button>
       ))}
     </div>
   );
@@ -155,13 +185,13 @@ const Navigation = () => {
       >
         <div className="flex flex-col space-y-2 p-4">
           {NAV_ITEMS.map((item, index) => (
-            <Link
-              to={item.href}
+            <button
               key={index}
+              onClick={() => handleNavClick(item.href)}
               className="text-left text-white hover:text-teal-400 transition-all duration-300 font-heading text-sm font-medium py-3 px-2 rounded-lg hover:bg-white/5"
             >
               {item.name}
-            </Link>
+            </button>
           ))}
         </div>
       </div>
@@ -177,9 +207,10 @@ const Navigation = () => {
       <div className="mx-4 sm:mx-6 mt-4 sm:mt-6 mb-2">
         {/* Main navigation container */}
         <div
-          className="flex items-center justify-end px-4 sm:px-6 py-4 rounded-2xl border backdrop-blur-xl transition-all duration-300 hover:backdrop-blur-2xl"
+          className="flex items-center justify-between px-4 sm:px-6 py-4 rounded-2xl border backdrop-blur-xl transition-all duration-300 hover:backdrop-blur-2xl"
           style={GLASS_CONTAINER_STYLES}
         >
+          {renderLogo()}
           {renderDesktopNavigation()}
           {renderMobileMenuButton()}
         </div>

@@ -31,7 +31,7 @@ const TechnologyBadge = ({ technology }: TechnologyBadgeProps) => (
   </span>
 );
 
-const ExperienceCard = ({ experience, index, isLast }: ExperienceCardProps) => (
+const ExperienceCard = ({ experience, isLast }: ExperienceCardProps) => (
   <div className="group">
     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
       {/* Period */}
