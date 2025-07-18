@@ -1,12 +1,14 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 // Constants
 const NAV_ITEMS = [
-  { name: "Who am I", href: "#about" },
-  { name: "Experience", href: "#work" },
-  { name: "Skillset", href: "#skills" },
-  { name: "Testimonials", href: "#testimonials" },
+  { name: "Who am I", href: "/#about" },
+  { name: "Experience", href: "/#work" },
+  { name: "Skillset", href: "/#skills" },
+  { name: "Testimonials", href: "/#testimonials" },
+  { name: "Thoughts", href: "/thoughts" },
 ];
 
 const GLASS_CONTAINER_STYLES = {
@@ -32,8 +34,15 @@ const useNavigationVisibility = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
+    // Always show navigation on the blog page
+    if (location.pathname === "/thoughts") {
+      setIsVisible(true);
+      return;
+    }
+
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
 
@@ -59,7 +68,7 @@ const useNavigationVisibility = () => {
 
     window.addEventListener("scroll", controlNavbar);
     return () => window.removeEventListener("scroll", controlNavbar);
-  }, [lastScrollY, hasScrolled]);
+  }, [lastScrollY, hasScrolled, location.pathname]);
 
   return isVisible;
 };
@@ -67,17 +76,12 @@ const useNavigationVisibility = () => {
 const Navigation = () => {
   const isVisible = useNavigationVisibility();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   // Event handlers
-  const handleNavClick = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsMobileMenuOpen(false);
-  };
-
   const handleLogoClick = () => {
+    navigate("/");
     window.scrollTo({ top: 0, behavior: "smooth" });
     setIsMobileMenuOpen(false);
   };
@@ -102,9 +106,9 @@ const Navigation = () => {
   const renderDesktopNavigation = () => (
     <div className="hidden md:flex items-center space-x-8">
       {NAV_ITEMS.map((item, index) => (
-        <button
+        <Link
+          to={item.href}
           key={index}
-          onClick={() => handleNavClick(item.href)}
           className="relative group text-white hover:text-teal-400 transition-all duration-300 font-heading text-sm font-medium py-2 px-1"
         >
           {item.name}
@@ -117,13 +121,13 @@ const Navigation = () => {
 
           {/* Glow effect on hover */}
           <span
-            className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+            className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"
             style={{
               background:
                 "radial-gradient(circle, rgba(79, 209, 199, 0.3) 0%, transparent 70%)",
             }}
           />
-        </button>
+        </Link>
       ))}
     </div>
   );
@@ -151,13 +155,13 @@ const Navigation = () => {
       >
         <div className="flex flex-col space-y-2 p-4">
           {NAV_ITEMS.map((item, index) => (
-            <button
+            <Link
+              to={item.href}
               key={index}
-              onClick={() => handleNavClick(item.href)}
               className="text-left text-white hover:text-teal-400 transition-all duration-300 font-heading text-sm font-medium py-3 px-2 rounded-lg hover:bg-white/5"
             >
               {item.name}
-            </button>
+            </Link>
           ))}
         </div>
       </div>
