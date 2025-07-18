@@ -22,9 +22,9 @@ function App() {
         <main className="relative z-10">
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="*" element={<NotFound />} />
             <Route path="/thoughts" element={<Thoughts />} />
             <Route path="/thoughts/:slug" element={<ThoughtPage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
       </BrowserRouter>
