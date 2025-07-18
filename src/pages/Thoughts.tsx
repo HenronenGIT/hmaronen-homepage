@@ -38,7 +38,10 @@ const Thoughts = () => {
   useEffect(() => {
     const fetchThoughts = async () => {
       try {
-        const modules = import.meta.glob("/src/thoughts/*.md", { as: "raw" });
+        const modules = import.meta.glob("/src/thoughts/*.md", {
+          query: "?raw",
+          import: "default",
+        });
 
         const thoughtsData = await Promise.all(
           Object.entries(modules).map(async ([path, resolver]) => {
