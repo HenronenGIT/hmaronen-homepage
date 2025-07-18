@@ -1,6 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import logo from "../../public/favicon.svg";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // Constants
 const NAV_ITEMS = [
@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { name: "Experience", href: "#work" },
   { name: "Skillset", href: "#skills" },
   { name: "Testimonials", href: "#testimonials" },
+  { name: "Thoughts", href: "/thoughts" },
 ];
 
 const GLASS_CONTAINER_STYLES = {
@@ -68,18 +69,35 @@ const useNavigationVisibility = () => {
 const Navigation = () => {
   const isVisible = useNavigationVisibility();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // Event handlers
   const handleNavClick = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("/")) {
+      // Route link (like /thoughts)
+      navigate(href);
+    } else if (location.pathname === "/") {
+      // On homepage, scroll to section
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // On other pages, navigate to homepage with section
+      navigate(`/${href}`);
     }
     setIsMobileMenuOpen(false);
   };
 
   const handleLogoClick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (location.pathname === "/") {
+      // On homepage, scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // On other pages, navigate to homepage
+      navigate("/");
+    }
     setIsMobileMenuOpen(false);
   };
 
