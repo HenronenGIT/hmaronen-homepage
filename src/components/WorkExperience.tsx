@@ -111,6 +111,9 @@ const WorkExperience = () => {
       company: "Slush",
       description: [
         "Build and maintain scalable full-stack applications serving Slush's 13,000+ attendees.",
+        "Led App Search to Elasticsearch microservice migration with client-side updates and optimized synchronization, mapping definitions, versioning, and zero-downtime capabilities.",
+        "Developed Meeting Tool search experience which conducted 20,000 accepted meetings, featuring saved search functionality, CSV/JSON export capabilities, and stateful UI components",
+        "Provided technical support resolving user issues, created Metabase analytics dashboards, and onboarded new team members.",
       ],
       technologies: [...slushMainTechStack, "Elasticsearch"],
     },
@@ -123,7 +126,7 @@ const WorkExperience = () => {
         "Project owner of Slush Online, a year-round platform helping founders share insights and connect with investors.",
         "Project owner of Media Bank, enabling media attendees to access press releases and media kits with ease.",
         "Contributed to the Activities Tool, supporting the creation of 500+ side events via a dynamic submission form I was responsible for.",
-        "Initiated and built 'Knowledge' — a chatbot for info volunteers to access real-time information about Slush and the event.",
+        "Developed feature flag system with cache-optimized flag fetching and admin tooling for progressive rollouts",
       ],
       technologies: [...slushMainTechStack, "AI Agent"],
     },
