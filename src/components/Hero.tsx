@@ -81,14 +81,15 @@ const Hero = () => {
           className="font-heading text-base sm:text-lg font-medium leading-relaxed"
           style={{ color: COLORS.text.primary }}
         >
-          Crafting software that brings ideas to{" "}
+          I build full-stack web applications, from idea to production.
+          {/* Crafting software that brings ideas to{" "}
           <span
             className="animate-pulse-glow"
             style={{ color: COLORS.primary }}
           >
             life
           </span>
-          .
+          . */}
         </BodyLarge>
 
         <div className="pt-2">
