@@ -26,12 +26,12 @@ const Index = () => {
         <div id="work">
           <WorkExperience />
         </div>
-        <div id="skills">
+        {/* <div id="skills">
           <Skills />
-        </div>
-        <div id="testimonials">
+        </div> */}
+        {/* <div id="testimonials">
           <Testimonials />
-        </div>
+        </div> */}
         <CTA />
       </div>
     </div>
