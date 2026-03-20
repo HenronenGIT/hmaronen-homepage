@@ -6,8 +6,8 @@ import Hero from "../components/Hero";
 import Navigation from "../components/Navigation";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
+import SoftSkills from "../components/SoftSkills";
 import SocialLinks from "../components/SocialLinks";
-import Testimonials from "../components/Testimonials";
 import WorkExperience from "../components/WorkExperience";
 
 const Index = () => {
@@ -24,17 +24,17 @@ const Index = () => {
         <div id="about">
           <About />
         </div>
+        <div id="skills">
+          <Skills />
+        </div>
         <div id="work">
           <WorkExperience />
         </div>
         <div id="projects">
           <Projects />
         </div>
-        <div id="skills">
-          <Skills />
-        </div>
-        {/* <div id="testimonials">
-          <Testimonials />
+        {/* <div id="soft-skills">
+          <SoftSkills />
         </div> */}
         <CTA />
       </div>

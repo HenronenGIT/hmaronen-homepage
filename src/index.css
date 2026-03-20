@@ -275,3 +275,36 @@
 .float-down {
   animation: float-down 6s ease-in-out infinite;
 }
+
+/* Skills Marquee Animations */
+@keyframes marquee-scroll-r {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-scroll-l {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.marquee-row-1 {
+  animation: marquee-scroll-r 30s linear infinite;
+}
+.marquee-row-2 {
+  animation: marquee-scroll-l 36s linear infinite;
+}
+.marquee-row-3 {
+  animation: marquee-scroll-r 42s linear infinite;
+}
+
+.marquee-paused {
+  animation-play-state: paused !important;
+}
