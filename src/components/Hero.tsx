@@ -93,14 +93,14 @@ const Hero = () => {
         </BodyLarge>
 
         <div className="pt-2">
-          <GlassButton
+          {/* <GlassButton
             onClick={handleReachOutClick}
             variant="primary"
             size="sm"
             className="sm:w-auto"
           >
             Let's connect
-          </GlassButton>
+          </GlassButton> */}
         </div>
       </div>
     </div>
