@@ -14,10 +14,18 @@ export const COLORS = {
     20: "rgba(79, 209, 199, 0.2)",
     25: "rgba(79, 209, 199, 0.25)",
     30: "rgba(79, 209, 199, 0.3)",
+    80: "rgba(79, 209, 199, 0.8)",
   },
 
+  // Text colors — light to dark scale
   text: {
-    primary: "#fff",
+    primary: "#fff", // headings, primary content
+    secondary: "#e0e0e0", // near-white body text
+    muted: "#888", // descriptions, secondary content
+    tertiary: "#777", // tags, subtle elements
+    subtle: "#555", // inactive labels, tabs
+    faint: "#999", // section metadata, small labels
+    dimmed: "#444", // timestamps, very muted meta
   },
 
   // Gradient variations
@@ -36,6 +44,36 @@ export const COLORS = {
     section: "rgba(79, 209, 199, 0.05)", // Light teal background for sections
   },
 
+  // Dark surface scale — for cards, app UIs, and elevated elements
+  surface: {
+    deepest: "#0a0a0a", // near-black visual areas
+    deeper: "#0d0d0d", // slightly elevated from deepest
+    divider: "#181818", // divider lines
+    mid: "#1a1a1a", // subtle borders
+    elevated: "#1e1e1e", // elevated surfaces, inner borders
+    subtle: "#222", // subtle element backgrounds
+    border: "#2a2a2a", // visible borders
+  },
+
+  // Card background colors and their themed text/tag palettes
+  card: {
+    dark: "#111", // default dark card background
+    darkBlue: {
+      bg: "#1a2330", // dark blue-tinted card background
+      title: "#d8e8f0", // title text on dark blue card
+      subtitle: "#7a9aaa", // description text on dark blue card
+      label: "#4a6a7a", // type label on dark blue card
+      tagBg: "#1e2e3a", // tag background on dark blue card
+      tagText: "#5a7a8a", // tag text on dark blue card
+      tagBorder: "#253545", // tag border on dark blue card
+    },
+  },
+
+  // Overlay gradients — for image text-legibility overlays
+  overlay: {
+    dark: "rgba(10, 16, 20, 0.6)",
+  },
+
   // Social media brand colors
   social: {
     linkedin: "#0077B5",
@@ -52,6 +90,8 @@ export const COLORS = {
     primary: "0 10px 25px rgba(79, 209, 199, 0.25)",
     primaryMedium: "0 15px 30px rgba(79, 209, 199, 0.2)",
     primaryStrong: "0 20px 40px rgba(79, 209, 199, 0.15)",
+    card: "0 12px 48px rgba(0, 0, 0, 0.3)", // card hover shadow
+    innerDark: "0 4px 32px rgba(0, 0, 0, 0.6)", // app preview inner shadow
   },
 } as const;
 
@@ -75,6 +115,10 @@ export const {
   primaryAlpha,
   gradients,
   background,
+  surface,
+  card,
+  overlay,
   social,
   shadows,
+  text,
 } = COLORS;

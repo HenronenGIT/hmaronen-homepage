@@ -73,7 +73,7 @@ const GlassButton = ({
   const currentSize = sizeStyles[size];
 
   // Scale effects
-  const scaleEffect = disabled ? "" : "hover:scale-110";
+  const scaleEffect = "";
 
   // Combine classes
   const combinedClasses =

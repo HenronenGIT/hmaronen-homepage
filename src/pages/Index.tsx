@@ -4,6 +4,7 @@ import CTA from "../components/CTA";
 import CursorEffect from "../components/CursorEffect";
 import Hero from "../components/Hero";
 import Navigation from "../components/Navigation";
+import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import SocialLinks from "../components/SocialLinks";
 import Testimonials from "../components/Testimonials";
@@ -26,9 +27,12 @@ const Index = () => {
         <div id="work">
           <WorkExperience />
         </div>
-        {/* <div id="skills">
+        <div id="projects">
+          <Projects />
+        </div>
+        <div id="skills">
           <Skills />
-        </div> */}
+        </div>
         {/* <div id="testimonials">
           <Testimonials />
         </div> */}
