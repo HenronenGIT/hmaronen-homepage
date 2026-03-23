@@ -424,7 +424,7 @@ export default function Projects() {
               color: COLORS.text.primary,
             }}
           >
-            Building things I'm proud of.
+            A few projects I’ve worked on.
           </h2>
         </div>
 
