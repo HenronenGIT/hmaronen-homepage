@@ -1,26 +1,3 @@
-:root {
-  --bg: #faf7f2;
-  --surface: #f0e8dc;
-  --surface-deep: #e8d9c4;
-  --surface-card: #fffdf9;
-  --charcoal: #2c2c2a;
-  --charcoal-mid: #4a4a47;
-  --muted: #8a7f72;
-  --subtle: #b5aa9e;
-  --accent: #c45c2e;
-  --accent-soft: #f5ede6;
-  --cognac: #9b6a3e;
-  --border: rgba(155, 106, 62, 0.18);
-  --shadow-soft: 0 24px 64px rgba(82, 57, 34, 0.08);
-  --shadow-card: 0 18px 40px rgba(72, 54, 39, 0.1);
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-pill: 999px;
-  --shell: 1120px;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -36,17 +13,22 @@ body {
   background:
     radial-gradient(
       circle at top left,
-      rgba(196, 92, 46, 0.09),
+      var(--hero-glow-primary),
       transparent 26%
     ),
     radial-gradient(
       circle at 80% 10%,
-      rgba(155, 106, 62, 0.08),
+      var(--hero-glow-secondary),
       transparent 28%
     ),
-    linear-gradient(180deg, #fcfaf6 0%, var(--bg) 28%, #f7f0e7 100%);
+    linear-gradient(
+      180deg,
+      var(--white-warm) 0%,
+      var(--bg) 28%,
+      var(--white-accent) 100%
+    );
   color: var(--charcoal);
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-family-body);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -95,7 +77,7 @@ select {
   border-radius: 2rem;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.72),
+    var(--white-pure),
     rgba(240, 232, 220, 0.84)
   );
   border: 1px solid rgba(155, 106, 62, 0.12);
@@ -112,9 +94,9 @@ select {
 
 .section-kicker,
 .eyebrow-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -143,12 +125,12 @@ select {
 
 .section-title {
   margin: 0.9rem 0 0;
-  font-family: var(--font-display), sans-serif;
-  font-size: clamp(2.3rem, 5vw, 4.4rem);
-  font-weight: 500;
-  line-height: 0.95;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-section-title);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-heading);
   text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-section);
 }
 
 .section-lead,
@@ -156,8 +138,8 @@ select {
 .project-copy,
 .info-card p,
 .connect-card p {
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   color: var(--charcoal-mid);
 }
 
@@ -171,7 +153,8 @@ select {
 }
 
 .reveal {
-  animation: fade-up 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fade-up var(--motion-reveal-duration) var(--motion-reveal-ease)
+    both;
 }
 
 @keyframes fade-up {
@@ -214,7 +197,7 @@ select {
   border-radius: var(--radius-pill);
   background: rgba(250, 247, 242, 0.9);
   backdrop-filter: blur(18px);
-  box-shadow: 0 12px 30px rgba(92, 67, 42, 0.08);
+  box-shadow: var(--shadow-floating);
   color: var(--charcoal);
   cursor: pointer;
   transition:
@@ -243,8 +226,8 @@ select {
 }
 
 .menu-toggle-label {
-  font-size: 0.74rem;
-  font-weight: 700;
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -274,7 +257,7 @@ select {
   border-radius: calc(var(--radius-xl) + 4px);
   background: rgba(250, 247, 242, 0.82);
   backdrop-filter: blur(18px);
-  box-shadow: 0 12px 30px rgba(92, 67, 42, 0.08);
+  box-shadow: var(--shadow-floating);
 }
 
 .brand-mark {
@@ -292,18 +275,18 @@ select {
   border-radius: 50%;
   background: var(--charcoal);
   color: var(--bg);
-  font-family: var(--font-display), sans-serif;
+  font-family: var(--font-family-display);
   font-size: 1rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .brand-mark-text {
-  font-family: var(--font-display), sans-serif;
+  font-family: var(--font-family-display);
   font-size: 0.95rem;
   line-height: 0.9;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: var(--tracking-display-wide);
 }
 
 .header-nav {
@@ -317,10 +300,10 @@ select {
   padding: 0.7rem 1rem;
   border-radius: var(--radius-pill);
   color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 600;
+  font-size: var(--font-size-nav);
+  font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--tracking-nav);
   transition:
     background-color 160ms ease,
     color 160ms ease,
@@ -396,7 +379,7 @@ select {
 }
 
 .hero-shell {
-  width: min(calc(100% - 7rem), 1080px);
+  width: min(calc(100% - 7rem), var(--hero-shell));
 }
 
 .hero-copy {
@@ -409,19 +392,19 @@ select {
 
 .hero-pretitle {
   margin: 0;
-  font-family: var(--font-display), sans-serif;
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-pretitle);
   text-transform: uppercase;
   color: var(--cognac);
-  letter-spacing: 0.05em;
+  letter-spacing: var(--tracking-display-wide);
 }
 
 .hero-title {
   margin: 0;
-  font-family: var(--font-display), sans-serif;
-  font-size: clamp(2.9rem, min(7vw, 11dvh), 7.4rem);
-  line-height: 0.88;
-  letter-spacing: -0.03em;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-hero-title);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--tracking-display);
   text-transform: uppercase;
 }
 
@@ -433,8 +416,8 @@ select {
 .hero-summary {
   max-width: 34rem;
   margin: 0;
-  font-size: clamp(0.98rem, 1.15vw, 1.08rem);
-  line-height: clamp(1.6, 1.9dvh, 1.8);
+  font-size: var(--font-size-body-large);
+  line-height: var(--line-height-body-relaxed);
   color: var(--charcoal-mid);
 }
 
@@ -455,9 +438,9 @@ select {
   padding: 0.95rem 1.5rem;
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-size: var(--font-size-nav);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-button);
   text-transform: uppercase;
   transition:
     transform 180ms ease,
@@ -522,10 +505,10 @@ select {
   border-radius: 50%;
   background: linear-gradient(
     145deg,
-    rgba(255, 255, 255, 0.92),
+    var(--white-overlay),
     rgba(240, 232, 220, 0.65)
   );
-  box-shadow: 0 30px 90px rgba(79, 56, 33, 0.14);
+  box-shadow: var(--shadow-hero);
 }
 
 .hero-portrait-crop {
@@ -549,14 +532,14 @@ select {
   max-width: min(60%, 13rem);
   padding: 0.9rem 1rem;
   border-radius: 1.15rem;
-  background: rgba(250, 247, 242, 0.92);
+  background: var(--white-overlay);
   border: 1px solid rgba(155, 106, 62, 0.18);
   box-shadow: var(--shadow-card);
-  font-family: var(--font-display), sans-serif;
+  font-family: var(--font-family-display);
   font-size: clamp(0.78rem, 1vw, 0.95rem);
-  line-height: 1.05;
+  line-height: var(--line-height-label);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: var(--tracking-display-wide);
   z-index: 1;
 }
 
@@ -582,7 +565,7 @@ select {
 .project-card,
 .connect-card {
   border: 1px solid rgba(155, 106, 62, 0.14);
-  background: rgba(255, 255, 255, 0.82);
+  background: var(--white-soft);
   box-shadow: var(--shadow-soft);
 }
 
@@ -600,9 +583,9 @@ select {
 .project-content h3,
 .connect-card h3 {
   margin: 0.35rem 0 0;
-  font-family: var(--font-display), sans-serif;
-  font-size: 1.45rem;
-  line-height: 1;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-card-title);
+  line-height: var(--line-height-compact);
   text-transform: uppercase;
 }
 
@@ -658,11 +641,11 @@ select {
 }
 
 .experience-period {
-  font-family: var(--font-display), sans-serif;
+  font-family: var(--font-family-display);
   font-size: 1rem;
   text-transform: uppercase;
   color: var(--muted);
-  letter-spacing: 0.04em;
+  letter-spacing: var(--tracking-display-wide);
 }
 
 .experience-header {
@@ -671,9 +654,9 @@ select {
 
 .experience-header h3 {
   margin: 0.35rem 0 0;
-  font-family: var(--font-display), sans-serif;
-  font-size: clamp(1.65rem, 2.5vw, 2.2rem);
-  line-height: 0.95;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-experience-title);
+  line-height: var(--line-height-heading);
   text-transform: uppercase;
 }
 
@@ -726,8 +709,8 @@ select {
 
 .project-placeholder p {
   margin: 0;
-  font-family: var(--font-display), sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-project-display);
   line-height: 0.9;
   text-transform: uppercase;
 }
@@ -820,7 +803,7 @@ select {
   }
 
   .hero-shell {
-    width: min(calc(100% - 4.5rem), 1080px);
+    width: min(calc(100% - 4.5rem), var(--hero-shell));
   }
 }
 

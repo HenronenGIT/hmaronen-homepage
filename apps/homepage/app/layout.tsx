@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Sans, Oswald } from "next/font/google";
 import type { ReactNode } from "react";
+import { designSystemRootVariables } from "./design-system/tokens";
 import "./globals.css";
 
 const instrumentSans = Instrument_Sans({
@@ -26,7 +27,10 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={`${instrumentSans.variable} ${oswald.variable}`}>
+      <body
+        className={`${instrumentSans.variable} ${oswald.variable}`}
+        style={designSystemRootVariables}
+      >
         {children}
       </body>
     </html>
