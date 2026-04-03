@@ -1,0 +1,1945 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Henri Maronen — Design System</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Instrument+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ─── TOKENS ─────────────────────────────────────────── */
+      :root {
+        --bg: #faf7f2;
+        --surface: #f0e8dc;
+        --surface-deep: #e8d9c4;
+        --charcoal: #2c2c2a;
+        --charcoal-mid: #4a4a47;
+        --muted: #8a7f72;
+        --subtle: #b5aa9e;
+        --accent: #c45c2e;
+        --accent-light: #f5ede6;
+        --cognac: #9b6a3e;
+        --white: #ffffff;
+
+        --oswald: "Oswald", sans-serif;
+        --instrument: "Instrument Sans", sans-serif;
+
+        --radius-sm: 6px;
+        --radius-md: 10px;
+        --radius-lg: 16px;
+        --radius-xl: 24px;
+        --radius-pill: 99px;
+      }
+
+      /* ─── RESET ──────────────────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        font-family: var(--instrument);
+        color: var(--charcoal);
+        line-height: 1.6;
+      }
+
+      /* ─── LAYOUT ─────────────────────────────────────────── */
+      .page {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 48px 120px;
+      }
+
+      .ds-header {
+        padding: 64px 0 48px;
+        border-bottom: 1px solid var(--surface-deep);
+        margin-bottom: 72px;
+      }
+      .ds-header-eyebrow {
+        font-family: var(--instrument);
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .ds-header-eyebrow::before {
+        content: "";
+        display: block;
+        width: 28px;
+        height: 1px;
+        background: var(--accent);
+      }
+      .ds-header-title {
+        font-family: var(--oswald);
+        font-size: 56px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        line-height: 0.95;
+        color: var(--charcoal);
+        margin-bottom: 6px;
+      }
+      .ds-header-title span {
+        color: var(--accent);
+      }
+      .ds-header-sub {
+        font-family: var(--instrument);
+        font-size: 15px;
+        font-weight: 300;
+        color: var(--muted);
+        margin-top: 16px;
+      }
+
+      .section {
+        margin-bottom: 80px;
+      }
+      .section-label {
+        font-family: var(--instrument);
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .section-label::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 1px;
+        background: var(--accent);
+      }
+      .section-title {
+        font-family: var(--oswald);
+        font-size: 13px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+        margin-bottom: 20px;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--surface-deep);
+        margin: 72px 0;
+      }
+
+      /* ─── COLOR PALETTE ──────────────────────────────────── */
+      .palette-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+      }
+      .swatch {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid var(--surface-deep);
+      }
+      .swatch-color {
+        height: 80px;
+      }
+      .swatch-info {
+        padding: 10px 12px;
+        background: var(--white);
+      }
+      .swatch-name {
+        font-family: var(--instrument);
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--charcoal);
+      }
+      .swatch-hex {
+        font-family: var(--instrument);
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 2px;
+        font-feature-settings: "tnum";
+      }
+      .swatch-role {
+        font-family: var(--instrument);
+        font-size: 10px;
+        color: var(--subtle);
+        margin-top: 2px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      /* ─── TYPOGRAPHY ─────────────────────────────────────── */
+      .type-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+      .type-row {
+        display: flex;
+        align-items: baseline;
+        gap: 32px;
+        padding: 24px 0;
+        border-bottom: 1px solid var(--surface-deep);
+      }
+      .type-meta {
+        flex-shrink: 0;
+        width: 160px;
+      }
+      .type-meta-name {
+        font-family: var(--instrument);
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+      }
+      .type-meta-spec {
+        font-family: var(--instrument);
+        font-size: 11px;
+        color: var(--subtle);
+        margin-top: 3px;
+      }
+      .type-sample {
+        flex: 1;
+      }
+
+      .t-display {
+        font-family: var(--oswald);
+        font-size: 64px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        line-height: 0.92;
+        color: var(--charcoal);
+      }
+      .t-h1 {
+        font-family: var(--oswald);
+        font-size: 52px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        line-height: 0.95;
+        color: var(--charcoal);
+      }
+      .t-h2 {
+        font-family: var(--oswald);
+        font-size: 36px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0em;
+        color: var(--charcoal);
+      }
+      .t-h3 {
+        font-family: var(--oswald);
+        font-size: 24px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        color: var(--charcoal);
+      }
+      .t-h4 {
+        font-family: var(--oswald);
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--charcoal);
+      }
+      .t-body-lg {
+        font-family: var(--instrument);
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 1.75;
+        color: var(--charcoal-mid);
+      }
+      .t-body {
+        font-family: var(--instrument);
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.75;
+        color: var(--charcoal-mid);
+      }
+      .t-body-sm {
+        font-family: var(--instrument);
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.65;
+        color: var(--muted);
+      }
+      .t-label {
+        font-family: var(--instrument);
+        font-size: 11px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+      }
+      .t-caption {
+        font-family: var(--instrument);
+        font-size: 11px;
+        font-weight: 400;
+        color: var(--subtle);
+      }
+      .t-tagline {
+        font-family: var(--oswald);
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--cognac);
+      }
+
+      /* ─── BUTTONS ────────────────────────────────────────── */
+      .btn-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .btn {
+        font-family: var(--instrument);
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        border-radius: var(--radius-pill);
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition:
+          opacity 0.15s ease,
+          transform 0.15s ease;
+        text-decoration: none;
+      }
+      .btn:hover {
+        opacity: 0.88;
+        transform: translateY(-1px);
+      }
+      .btn:active {
+        transform: scale(0.97);
+      }
+
+      .btn-primary {
+        background: var(--charcoal);
+        color: var(--bg);
+        padding: 13px 32px;
+      }
+      .btn-accent {
+        background: var(--accent);
+        color: #fff;
+        padding: 13px 32px;
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--charcoal);
+        padding: 12px 30px;
+        border: 1px solid var(--surface-deep);
+      }
+      .btn-outline-accent {
+        background: transparent;
+        color: var(--accent);
+        padding: 12px 30px;
+        border: 1px solid var(--accent);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--muted);
+        padding: 12px 24px;
+        border: 1px solid var(--surface-deep);
+      }
+      .btn-sm {
+        padding: 8px 20px;
+        font-size: 11px;
+      }
+      .btn-icon {
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        justify-content: center;
+        border: 1px solid var(--surface-deep);
+        background: transparent;
+        color: var(--muted);
+        border-radius: 50%;
+      }
+
+      /* ─── TAGS ───────────────────────────────────────────── */
+      .tags-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tag {
+        font-family: var(--instrument);
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        border-radius: var(--radius-pill);
+        padding: 6px 14px 6px 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        border: 1px solid transparent;
+      }
+      .tag-icon-wrap {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      /* Neutral — for tech stack, generic labels */
+      .tag-neutral {
+        background: var(--surface);
+        color: var(--charcoal-mid);
+        border-color: var(--surface-deep);
+      }
+      .tag-neutral .tag-icon-wrap {
+        background: var(--surface-deep);
+      }
+
+      /* Accent — terracotta, for categories and featured */
+      .tag-accent {
+        background: var(--accent-light);
+        color: var(--accent);
+        border-color: rgba(196, 92, 46, 0.22);
+      }
+      .tag-accent .tag-icon-wrap {
+        background: rgba(196, 92, 46, 0.12);
+      }
+
+      /* Cognac — for status, open to work */
+      .tag-cognac {
+        background: #f5ece0;
+        color: var(--cognac);
+        border-color: rgba(155, 106, 62, 0.22);
+      }
+      .tag-cognac .tag-icon-wrap {
+        background: rgba(155, 106, 62, 0.12);
+      }
+
+      /* Dark — for year labels, strong emphasis */
+      .tag-charcoal {
+        background: var(--charcoal);
+        color: var(--bg);
+        border-color: var(--charcoal);
+      }
+      .tag-charcoal .tag-icon-wrap {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Outlined accent — for project cards on light bg */
+      .tag-outlined-accent {
+        background: transparent;
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .tag-outlined-accent .tag-icon-wrap {
+        background: var(--accent-light);
+      }
+
+      /* Outlined neutral — for project cards on light bg */
+      .tag-outlined {
+        background: transparent;
+        color: var(--charcoal);
+        border-color: var(--charcoal);
+      }
+      .tag-outlined .tag-icon-wrap {
+        background: var(--surface);
+      }
+
+      /* ─── CARDS ──────────────────────────────────────────── */
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .card-cinematic {
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        position: relative;
+        height: 380px;
+        cursor: pointer;
+      }
+      .card-img {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .card-img-placeholder {
+        font-family: var(--oswald);
+        font-size: 48px;
+        font-weight: 300;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.15);
+      }
+      .card-scrim {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(28, 20, 12, 0.94) 0%,
+          rgba(28, 20, 12, 0.3) 50%,
+          transparent 72%
+        );
+      }
+      .card-badge {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(250, 247, 242, 0.15);
+        border: 1px solid rgba(250, 247, 242, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .card-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 24px;
+      }
+      .card-tags-row {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 10px;
+      }
+      .tag-glass {
+        font-family: var(--instrument);
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 3px 10px;
+        border-radius: var(--radius-pill);
+        background: rgba(250, 247, 242, 0.12);
+        color: rgba(250, 247, 242, 0.75);
+        border: 1px solid rgba(250, 247, 242, 0.18);
+      }
+      .tag-glass-accent {
+        background: rgba(196, 92, 46, 0.3);
+        color: #f5c4a4;
+        border-color: rgba(196, 92, 46, 0.38);
+      }
+      .card-title-text {
+        font-family: var(--oswald);
+        font-size: 28px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #faf7f2;
+        margin-bottom: 4px;
+        line-height: 1;
+      }
+      .card-sub-text {
+        font-family: var(--instrument);
+        font-size: 13px;
+        font-weight: 300;
+        color: rgba(250, 247, 242, 0.5);
+        margin-bottom: 16px;
+      }
+      .card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .card-year {
+        font-family: var(--instrument);
+        font-size: 12px;
+        color: rgba(250, 247, 242, 0.38);
+      }
+      .card-cta-text {
+        font-family: var(--instrument);
+        font-size: 12px;
+        font-weight: 500;
+        color: #faf7f2;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      /* ─── NAV ────────────────────────────────────────────── */
+      .nav-demo {
+        background: rgba(250, 247, 242, 0.95);
+        border: 1px solid var(--surface-deep);
+        border-radius: var(--radius-lg);
+        padding: 18px 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-logo-demo {
+        font-family: var(--oswald);
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--charcoal);
+      }
+      .nav-links-demo {
+        display: flex;
+        gap: 28px;
+      }
+      .nav-link-demo {
+        font-family: var(--instrument);
+        font-size: 13px;
+        color: var(--muted);
+        cursor: pointer;
+      }
+      .nav-link-demo.active {
+        color: var(--charcoal);
+        font-weight: 500;
+      }
+
+      /* ─── WORK TIMELINE ──────────────────────────────────── */
+      .work-list {
+        display: flex;
+        flex-direction: column;
+      }
+      .work-item {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 24px;
+        padding: 22px 0;
+        border-bottom: 1px solid var(--surface-deep);
+      }
+      .work-item:first-child {
+        border-top: 1px solid var(--surface-deep);
+      }
+      .work-year {
+        font-family: var(--instrument);
+        font-size: 12px;
+        color: var(--subtle);
+        padding-top: 4px;
+      }
+      .work-role {
+        font-family: var(--oswald);
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        color: var(--charcoal);
+        margin-bottom: 2px;
+      }
+      .work-company {
+        font-family: var(--instrument);
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--cognac);
+        margin-bottom: 5px;
+      }
+      .work-desc {
+        font-family: var(--instrument);
+        font-size: 13px;
+        font-weight: 300;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      /* ─── SKILLS ─────────────────────────────────────────── */
+      .skills-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .skill-pill {
+        font-family: var(--instrument);
+        font-size: 13px;
+        color: var(--charcoal-mid);
+        padding: 8px 18px;
+        border-radius: var(--radius-pill);
+        background: var(--surface);
+        border: 1px solid var(--surface-deep);
+        transition: all 0.15s ease;
+        cursor: pointer;
+      }
+      .skill-pill:hover {
+        background: var(--surface-deep);
+      }
+      .skill-pill.active {
+        background: var(--charcoal);
+        color: var(--bg);
+        border-color: var(--charcoal);
+      }
+
+      /* ─── AVATAR ─────────────────────────────────────────── */
+      .avatar-demo {
+        display: flex;
+        gap: 20px;
+        align-items: flex-end;
+        flex-wrap: wrap;
+      }
+      .avatar {
+        border-radius: 50%;
+        background: var(--surface);
+        border: 1px solid var(--surface-deep);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .avatar-xl {
+        width: 120px;
+        height: 120px;
+      }
+      .avatar-lg {
+        width: 80px;
+        height: 80px;
+      }
+      .avatar-md {
+        width: 56px;
+        height: 56px;
+      }
+      .avatar-sm {
+        width: 36px;
+        height: 36px;
+      }
+      .avatar-initials {
+        font-family: var(--oswald);
+        font-weight: 300;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--subtle);
+      }
+      .avatar-xl .avatar-initials {
+        font-size: 32px;
+      }
+      .avatar-lg .avatar-initials {
+        font-size: 22px;
+      }
+      .avatar-md .avatar-initials {
+        font-size: 15px;
+      }
+      .avatar-sm .avatar-initials {
+        font-size: 10px;
+      }
+      .avatar-badge-wrap {
+        position: relative;
+        display: inline-block;
+      }
+      .avatar-status {
+        position: absolute;
+        bottom: 4px;
+        right: 4px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #7cb87a;
+        border: 2px solid var(--bg);
+      }
+
+      /* ─── STATUS BADGE ───────────────────────────────────── */
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-family: var(--instrument);
+        font-size: 12px;
+        color: var(--charcoal-mid);
+        background: var(--bg);
+        border: 1px solid var(--surface-deep);
+        border-radius: var(--radius-md);
+        padding: 9px 14px;
+      }
+      .status-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .status-available {
+        background: #7cb87a;
+      }
+      .status-busy {
+        background: #e8a84a;
+      }
+
+      /* ─── CTA BLOCK ──────────────────────────────────────── */
+      .cta-block {
+        background: var(--charcoal);
+        border-radius: var(--radius-xl);
+        padding: 52px 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+      }
+      .cta-block-heading {
+        font-family: var(--oswald);
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 0.95;
+        color: var(--bg);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .cta-block-heading span {
+        color: #e8c9a8;
+      }
+      .cta-block-sub {
+        font-family: var(--instrument);
+        font-size: 14px;
+        font-weight: 300;
+        color: rgba(250, 247, 242, 0.48);
+        line-height: 1.65;
+        max-width: 320px;
+      }
+      .cta-block-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex-shrink: 0;
+      }
+      .btn-cta-p {
+        background: var(--accent);
+        color: #fff;
+        font-family: var(--instrument);
+        font-size: 13px;
+        font-weight: 500;
+        padding: 13px 28px;
+        border-radius: var(--radius-pill);
+        border: none;
+        cursor: pointer;
+        white-space: nowrap;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+      .btn-cta-g {
+        background: transparent;
+        color: rgba(250, 247, 242, 0.65);
+        font-family: var(--instrument);
+        font-size: 13px;
+        padding: 13px 28px;
+        border-radius: var(--radius-pill);
+        border: 1px solid rgba(250, 247, 242, 0.2);
+        cursor: pointer;
+        white-space: nowrap;
+        text-align: center;
+      }
+
+      /* ─── SPACING ────────────────────────────────────────── */
+      .spacing-row {
+        display: flex;
+        gap: 0;
+        align-items: flex-end;
+      }
+      .spacing-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-right: 20px;
+      }
+      .spacing-block {
+        background: var(--surface-deep);
+        border-radius: 3px;
+        width: 100%;
+        min-width: 12px;
+      }
+      .spacing-label {
+        font-family: var(--instrument);
+        font-size: 10px;
+        color: var(--muted);
+        text-align: center;
+      }
+      .spacing-value {
+        font-family: var(--instrument);
+        font-size: 10px;
+        font-weight: 500;
+        color: var(--charcoal);
+        text-align: center;
+      }
+
+      /* ─── RADIUS ─────────────────────────────────────────── */
+      .radius-row {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      .radius-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .radius-block {
+        width: 72px;
+        height: 72px;
+        background: var(--surface);
+        border: 1px solid var(--surface-deep);
+      }
+      .radius-label {
+        font-family: var(--instrument);
+        font-size: 10px;
+        color: var(--muted);
+        text-align: center;
+      }
+      .radius-value {
+        font-family: var(--instrument);
+        font-size: 10px;
+        font-weight: 500;
+        color: var(--charcoal);
+        text-align: center;
+      }
+
+      /* ─── HOVER STATES ───────────────────────────────────── */
+      .card-cinematic {
+        transition: transform 0.2s ease;
+      }
+      .card-cinematic:hover {
+        transform: translateY(-4px);
+      }
+
+      /* ─── FOOTER ─────────────────────────────────────────── */
+      .ds-footer {
+        padding-top: 48px;
+        border-top: 1px solid var(--surface-deep);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .ds-footer-logo {
+        font-family: var(--oswald);
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--charcoal);
+      }
+      .ds-footer-meta {
+        font-family: var(--instrument);
+        font-size: 12px;
+        color: var(--subtle);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- HEADER -->
+      <header class="ds-header">
+        <div class="ds-header-eyebrow">Henri Maronen — Portfolio</div>
+        <h1 class="ds-header-title">Design<br /><span>System</span></h1>
+        <p class="ds-header-sub">
+          Oswald · Instrument Sans · Warm Light Palette · v1.0
+        </p>
+      </header>
+
+      <!-- COLOR PALETTE -->
+      <section class="section">
+        <div class="section-label">01 — Colour palette</div>
+        <div class="palette-grid">
+          <div class="swatch">
+            <div class="swatch-color" style="background: #faf7f2"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Page BG</div>
+              <div class="swatch-hex">#FAF7F2</div>
+              <div class="swatch-role">Background</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #f0e8dc"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Surface</div>
+              <div class="swatch-hex">#F0E8DC</div>
+              <div class="swatch-role">Cards, chips</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #e8d9c4"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Surface Deep</div>
+              <div class="swatch-hex">#E8D9C4</div>
+              <div class="swatch-role">Borders, dividers</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #2c2c2a"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Charcoal</div>
+              <div class="swatch-hex">#2C2C2A</div>
+              <div class="swatch-role">Primary text, CTA bg</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #4a4a47"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Charcoal Mid</div>
+              <div class="swatch-hex">#4A4A47</div>
+              <div class="swatch-role">Secondary text</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #8a7f72"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Muted</div>
+              <div class="swatch-hex">#8A7F72</div>
+              <div class="swatch-role">Body copy</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #b5aa9e"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Subtle</div>
+              <div class="swatch-hex">#B5AA9E</div>
+              <div class="swatch-role">Hints, metadata</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #c45c2e"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Accent</div>
+              <div class="swatch-hex">#C45C2E</div>
+              <div class="swatch-role">Terracotta — highlight</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #f5ede6"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Accent Light</div>
+              <div class="swatch-hex">#F5EDE6</div>
+              <div class="swatch-role">Tag fills</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #9b6a3e"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Cognac</div>
+              <div class="swatch-hex">#9B6A3E</div>
+              <div class="swatch-role">Company names, tagline</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- TYPOGRAPHY -->
+      <section class="section">
+        <div class="section-label">02 — Typography</div>
+        <div class="type-stack">
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-name">Display</div>
+              <div class="type-meta-spec">Oswald 700 · 64px · uppercase</div>
+            </div>
+            <div class="type-sample"><div class="t-display">Henri</div></div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-name">Heading 1</div>
+              <div class="type-meta-spec">Oswald 600 · 52px · uppercase</div>
+            </div>
+            <div class="type-sample">
+              <div class="t-h1">Full-Stack Developer</div>
+            </div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-name">Heading 2</div>
+              <div class="type-meta-spec">Oswald 500 · 36px · uppercase</div>
+            </div>
+            <div class="type-sample"><div class="t-h2">Selected Work</div></div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-name">Heading 3</div>
+              <div class="type-meta-spec">Oswald 500 · 24px · uppercase</div>
+            </div>
+            <div class="type-sample">
+              <div class="t-h3">Lead Developer</div>
+            </div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-name">Heading 4</div>
+              <div class="type-meta-spec">Oswald 400 · 18px · uppercase</div>
+            </div>
+            <div class="type-sample">
+              <div class="t-h4">Work Experience</div>
+            </div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-name">Tagline</div>
+              <div class="type-meta-spec">Oswald 600 · 20px · cognac</div>
+            </div>
+            <div class="type-sample">
+              <div class="t-tagline">Developer Brain. Creator Soul.</div>
+            </div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-name">Body Large</div>
+              <div class="type-meta-spec">Instrument 300 · 17px · 1.75lh</div>
+            </div>
+            <div class="type-sample">
+              <div class="t-body-lg">
+                I build digital products end-to-end — from architecture to
+                interface.
+              </div>
+            </div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-name">Body</div>
+              <div class="type-meta-spec">Instrument 300 · 15px · 1.75lh</div>
+            </div>
+            <div class="type-sample">
+              <div class="t-body">
+                Currently at Slush, engineering experiences for the world's
+                leading startup event. I care about craft, performance, and the
+                details that make software feel alive.
+              </div>
+            </div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-name">Body Small</div>
+              <div class="type-meta-spec">Instrument 400 · 13px · 1.65lh</div>
+            </div>
+            <div class="type-sample">
+              <div class="t-body-sm">
+                Shaped the attendee and speaker experience across web and mobile
+                products, end-to-end.
+              </div>
+            </div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-name">Label</div>
+              <div class="type-meta-spec">
+                Instrument 500 · 11px · uppercase
+              </div>
+            </div>
+            <div class="type-sample">
+              <div class="t-label">Selected work · 01 — Colour</div>
+            </div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-name">Caption</div>
+              <div class="type-meta-spec">Instrument 400 · 11px · subtle</div>
+            </div>
+            <div class="type-sample">
+              <div class="t-caption">2023 · Helsinki, Finland · Slush</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- BUTTONS -->
+      <section class="section">
+        <div class="section-label">03 — Buttons</div>
+
+        <div class="section-title" style="margin-top: 0">Primary actions</div>
+        <div class="btn-row" style="margin-bottom: 28px">
+          <button class="btn btn-primary">View my work</button>
+          <button class="btn btn-accent">Contact me</button>
+          <button class="btn btn-primary btn-sm">Download CV</button>
+          <button class="btn btn-accent btn-sm">Let's talk</button>
+        </div>
+
+        <div class="section-title">Secondary actions</div>
+        <div class="btn-row" style="margin-bottom: 28px">
+          <button class="btn btn-outline">See all projects</button>
+          <button class="btn btn-outline-accent">Let's talk</button>
+          <button class="btn btn-ghost">Learn more</button>
+        </div>
+
+        <div class="section-title">Icon buttons</div>
+        <div class="btn-row">
+          <button class="btn btn-icon">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"
+              />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </button>
+          <button class="btn btn-icon">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              />
+            </svg>
+          </button>
+          <button class="btn btn-icon">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </button>
+          <button
+            class="btn btn-icon"
+            style="border-color: var(--accent); color: var(--accent)"
+          >
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- TAGS -->
+      <section class="section">
+        <div class="section-label">04 — Tags &amp; badges</div>
+
+        <div class="section-title" style="margin-top: 0">
+          Tech stack — neutral
+        </div>
+        <div class="tags-row" style="margin-bottom: 24px">
+          <span class="tag tag-neutral">
+            <span class="tag-icon-wrap"
+              ><svg
+                width="11"
+                height="11"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="7,1 12,6 7,11" />
+                <polyline points="5,1 0,6 5,11" /></svg
+            ></span>
+            React
+          </span>
+          <span class="tag tag-neutral">
+            <span class="tag-icon-wrap"
+              ><svg
+                width="11"
+                height="11"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="6" cy="6" r="5" />
+                <path d="M6 3v3l2 2" /></svg
+            ></span>
+            Node.js
+          </span>
+          <span class="tag tag-neutral">
+            <span class="tag-icon-wrap"
+              ><svg
+                width="11"
+                height="11"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="1" y="1" width="10" height="10" rx="2" />
+                <path d="M4 6h4M6 4v4" /></svg
+            ></span>
+            TypeScript
+          </span>
+          <span class="tag tag-neutral">
+            <span class="tag-icon-wrap"
+              ><svg
+                width="11"
+                height="11"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M1 9L6 2l5 7H1z" /></svg
+            ></span>
+            Next.js
+          </span>
+          <span class="tag tag-neutral">
+            <span class="tag-icon-wrap"
+              ><svg
+                width="11"
+                height="11"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <ellipse cx="6" cy="6" rx="5" ry="2" />
+                <path d="M1 6c0 1.1 2.24 2 5 2s5-.9 5-2" />
+                <path d="M1 6v3c0 1.1 2.24 2 5 2s5-.9 5-2V6" /></svg
+            ></span>
+            PostgreSQL
+          </span>
+          <span class="tag tag-neutral">
+            <span class="tag-icon-wrap"
+              ><svg
+                width="11"
+                height="11"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="1" y="3" width="10" height="7" rx="1" />
+                <path d="M1 6h10" />
+                <path d="M4 1v2M8 1v2" /></svg
+            ></span>
+            Figma
+          </span>
+        </div>
+
+        <div class="section-title">Categories — accent &amp; cognac</div>
+        <div class="tags-row" style="margin-bottom: 24px">
+          <span class="tag tag-accent">
+            <span class="tag-icon-wrap"
+              ><svg
+                width="11"
+                height="11"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M2 9l3-3 2 2 3-4" /></svg
+            ></span>
+            Full-stack
+          </span>
+          <span class="tag tag-accent">
+            <span class="tag-icon-wrap"
+              ><svg
+                width="11"
+                height="11"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon
+                  points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"
+                /></svg
+            ></span>
+            Featured
+          </span>
+          <span class="tag tag-accent">
+            <span class="tag-icon-wrap"
+              ><svg
+                width="11"
+                height="11"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="1" y="2" width="10" height="8" rx="1" />
+                <path d="M1 5h10" /></svg
+            ></span>
+            Product design
+          </span>
+          <span class="tag tag-cognac">
+            <span class="tag-icon-wrap"
+              ><svg
+                width="11"
+                height="11"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="6" cy="6" r="2" />
+                <path
+                  d="M6 1v1M6 10v1M1 6h1M10 6h1M2.5 2.5l.7.7M8.8 8.8l.7.7M2.5 9.5l.7-.7M8.8 3.2l.7-.7"
+                /></svg
+            ></span>
+            Open to work
+          </span>
+          <span class="tag tag-charcoal">
+            <span class="tag-icon-wrap"
+              ><svg
+                width="11"
+                height="11"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="2,4 6,8 10,4" /></svg
+            ></span>
+            2024
+          </span>
+        </div>
+
+        <div class="section-title">Outlined — for use on project cards</div>
+        <div class="tags-row" style="margin-bottom: 24px">
+          <span class="tag tag-outlined">
+            <span class="tag-icon-wrap"
+              ><svg
+                width="11"
+                height="11"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="7,1 12,6 7,11" />
+                <polyline points="5,1 0,6 5,11" /></svg
+            ></span>
+            React
+          </span>
+          <span class="tag tag-outlined">
+            <span class="tag-icon-wrap"
+              ><svg
+                width="11"
+                height="11"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M1 9L6 2l5 7H1z" /></svg
+            ></span>
+            Next.js
+          </span>
+          <span class="tag tag-outlined-accent">
+            <span class="tag-icon-wrap"
+              ><svg
+                width="11"
+                height="11"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M2 9l3-3 2 2 3-4" /></svg
+            ></span>
+            Full-stack
+          </span>
+          <span class="tag tag-outlined-accent">
+            <span class="tag-icon-wrap"
+              ><svg
+                width="11"
+                height="11"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon
+                  points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"
+                /></svg
+            ></span>
+            Featured
+          </span>
+        </div>
+
+        <div class="section-title">Status badges</div>
+        <div
+          style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center"
+        >
+          <div class="status-badge">
+            <div class="status-dot status-available"></div>
+            Available for projects
+          </div>
+          <div class="status-badge">
+            <div class="status-dot status-busy"></div>
+            Currently busy
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- AVATAR -->
+      <section class="section">
+        <div class="section-label">05 — Avatar component</div>
+        <div class="avatar-demo">
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 8px;
+            "
+          >
+            <div class="avatar-badge-wrap">
+              <div class="avatar avatar-xl">
+                <span class="avatar-initials">HM</span>
+              </div>
+              <div class="avatar-status"></div>
+            </div>
+            <span class="t-caption">XL · 120px</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 8px;
+            "
+          >
+            <div class="avatar avatar-lg">
+              <span class="avatar-initials">HM</span>
+            </div>
+            <span class="t-caption">LG · 80px</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 8px;
+            "
+          >
+            <div class="avatar avatar-md">
+              <span class="avatar-initials">HM</span>
+            </div>
+            <span class="t-caption">MD · 56px</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 8px;
+            "
+          >
+            <div class="avatar avatar-sm">
+              <span class="avatar-initials">HM</span>
+            </div>
+            <span class="t-caption">SM · 36px</span>
+          </div>
+          <div style="margin-left: 32px">
+            <p class="t-body-sm" style="margin-bottom: 8px">
+              Hero variant — pill shape
+            </p>
+            <div
+              style="
+                width: 180px;
+                height: 200px;
+                border-radius: 90px 90px 60px 60px;
+                background: var(--surface);
+                border: 1px solid var(--surface-deep);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <span
+                style="
+                  font-family: var(--oswald);
+                  font-size: 48px;
+                  font-weight: 300;
+                  color: var(--subtle);
+                  letter-spacing: 0.06em;
+                "
+                >HM</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- PROJECT CARDS -->
+      <section class="section">
+        <div class="section-label">06 — Project cards (cinematic)</div>
+        <div class="cards-grid">
+          <div class="card-cinematic">
+            <div
+              class="card-img"
+              style="
+                background: linear-gradient(
+                  155deg,
+                  #c8b49e 0%,
+                  #8a6e55 45%,
+                  #3e2a1e 100%
+                );
+              "
+            >
+              <span class="card-img-placeholder">Breefli</span>
+            </div>
+            <div class="card-scrim"></div>
+            <div class="card-badge">
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="rgba(250,247,242,0.75)"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+            </div>
+            <div class="card-content">
+              <div class="card-tags-row">
+                <span class="tag-glass tag-glass-accent">Full-stack</span>
+                <span class="tag-glass">React</span>
+                <span class="tag-glass">Node.js</span>
+              </div>
+              <p class="card-title-text">Breefli</p>
+              <p class="card-sub-text">
+                Smart briefing tool — from zero to launch
+              </p>
+              <div class="card-footer">
+                <span class="card-year">2024</span>
+                <span class="card-cta-text"
+                  >View case study
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path
+                      d="M2 6h8M6 2l4 4-4 4"
+                      stroke="currentColor"
+                      stroke-width="1.2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div class="card-cinematic">
+            <div
+              class="card-img"
+              style="
+                background: linear-gradient(
+                  155deg,
+                  #bbb0a2 0%,
+                  #7a6555 45%,
+                  #2e2018 100%
+                );
+              "
+            >
+              <span class="card-img-placeholder">Photography</span>
+            </div>
+            <div class="card-scrim"></div>
+            <div class="card-badge">
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="rgba(250,247,242,0.75)"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+            </div>
+            <div class="card-content">
+              <div class="card-tags-row">
+                <span class="tag-glass tag-glass-accent">Visual design</span>
+                <span class="tag-glass">Next.js</span>
+              </div>
+              <p class="card-title-text">Photography Portfolio</p>
+              <p class="card-sub-text">
+                Minimal gallery — let the images breathe
+              </p>
+              <div class="card-footer">
+                <span class="card-year">2023</span>
+                <span class="card-cta-text"
+                  >View project
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path
+                      d="M2 6h8M6 2l4 4-4 4"
+                      stroke="currentColor"
+                      stroke-width="1.2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- NAVIGATION -->
+      <section class="section">
+        <div class="section-label">07 — Navigation</div>
+        <div class="nav-demo">
+          <span class="nav-logo-demo">Henri Maronen</span>
+          <div class="nav-links-demo">
+            <span class="nav-link-demo active">Work</span>
+            <span class="nav-link-demo">About</span>
+            <span class="nav-link-demo">Skills</span>
+            <span class="nav-link-demo">Thoughts</span>
+          </div>
+          <button class="btn btn-outline-accent btn-sm">Let's talk</button>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- WORK TIMELINE -->
+      <section class="section">
+        <div class="section-label">08 — Work timeline</div>
+        <div class="work-list">
+          <div class="work-item">
+            <span class="work-year">2023 – now</span>
+            <div>
+              <p class="work-role">Lead Developer</p>
+              <p class="work-company">Slush</p>
+              <p class="work-desc">
+                Building and scaling digital products for Europe's largest
+                startup event — from backend systems to polished frontends.
+              </p>
+            </div>
+          </div>
+          <div class="work-item">
+            <span class="work-year">2021 – 23</span>
+            <div>
+              <p class="work-role">Full-Stack Developer</p>
+              <p class="work-company">Slush</p>
+              <p class="work-desc">
+                Developed attendee and speaker-facing web and mobile
+                applications end-to-end.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- SKILL PILLS -->
+      <section class="section">
+        <div class="section-label">09 — Skill pills</div>
+        <div class="skills-row">
+          <span class="skill-pill active">Full-stack dev</span>
+          <span class="skill-pill">React</span>
+          <span class="skill-pill">Node.js</span>
+          <span class="skill-pill">TypeScript</span>
+          <span class="skill-pill">Next.js</span>
+          <span class="skill-pill">PostgreSQL</span>
+          <span class="skill-pill">UI / UX</span>
+          <span class="skill-pill">Figma</span>
+          <span class="skill-pill">System design</span>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- SPACING -->
+      <section class="section">
+        <div class="section-label">10 — Spacing scale</div>
+        <div class="spacing-row">
+          <div class="spacing-item">
+            <div class="spacing-block" style="height: 4px; width: 24px"></div>
+            <div class="spacing-value">4px</div>
+            <div class="spacing-label">xs</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-block" style="height: 8px; width: 28px"></div>
+            <div class="spacing-value">8px</div>
+            <div class="spacing-label">sm</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-block" style="height: 12px; width: 32px"></div>
+            <div class="spacing-value">12px</div>
+            <div class="spacing-label">–</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-block" style="height: 16px; width: 36px"></div>
+            <div class="spacing-value">16px</div>
+            <div class="spacing-label">md</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-block" style="height: 24px; width: 40px"></div>
+            <div class="spacing-value">24px</div>
+            <div class="spacing-label">lg</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-block" style="height: 32px; width: 44px"></div>
+            <div class="spacing-value">32px</div>
+            <div class="spacing-label">xl</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-block" style="height: 48px; width: 48px"></div>
+            <div class="spacing-value">48px</div>
+            <div class="spacing-label">2xl</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-block" style="height: 64px; width: 52px"></div>
+            <div class="spacing-value">64px</div>
+            <div class="spacing-label">3xl</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-block" style="height: 80px; width: 56px"></div>
+            <div class="spacing-value">80px</div>
+            <div class="spacing-label">section</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- BORDER RADIUS -->
+      <section class="section">
+        <div class="section-label">11 — Border radius</div>
+        <div class="radius-row">
+          <div class="radius-item">
+            <div class="radius-block" style="border-radius: 6px"></div>
+            <div class="radius-value">6px</div>
+            <div class="radius-label">sm</div>
+          </div>
+          <div class="radius-item">
+            <div class="radius-block" style="border-radius: 10px"></div>
+            <div class="radius-value">10px</div>
+            <div class="radius-label">md</div>
+          </div>
+          <div class="radius-item">
+            <div class="radius-block" style="border-radius: 16px"></div>
+            <div class="radius-value">16px</div>
+            <div class="radius-label">lg</div>
+          </div>
+          <div class="radius-item">
+            <div class="radius-block" style="border-radius: 24px"></div>
+            <div class="radius-value">24px</div>
+            <div class="radius-label">xl</div>
+          </div>
+          <div class="radius-item">
+            <div class="radius-block" style="border-radius: 99px"></div>
+            <div class="radius-value">99px</div>
+            <div class="radius-label">pill</div>
+          </div>
+          <div class="radius-item">
+            <div class="radius-block" style="border-radius: 50%"></div>
+            <div class="radius-value">50%</div>
+            <div class="radius-label">circle</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- CTA BLOCK -->
+      <section class="section">
+        <div class="section-label">12 — CTA block</div>
+        <div class="cta-block">
+          <div>
+            <h2 class="cta-block-heading">
+              Let's build<br /><span>something</span>
+            </h2>
+            <p class="cta-block-sub">
+              Open to freelance projects, full-time roles, and conversations
+              worth having.
+            </p>
+          </div>
+          <div class="cta-block-actions">
+            <button class="btn-cta-p">Send me an email</button>
+            <button class="btn-cta-g">Connect on LinkedIn</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="ds-footer">
+        <span class="ds-footer-logo">Henri Maronen</span>
+        <span class="ds-footer-meta"
+          >Design System v1.0 · Developer Brain. Creator Soul.</span
+        >
+      </footer>
+    </div>
+  </body>
+</html>
