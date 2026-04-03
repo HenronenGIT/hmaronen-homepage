@@ -15,36 +15,42 @@ export default function ExperienceSection({ items }: ExperienceSectionProps) {
           </h2>
         </div>
 
-        <div className="experience-list">
-          {items.map((item) => (
-            <article
-              key={`${item.company}-${item.period}`}
-              className="experience-card"
-            >
-              <div className="experience-period">{item.period}</div>
-              <div className="experience-body">
-                <div className="experience-header">
-                  <p className="eyebrow-label">{item.company}</p>
-                  <h3>
-                    {item.title}
-                    <span>{item.company}</span>
-                  </h3>
+        <div className="experience-timeline">
+          {items.map((item, index) => {
+            const anchorYear = item.period.match(/\d{4}/)?.[0] ?? item.period;
+            const side = index % 2 === 0 ? "left" : "right";
+            const summary = item.description[0] ?? "";
+
+            return (
+              <article
+                key={`${item.company}-${item.period}`}
+                className={`experience-item experience-item-${side}`}
+              >
+                <div className="experience-track">
+                  <div className="experience-node">
+                    <span>{anchorYear}</span>
+                  </div>
                 </div>
-                <div className="body-stack body-stack-tight">
-                  {item.description.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
+
+                <div className="experience-panel">
+                  <p className="experience-period">{item.period}</p>
+                  <div className="experience-header">
+                    <h3>{item.title}</h3>
+                    <p className="experience-company">{item.company}</p>
+                  </div>
+                  <p className="experience-summary">{summary}</p>
+                  <div className="tag-row experience-tags">
+                    {item.technologies.map((technology) => (
+                      <span key={technology} className="tag tag-outlined">
+                        {technology}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <div className="tag-row">
-                  {item.technologies.map((technology) => (
-                    <span key={technology} className="tag tag-accent">
-                      {technology}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </article>
-          ))}
+                <div className="experience-spacer" aria-hidden="true" />
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

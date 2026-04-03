@@ -16,7 +16,7 @@ export default function SiteHeader({ items }: SiteHeaderProps) {
 
   return (
     <header className="site-header">
-      <div className="shell header-toggle-shell">
+      <div className="header-row">
         <div
           className={`header-shell ${isOpen ? "is-open" : ""}`}
           id="primary-menu"

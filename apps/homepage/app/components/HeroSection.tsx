@@ -25,10 +25,16 @@ export default function HeroSection({ socialLinks }: HeroSectionProps) {
           </p>
           <div className="hero-actions">
             <a className="button button-charcoal" href="#projects">
-              View projects
+              <span className="button-label">View projects</span>
+              <span className="button-orb" aria-hidden="true">
+                <ArrowIcon />
+              </span>
             </a>
             <a className="button button-accent" href="#connect">
-              Let&apos;s connect
+              <span className="button-label">Let&apos;s connect</span>
+              <span className="button-orb" aria-hidden="true">
+                <ArrowIcon />
+              </span>
             </a>
           </div>
           <div className="hero-socials" aria-label="Hero social links">
@@ -116,4 +122,13 @@ function SocialIcon({ icon }: SocialIconProps) {
         </svg>
       );
   }
+}
+
+function ArrowIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 12h12" />
+      <path d="m12 5 7 7-7 7" />
+    </svg>
+  );
 }
