@@ -7,7 +7,7 @@ type HeroSectionProps = {
 export default function HeroSection({ highlights }: HeroSectionProps) {
   return (
     <section className="hero-section section-shell reveal" id="top">
-      <div className="shell hero-grid">
+      <div className="shell hero-shell hero-grid">
         <div className="hero-copy">
           <p className="section-kicker">Henri Maronen</p>
           <div className="hero-heading-wrap">
