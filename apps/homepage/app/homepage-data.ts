@@ -6,6 +6,7 @@ export interface NavItem {
 export interface SocialLink {
   label: string;
   href: string;
+  icon: "linkedin" | "github" | "instagram" | "mail";
 }
 
 export interface InfoCardItem {
@@ -56,16 +57,27 @@ export const navItems: NavItem[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/henrimaronen/" },
-  { label: "GitHub", href: "https://github.com/HenronenGIT" },
-  { label: "Instagram", href: "https://www.instagram.com/hmaronen/" },
+  {
+    label: "LinkedIn",
+    icon: "linkedin",
+    href: "https://www.linkedin.com/in/henrimaronen/",
+  },
+  {
+    label: "GitHub",
+    icon: "github",
+    href: "https://github.com/HenronenGIT",
+  },
+  {
+    label: "Instagram",
+    icon: "instagram",
+    href: "https://www.instagram.com/hmaronen/",
+  },
+  {
+    label: "Connect",
+    icon: "mail",
+    href: "#connect",
+  },
 ];
-
-export const heroHighlights = [
-  "Creative engineer",
-  "Full-stack product builder",
-  "From idea to production",
-] as const;
 
 export const aboutParagraphs = [
   "I'm a passionate builder who recently worked on Slush's Product Team, where I developed and maintained digital products that enabled seamless operations for one of the world's largest startup events.",

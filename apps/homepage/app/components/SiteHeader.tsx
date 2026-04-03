@@ -17,50 +17,42 @@ export default function SiteHeader({ items }: SiteHeaderProps) {
   return (
     <header className="site-header">
       <div className="shell header-toggle-shell">
-        <button
-          type="button"
-          className="menu-toggle"
-          aria-expanded={isOpen}
-          aria-controls="primary-menu"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-          onClick={() => setIsOpen((open) => !open)}
+        <div
+          className={`header-shell ${isOpen ? "is-open" : ""}`}
+          id="primary-menu"
         >
-          <span className="menu-toggle-icon" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-          </span>
-        </button>
-      </div>
+          {isOpen ? (
+            <nav className="header-nav" aria-label="Primary navigation">
+              {items.map((item) => (
+                <a
+                  key={item.href}
+                  className="header-link"
+                  href={item.href}
+                  onClick={handleLinkClick}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          ) : null}
 
-      <div className={`shell header-panel-shell ${isOpen ? "is-open" : ""}`}>
-        <div className="header-shell" id="primary-menu">
-          <a
-            className="brand-mark"
-            href="#top"
-            aria-label="Back to top"
-            onClick={handleLinkClick}
+          <button
+            type="button"
+            className="menu-toggle"
+            aria-expanded={isOpen}
+            aria-controls="primary-menu"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            onClick={() => setIsOpen((open) => !open)}
           >
-            <span className="brand-mark-monogram">HM</span>
-            <span className="brand-mark-text">
-              Henri
-              <br />
-              Maronen
+            <span
+              className={`menu-toggle-icon ${isOpen ? "is-open" : ""}`}
+              aria-hidden="true"
+            >
+              <span />
+              <span />
+              <span />
             </span>
-          </a>
-
-          <nav className="header-nav" aria-label="Primary navigation">
-            {items.map((item) => (
-              <a
-                key={item.href}
-                className="header-link"
-                href={item.href}
-                onClick={handleLinkClick}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
+          </button>
         </div>
       </div>
     </header>

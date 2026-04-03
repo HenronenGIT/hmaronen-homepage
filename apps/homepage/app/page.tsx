@@ -10,7 +10,6 @@ import {
   aboutParagraphs,
   connectLinks,
   experiences,
-  heroHighlights,
   infoCards,
   navItems,
   projects,
@@ -23,7 +22,7 @@ export default function HomePage() {
     <main className="page-shell">
       <SiteHeader items={navItems} />
       <SocialDock links={socialLinks} />
-      <HeroSection highlights={heroHighlights} />
+      <HeroSection socialLinks={socialLinks} />
       <AboutSection paragraphs={aboutParagraphs} cards={infoCards} />
       <SkillsSection groups={skillGroups} />
       <ExperienceSection items={experiences} />
