@@ -48,6 +48,12 @@ export interface ConnectLink {
   note: string;
 }
 
+export interface ArchiveLink {
+  label: string;
+  href: string;
+  note: string;
+}
+
 export const navItems: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
@@ -78,6 +84,12 @@ export const socialLinks: SocialLink[] = [
     href: "#connect",
   },
 ];
+
+export const archiveLink: ArchiveLink = {
+  label: "Visit the archive",
+  href: "https://v1.henrimaronen.com",
+  note: "The previous version of this homepage still lives on as a snapshot.",
+};
 
 export const aboutParagraphs = [
   "I'm a passionate builder who recently worked on Slush's Product Team, where I developed and maintained digital products that enabled seamless operations for one of the world's largest startup events.",
