@@ -9,6 +9,8 @@ lerna-debug.log*
 
 node_modules
 dist
+.next
+*.tsbuildinfo
 dist-ssr
 *.local
 
@@ -25,3 +27,4 @@ dist-ssr
 
 node_modules/
 
+.next/

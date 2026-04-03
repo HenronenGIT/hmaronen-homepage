@@ -17,10 +17,10 @@ No test suite is configured.
 
 ## Architecture
 
-**PNPM monorepo** with two React 18 SPAs built with Vite + TypeScript and deployed independently.
+**PNPM monorepo** with two independently deployable frontend apps.
 
 - `apps/legacy-homepage` — frozen current site, intended for the "time machine" subdomain
-- `apps/homepage` — new redesigned homepage workspace
+- `apps/homepage` — new redesigned homepage workspace built with Next.js App Router
 - `packages/` — reserved for future shared packages; avoid adding shared runtime code unless necessary
 
 ### Routing & Pages

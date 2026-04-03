@@ -3,7 +3,7 @@
 This repository now contains two independent frontend apps:
 
 - `apps/legacy-homepage` keeps the current site intact so it can live on a separate "time machine" subdomain.
-- `apps/homepage` is the new redesigned homepage app.
+- `apps/homepage` is the new redesigned homepage app built with Next.js.
 
 ## Workspace Commands
 
@@ -38,7 +38,7 @@ pnpm check-all
 ```text
 hmaronen-homepage/
 ├── apps/
-│   ├── homepage/          # New redesigned homepage
+│   ├── homepage/          # New redesigned homepage (Next.js)
 │   └── legacy-homepage/   # Frozen current site
 ├── docs/
 ├── packages/              # Reserved for future shared packages

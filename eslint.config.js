@@ -7,7 +7,9 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  { ignores: ["dist", "node_modules", "*.config.js"] },
+  {
+    ignores: ["dist", ".next", "**/.next/**", "node_modules", "*.config.js"],
+  },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ["**/*.{ts,tsx}"],
@@ -89,6 +91,12 @@ export default tseslint.config(
       // Code quality rules (non-formatting)
       eqeqeq: ["error", "always"],
       curly: ["error", "all"],
+    },
+  },
+  {
+    files: ["apps/homepage/app/**/*.{ts,tsx}"],
+    rules: {
+      "react-refresh/only-export-components": "off",
     },
   },
   prettierConfig

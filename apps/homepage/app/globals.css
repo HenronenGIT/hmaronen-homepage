@@ -22,9 +22,14 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
   min-width: 320px;
+  min-height: 100vh;
+}
+
+body {
   min-height: 100vh;
 }
 
@@ -33,10 +38,6 @@ input,
 textarea,
 select {
   font: inherit;
-}
-
-#root {
-  min-height: 100vh;
 }
 
 .app-shell {
