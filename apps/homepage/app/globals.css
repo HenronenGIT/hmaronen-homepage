@@ -436,8 +436,9 @@ select {
 .hero-portrait-frame {
   position: relative;
   width: min(100%, 31rem);
+  aspect-ratio: 1;
   padding: 1rem;
-  border-radius: 2rem;
+  border-radius: 50%;
   background: linear-gradient(
     145deg,
     rgba(255, 255, 255, 0.92),
@@ -446,16 +447,23 @@ select {
   box-shadow: 0 30px 90px rgba(79, 56, 33, 0.14);
 }
 
+.hero-portrait-crop {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 .hero-portrait {
   width: 100%;
-  height: auto;
-  border-radius: 1.5rem;
+  height: 100%;
+  border-radius: 50%;
   object-fit: cover;
 }
 
 .hero-portrait-note {
   position: absolute;
-  left: -1rem;
+  left: 1.25rem;
   bottom: 1.8rem;
   padding: 1rem 1.1rem;
   border-radius: 1.15rem;
@@ -467,6 +475,7 @@ select {
   line-height: 1.05;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  z-index: 1;
 }
 
 .section-grid {

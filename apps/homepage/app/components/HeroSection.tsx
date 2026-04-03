@@ -41,19 +41,17 @@ export default function HeroSection({ highlights }: HeroSectionProps) {
 
         <div className="hero-visual">
           <div className="hero-portrait-frame">
-            <div className="hero-portrait-note">
-              Product-minded.
-              <br />
-              Engineering-led.
+            <div className="hero-portrait-note">Product-minded Engineer.</div>
+            <div className="hero-portrait-crop">
+              <Image
+                src="/images/homepage-portrait.png"
+                alt="Portrait of Henri Maronen"
+                width={1280}
+                height={1280}
+                priority
+                className="hero-portrait"
+              />
             </div>
-            <Image
-              src="/images/homepage-portrait.png"
-              alt="Portrait of Henri Maronen"
-              width={1280}
-              height={1280}
-              priority
-              className="hero-portrait"
-            />
           </div>
         </div>
       </div>
