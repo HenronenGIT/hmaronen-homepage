@@ -1,14 +1,34 @@
+import AboutSection from "./components/AboutSection";
+import ConnectSection from "./components/ConnectSection";
+import ExperienceSection from "./components/ExperienceSection";
+import HeroSection from "./components/HeroSection";
+import ProjectsSection from "./components/ProjectsSection";
+import SiteHeader from "./components/SiteHeader";
+import SkillsSection from "./components/SkillsSection";
+import SocialDock from "./components/SocialDock";
+import {
+  aboutParagraphs,
+  connectLinks,
+  experiences,
+  heroHighlights,
+  infoCards,
+  navItems,
+  projects,
+  skillGroups,
+  socialLinks,
+} from "./homepage-data";
+
 export default function HomePage() {
   return (
-    <main className="app-shell">
-      <section className="hero-card">
-        <p className="eyebrow">Next.js homepage workspace</p>
-        <h1>Redesign in progress.</h1>
-        <p className="summary">
-          This app now runs on Next.js so the new homepage can evolve
-          independently from the legacy time-machine version.
-        </p>
-      </section>
+    <main className="page-shell">
+      <SiteHeader items={navItems} />
+      <SocialDock links={socialLinks} />
+      <HeroSection highlights={heroHighlights} />
+      <AboutSection paragraphs={aboutParagraphs} cards={infoCards} />
+      <SkillsSection groups={skillGroups} />
+      <ExperienceSection items={experiences} />
+      <ProjectsSection items={projects} />
+      <ConnectSection links={connectLinks} />
     </main>
   );
 }

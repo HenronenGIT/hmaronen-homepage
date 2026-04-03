@@ -1,10 +1,22 @@
 import type { Metadata } from "next";
+import { Instrument_Sans, Oswald } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
 
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+
 export const metadata: Metadata = {
   title: "Henri Maronen",
-  description: "The redesigned Henri Maronen homepage is being built here.",
+  description:
+    "Creative engineer building full-stack web applications from idea to production.",
 };
 
 type RootLayoutProps = {
@@ -14,7 +26,9 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${instrumentSans.variable} ${oswald.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
