@@ -38,7 +38,7 @@ export interface ProjectItem {
 
 export interface SkillGroup {
   title: string;
-  description: string;
+  // description: string;
   skills: string[];
 }
 
@@ -53,6 +53,8 @@ export interface ArchiveLink {
   href: string;
   note: string;
 }
+
+export const contactEmail = "henrimaronen@gmail.com";
 
 export const navItems: NavItem[] = [
   { label: "About", href: "#about" },
@@ -92,10 +94,11 @@ export const archiveLink: ArchiveLink = {
 };
 
 export const aboutParagraphs = [
-  "I'm a passionate builder who recently worked on Slush's Product Team, where I developed and maintained digital products that enabled seamless operations for one of the world's largest startup events.",
-  "As a Hive Helsinki alumnus, I made the jump into software development and haven't looked back. I'm captivated by the potential of technology to solve meaningful problems.",
-  "Beyond code, I'm drawn to entrepreneurship and leadership. I find it fascinating to understand what drives great teams and, in result, great products.",
-  "When I'm not coding, you'll find me framing landscapes, chasing furry balls on the padel court, sharpening my mind with non-fiction, or carving down the snowy slopes of Northern Finland.",
+  "I build digital products end-to-end, from database schemas to user interfaces, with a focus on scalability and long-term ownership. The goal isn’t just to ship, but to create something that others can pick up, extend, and take further.",
+  "Right now, I’m exploring how artificial intelligence can be applied in product development. I’m studying different concepts and experimenting with ways to turn them into real features that create actual user value, not just hype.",
+  "Before writing a single line of code, I focus on whether something is worth building in the first place. I look for early signals that a problem is real and that the solution has potential. Once that’s clear, I move into execution with attention to detail, structured thinking, and a strong emphasis on keeping both the product and the team members around in a good state.",
+  "Over the past four years, I’ve worked across the full stack, building products from the ground up. What drives me is the combination of continuous learning and the ability to create something tangible, something that didn’t exist before and can have real impact.",
+  "Outside of work, I spend time in the gym, framing landscapes through viewfinder, or learning through books and podcasts. That constant loop of building and learning is what keeps me moving forward.",
 ] as const;
 
 export const infoCards: InfoCardItem[] = [
@@ -119,7 +122,6 @@ export const infoCards: InfoCardItem[] = [
 export const skillGroups: SkillGroup[] = [
   {
     title: "Frontend",
-    description: "Interfaces that feel considered, fast, and production-ready.",
     skills: [
       "React",
       "Next.js",
@@ -132,7 +134,6 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Backend",
-    description: "Systems and APIs that support real product usage at scale.",
     skills: [
       "Node.js",
       "PostgreSQL",
@@ -141,13 +142,13 @@ export const skillGroups: SkillGroup[] = [
       "Google Cloud",
       "Python",
       "Go",
+      "MongoDB",
       "Vercel",
     ],
   },
   {
     title: "Tools",
-    description:
-      "Workflow, design, and AI-assisted tools that speed up delivery.",
+
     skills: [
       "Figma",
       "Git",
@@ -166,26 +167,13 @@ export const skillGroups: SkillGroup[] = [
 
 export const experiences: ExperienceItem[] = [
   {
-    period: "2025 - Present",
-    title: "Senior Full-stack Developer",
-    company: "Slush",
+    period: "2026 - Present",
+    title: "Career Development",
+    company: "Personal",
     description: [
-      "Build and maintain scalable full-stack applications serving Slush's 13,000+ attendees.",
-      "Led App Search to Elasticsearch microservice migration with client-side updates and optimized synchronization, mapping definitions, versioning, and zero-downtime capabilities.",
-      "Developed Meeting Tool search experience which conducted 20,000 accepted meetings, featuring saved search functionality, CSV and JSON export capabilities, and stateful UI components.",
-      "Provided technical support resolving user issues, created Metabase analytics dashboards, and onboarded new team members.",
+      "After a few years of working in the industry, I've realized that I need to take a step back and focus on myself.",
     ],
-    technologies: [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "Express",
-      "CSS",
-      "Google Cloud Platform",
-      "Zod",
-      "Elasticsearch",
-    ],
+    technologies: ["RAG", "AI Development", "Hackathons", "Event organization"],
   },
   {
     period: "2024",

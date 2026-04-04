@@ -41,9 +41,9 @@ export default function ProjectsSection({ items }: ProjectsSectionProps) {
                 <p className="eyebrow-label">{item.category}</p>
                 <h3>{item.name}</h3>
                 <p className="project-copy">{item.description}</p>
-                <div className="tag-row">
+                <div className="tag-row project-tag-row">
                   {item.tags.map((tag) => (
-                    <span key={tag} className="tag tag-outlined">
+                    <span key={tag} className="tag project-tag">
                       {tag}
                     </span>
                   ))}
