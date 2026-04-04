@@ -1,3 +1,6 @@
+"use client";
+
+import { useLayoutEffect, useRef, useState } from "react";
 import type { InfoCardItem } from "../homepage-data";
 
 type AboutSectionProps = {
@@ -5,21 +8,87 @@ type AboutSectionProps = {
   cards: InfoCardItem[];
 };
 
+const MOBILE_BREAKPOINT_PX = 960;
+
+function readBorderBoxHeight(entry: ResizeObserverEntry): number {
+  const [first] = entry.borderBoxSize ?? [];
+  if (first) {
+    return first.blockSize;
+  }
+  return entry.contentRect.height;
+}
+
 export default function AboutSection({ paragraphs, cards }: AboutSectionProps) {
+  const leftCardRef = useRef<HTMLElement>(null);
+  const [stackMaxHeightPx, setStackMaxHeightPx] = useState<number | null>(null);
+
+  useLayoutEffect(() => {
+    const el = leftCardRef.current;
+    if (!el) {
+      return;
+    }
+
+    const mq = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT_PX}px)`);
+
+    const applyHeight = (entry?: ResizeObserverEntry): void => {
+      if (mq.matches) {
+        setStackMaxHeightPx(null);
+        return;
+      }
+      if (entry) {
+        setStackMaxHeightPx(readBorderBoxHeight(entry));
+        return;
+      }
+      const rect = el.getBoundingClientRect();
+      setStackMaxHeightPx(rect.height);
+    };
+
+    const ro = new ResizeObserver((entries) => {
+      const entry = entries[0];
+      if (!entry) {
+        return;
+      }
+      applyHeight(entry);
+    });
+
+    const onMqChange = (): void => {
+      applyHeight();
+    };
+
+    mq.addEventListener("change", onMqChange);
+    ro.observe(el);
+    applyHeight();
+
+    return () => {
+      mq.removeEventListener("change", onMqChange);
+      ro.disconnect();
+    };
+  }, []);
+
   return (
     <section className="section-shell reveal" id="about">
-      <div className="shell section-grid">
-        <div className="section-copy">
+      <div className="shell about-section-grid">
+        <div className="about-section-head section-copy">
           <p className="section-kicker">About</p>
-          <h2 className="section-title">Who I am when the work gets real.</h2>
+          <h2 className="section-title">Lets keep it brief.</h2>
+        </div>
+
+        <article ref={leftCardRef} className="info-card about-copy-card">
           <div className="body-stack">
             {paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-        </div>
+        </article>
 
-        <div className="info-card-stack">
+        <div
+          className="info-card-stack about-info-stack"
+          style={
+            stackMaxHeightPx !== null
+              ? { maxHeight: `${stackMaxHeightPx}px` }
+              : undefined
+          }
+        >
           {cards.map((card) => {
             const content = (
               <article key={card.label} className="info-card">

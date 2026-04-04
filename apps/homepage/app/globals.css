@@ -629,15 +629,42 @@ select {
   z-index: 1;
 }
 
-.section-grid {
+.about-section-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.85fr);
   gap: 2rem;
-  align-items: start;
+  grid-template-rows: auto auto;
+}
+
+.about-section-head {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.about-copy-card {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
+}
+
+.about-info-stack {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .section-copy {
   max-width: 38rem;
+}
+
+.section-copy .section-title {
+  margin-bottom: 1.25rem;
+}
+
+.about-copy-card .body-stack {
+  padding: 0;
 }
 
 .info-card-stack {
@@ -1132,12 +1159,27 @@ select {
 
 @media (max-width: 960px) {
   .hero-grid,
-  .section-grid,
   .project-grid,
   .skills-grid,
   .connect-grid,
   .footer-shell {
     grid-template-columns: 1fr;
+  }
+
+  .about-section-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .about-section-head,
+  .about-copy-card,
+  .about-info-stack {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .about-info-stack {
+    overflow-y: visible;
   }
 
   .hero-copy {
