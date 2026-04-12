@@ -876,6 +876,10 @@ select {
   gap: 1rem;
 }
 
+.skills-grid .skill-card:nth-child(4) {
+  grid-column: 1 / -1;
+}
+
 .skill-card {
   position: relative;
   padding: 1.5rem;
@@ -1306,6 +1310,8 @@ select {
 }
 
 .project-card {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border-radius: 1.8rem;
 }
@@ -1371,7 +1377,18 @@ select {
 }
 
 .project-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 1.45rem;
+}
+
+.project-actions {
+  margin-top: auto;
+}
+
+.project-actions .button {
+  justify-content: center;
 }
 
 .project-copy {

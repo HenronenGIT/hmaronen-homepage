@@ -58,7 +58,7 @@ export default function ProjectsSection({ items }: ProjectsSectionProps) {
                 </div>
                 <div className="project-actions">
                   <a
-                    className="button button-charcoal button-small"
+                    className="button button-charcoal button-sm"
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
@@ -67,7 +67,7 @@ export default function ProjectsSection({ items }: ProjectsSectionProps) {
                   </a>
                   {item.secondaryHref && item.secondaryLabel ? (
                     <a
-                      className="button button-outline button-small"
+                      className="button button-outline button-sm"
                       href={item.secondaryHref}
                       target="_blank"
                       rel="noreferrer"
