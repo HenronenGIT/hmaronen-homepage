@@ -1405,13 +1405,13 @@ select {
 
 .connect-layout {
   display: grid;
-  grid-template-columns: minmax(16rem, 0.78fr) minmax(0, 1.22fr);
+  grid-template-columns: 1fr;
   gap: 1.3rem;
-  align-items: start;
 }
 
 .connect-card-stack {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -1823,6 +1823,10 @@ select {
 
   .connect-layout {
     gap: 1rem;
+  }
+
+  .connect-card-stack {
+    grid-template-columns: 1fr;
   }
 
   .contact-form-panel {
