@@ -6,7 +6,7 @@ export interface NavItem {
 export interface SocialLink {
   label: string;
   href: string;
-  icon: "linkedin" | "github" | "instagram" | "mail";
+  icon: "linkedin" | "github";
 }
 
 export interface InfoCardItem {
@@ -74,16 +74,6 @@ export const socialLinks: SocialLink[] = [
     label: "GitHub",
     icon: "github",
     href: "https://github.com/HenronenGIT",
-  },
-  {
-    label: "Instagram",
-    icon: "instagram",
-    href: "https://www.instagram.com/hmaronen/",
-  },
-  {
-    label: "Connect",
-    icon: "mail",
-    href: "#connect",
   },
 ];
 

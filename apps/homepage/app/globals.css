@@ -541,15 +541,24 @@ select {
 
 .hero-actions,
 .project-actions,
-.tag-row,
-.hero-socials {
+.tag-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
 }
 
 .hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
   margin-bottom: 1.25rem;
+}
+
+.hero-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .button {
@@ -707,13 +716,10 @@ select {
 }
 
 .hero-social-button svg {
-  width: 1.08rem;
-  height: 1.08rem;
-  stroke: currentColor;
-  stroke-width: 1.7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
 .hero-visual {
