@@ -84,11 +84,11 @@ export const archiveLink: ArchiveLink = {
 };
 
 export const aboutParagraphs = [
-  "I build digital products end-to-end, from database schemas to user interfaces, with a focus on scalability and long-term ownership. The goal isn’t just to ship, but to create something that others can pick up, extend, and take further.",
-  "Right now, I’m exploring how artificial intelligence can be applied in product development. I’m studying different concepts and experimenting with ways to turn them into real features that create actual user value, not just hype.",
-  "Before writing a single line of code, I focus on whether something is worth building in the first place. I look for early signals that a problem is real and that the solution has potential. Once that’s clear, I move into execution with attention to detail, structured thinking, and a strong emphasis on keeping both the product and the team members around in a good state.",
-  "Over the past four years, I’ve worked across the full stack, building products from the ground up. What drives me is the combination of continuous learning and the ability to create something tangible, something that didn’t exist before and can have real impact.",
-  "Outside of work, I spend time in the gym, framing landscapes through viewfinder, or learning through books and podcasts. That constant loop of building and learning is what keeps me moving forward.",
+  "I work across the full stack because good products require it. Design decisions made in the database ripple up to the interface — I’d rather understand both ends than hand off blindly.",
+  "I’m currently deep in AI applied to product work — reading, building small experiments, and asking which AI capabilities are actually ready to ship into real products.",
+  "I default to asking questions before building. Is the problem real? Does this solution have legs? When those answers are yes, I move fast — structured thinking, high attention to detail, and a genuine investment in the outcome.",
+  "I’ve spent four years building from the ground up across the full stack. The part I can’t let go of is making something real — an idea that becomes a product someone actually uses.",
+  "Away from the screen I’m lifting weights, shooting landscapes, or working through whatever book I convinced myself I needed. The discipline of one tends to bleed into the others.",
 ] as const;
 
 export const infoCards: InfoCardItem[] = [
@@ -105,7 +105,7 @@ export const infoCards: InfoCardItem[] = [
   {
     label: "Focus",
     value: "Web development",
-    detail: "Interfaces, systems, and product delivery",
+    detail: "Full-stack, product-minded.",
   },
 ];
 
@@ -138,7 +138,7 @@ export const experiences: ExperienceItem[] = [
     title: "Career Development",
     company: "Personal",
     description: [
-      "After a few years of working in the industry, I've realized that I need to take a step back and focus on myself.",
+      "Ownership mode. Choosing my own learning agenda — AI tooling, side projects, and the fundamentals I want to go deeper on.",
     ],
     technologies: ["RAG", "AI Development", "Hackathons", "Event organization"],
   },
@@ -190,7 +190,7 @@ export const projects: ProjectItem[] = [
     category: "Web app",
     eyebrow: "Side project",
     description:
-      "A personal news aggregator that pulls information from different sources and creates a daily briefing for you.",
+      "Your daily briefing, built to your sources. Breefli cuts the noise and delivers the feeds you actually care about — one read, every morning.",
     href: "https://app.breefli.app",
     secondaryHref: "https://github.com/HenronenGIT/breefli",
     secondaryLabel: "GitHub",
@@ -201,7 +201,7 @@ export const projects: ProjectItem[] = [
     category: "Photography",
     eyebrow: "Image-led build",
     description:
-      "A full-stack photography portfolio with a custom GCS and Cloudflare image delivery pipeline, WebP thumbnail generation, and a stand-alone Go backend.",
+      "A photography portfolio built for real-world image scale — custom delivery pipeline via GCS and Cloudflare, WebP thumbnails, and a standalone Go backend keeping it fast.",
     href: "https://photos.henrimaronen.com/",
     tags: [
       "Go",
@@ -226,11 +226,6 @@ export const connectLinks: ConnectLink[] = [
   {
     label: "Telegram",
     href: "https://t.me/hmaronen",
-    note: "For quick, direct messages when speed matters.",
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/HenronenGIT",
-    note: "For code, side projects, and technical context.",
+    note: "If you want to skip the form.",
   },
 ];
