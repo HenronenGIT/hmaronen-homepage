@@ -1,0 +1,11 @@
+/* Button */
+.group.relative.rounded-pill.font-sans.font-medium.uppercase.bg-transparent /*
+Large: text-[13px] px-6 py-3 tracking-[0.04em] hover:tracking-[0.14em] */ /*
+Small: text-[11px] px-4 py-2 tracking-[0.04em] hover:tracking-[0.12em] */ /*
+Gradient text */ .bg-clip-text.text-transparent background-image:
+linear-gradient(135deg, hsl(19 62% 47%), hsl(29 43% 42%)); /* Animated underline
+*/
+.absolute.bottom-2.left-6.right-6.h-px.scale-x-0.group-hover:animate-draw-line
+background: linear-gradient(135deg, hsl(19 62% 47%), hsl(29 43% 42%));
+@keyframes draw-line { 0% { transform: scaleX(0); transform-origin: left; } 100%
+{ transform: scaleX(1); transform-origin: left; } }

@@ -57,7 +57,7 @@ export interface ArchiveLink {
 export const contactEmail = "henrimaronen@gmail.com";
 
 export const navItems: NavItem[] = [
-  { label: "About", href: "#about" },
+  // { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#work" },
   { label: "Projects", href: "#projects" },
@@ -112,7 +112,16 @@ export const infoCards: InfoCardItem[] = [
 export const skillGroups: SkillGroup[] = [
   {
     title: "Frontend",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vite", "Zod"],
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vite",
+      "Zod",
+      "Tailwind CSS",
+      "Styled Components",
+    ],
   },
   {
     title: "Backend",
@@ -120,15 +129,40 @@ export const skillGroups: SkillGroup[] = [
       "Node.js",
       "PostgreSQL",
       "Express",
+      "Redis",
+      "Elasticsearch",
+      "Zod",
       "Docker",
       "Google Cloud",
       "Python",
-      "Go",
+      "MongoDB",
     ],
   },
   {
     title: "Tools & AI",
-    skills: ["Claude", "Cursor", "Figma", "Git", "DataGrip", "Notion"],
+    skills: [
+      "Claude",
+      "Cursor",
+      "V0",
+      "Vercel",
+      "Figma",
+      "Git",
+      "DataGrip",
+      "Notion",
+      "Postman",
+      "Storybook",
+    ],
+  },
+  {
+    title: "Practices",
+    skills: [
+      "REST",
+      "CI/CD",
+      "Automated Testing",
+      "Pub/Sub",
+      "Microservices",
+      "Monorepo",
+    ],
   },
 ];
 
@@ -141,6 +175,27 @@ export const experiences: ExperienceItem[] = [
       "Ownership mode. Choosing my own learning agenda — AI tooling, side projects, and the fundamentals I want to go deeper on.",
     ],
     technologies: ["RAG", "AI Development", "Hackathons", "Event organization"],
+  },
+  {
+    period: "2025",
+    title: "Full-stack Developer",
+    company: "Slush",
+    description: [
+      "Build and maintain scalable full-stack applications serving Slush's 13,000+ attendees.",
+      "Led App Search to Elasticsearch microservice migration with client-side updates and optimized synchronization, mapping definitions, versioning, and zero-downtime capabilities.",
+      "Developed Meeting Tool search experience which conducted 20,000 accepted meetings, featuring saved search functionality, CSV/JSON export capabilities, and stateful UI components.",
+      "Provided technical support resolving user issues, created Metabase analytics dashboards, and onboarded new team members.",
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Express",
+      "Styled Components",
+      "Google Cloud Platform",
+      "Zod",
+    ],
   },
   {
     period: "2024",
@@ -161,7 +216,6 @@ export const experiences: ExperienceItem[] = [
       "Express",
       "Google Cloud Platform",
       "Zod",
-      "AI Agent",
     ],
   },
   {
@@ -191,10 +245,10 @@ export const projects: ProjectItem[] = [
     eyebrow: "Side project",
     description:
       "Your daily briefing, built to your sources. Breefli cuts the noise and delivers the feeds you actually care about — one read, every morning.",
-    href: "https://app.breefli.app",
+    href: "https://app.breefli.app/feed",
     secondaryHref: "https://github.com/HenronenGIT/breefli",
     secondaryLabel: "GitHub",
-    tags: ["React", "Node.js", "RSS", "Next.js"],
+    tags: ["React", "Node.js", "RSS", "Next.js", "AI"],
   },
   {
     name: "Photography Portfolio",

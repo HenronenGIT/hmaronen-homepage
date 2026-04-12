@@ -1,0 +1,9 @@
+/* Wrapper — acts as the gradient border via p-px */
+.group.relative.rounded-pill.p-px background: conic-gradient(from var(--angle,
+135deg), hsl(19 62% 47%), hsl(29 43% 42%), hsl(19 62% 47%)); /* JS hover:
+rotates --angle from 135deg → 495deg at 4deg/16ms */ /* Glow */
+.absolute.-inset-1.5.rounded-pill.opacity-0.group-hover:opacity-100.blur-lg
+background: linear-gradient(135deg, ${from}, ${to}); /* Inner face */
+.relative.block.rounded-pill.bg-background.font-sans.font-medium.tracking-[0.04em].uppercase
+/* Large: text-[13px] px-9 py-3.5 group-hover:tracking-[0.12em] */ /* Small:
+text-[11px] px-6 py-2.5 group-hover:tracking-[0.1em] */

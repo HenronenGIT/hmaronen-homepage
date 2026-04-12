@@ -43,8 +43,8 @@ export default function HomePage() {
               others can pick up, extend, and take further.
             </p>
           </div>
-          <SkillsSection groups={skillGroups} />
           {/* <AboutSection paragraphs={aboutParagraphs} cards={infoCards} /> */}
+          <SkillsSection groups={skillGroups} />
           <ExperienceSection items={experiences} />
           <ProjectsSection items={projects} />
           <ConnectSection links={connectLinks} />
