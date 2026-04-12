@@ -57,7 +57,7 @@ export interface ArchiveLink {
 export const contactEmail = "henrimaronen@gmail.com";
 
 export const navItems: NavItem[] = [
-  { label: "About", href: "#about" },
+  // { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#work" },
   { label: "Projects", href: "#projects" },
@@ -112,7 +112,16 @@ export const infoCards: InfoCardItem[] = [
 export const skillGroups: SkillGroup[] = [
   {
     title: "Frontend",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vite", "Zod"],
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vite",
+      "Zod",
+      "Tailwind CSS",
+      "Styled Components",
+    ],
   },
   {
     title: "Backend",
@@ -120,15 +129,39 @@ export const skillGroups: SkillGroup[] = [
       "Node.js",
       "PostgreSQL",
       "Express",
+      "Redis",
+      "Elasticsearch",
       "Docker",
       "Google Cloud",
       "Python",
-      "Go",
+      "MongoDB",
     ],
   },
   {
     title: "Tools & AI",
-    skills: ["Claude", "Cursor", "Figma", "Git", "DataGrip", "Notion"],
+    skills: [
+      "Claude",
+      "Cursor",
+      "V0",
+      "Vercel",
+      "Figma",
+      "Git",
+      "DataGrip",
+      "Notion",
+      "Postman",
+      "Storybook",
+    ],
+  },
+  {
+    title: "Practices",
+    skills: [
+      "REST",
+      "CI/CD",
+      "Automated Testing",
+      "Pub/Sub",
+      "Microservices",
+      "Monorepo",
+    ],
   },
 ];
 
@@ -191,10 +224,10 @@ export const projects: ProjectItem[] = [
     eyebrow: "Side project",
     description:
       "Your daily briefing, built to your sources. Breefli cuts the noise and delivers the feeds you actually care about — one read, every morning.",
-    href: "https://app.breefli.app",
+    href: "https://app.breefli.app/feed",
     secondaryHref: "https://github.com/HenronenGIT/breefli",
     secondaryLabel: "GitHub",
-    tags: ["React", "Node.js", "RSS", "Next.js"],
+    tags: ["React", "Node.js", "RSS", "Next.js", "AI"],
   },
   {
     name: "Photography Portfolio",
