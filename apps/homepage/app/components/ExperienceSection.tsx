@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import type { ExperienceItem } from "../homepage-data";
 
 type ExperienceSectionProps = {
@@ -5,52 +8,58 @@ type ExperienceSectionProps = {
 };
 
 export default function ExperienceSection({ items }: ExperienceSectionProps) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState<"down" | "up">("down");
+  const active = items[activeIndex];
+
+  const handleTabClick = (i: number) => {
+    setDirection(i > activeIndex ? "down" : "up");
+    setActiveIndex(i);
+  };
+
   return (
     <section className="section-shell reveal" id="work">
       <div className="shell">
         <div className="section-heading section-heading-narrow">
           <p className="section-kicker">Experience</p>
-          <h2 className="section-title">
-            Building inside teams with real momentum.
-          </h2>
+          <h2 className="section-title">Journey so far.</h2>
         </div>
 
-        <div className="experience-timeline">
-          {items.map((item, index) => {
-            const anchorYear = item.period.match(/\d{4}/)?.[0] ?? item.period;
-            const side = index % 2 === 0 ? "left" : "right";
-            const summary = item.description[0] ?? "";
-
-            return (
-              <article
+        <div className="experience-tab-layout">
+          <nav className="experience-tab-nav" aria-label="Experience entries">
+            {items.map((item, i) => (
+              <button
                 key={`${item.company}-${item.period}`}
-                className={`experience-item experience-item-${side}`}
+                className={`experience-tab-btn${i === activeIndex ? ` experience-tab-btn-active experience-tab-btn-${direction}` : ""}`}
+                onClick={() => handleTabClick(i)}
+                aria-selected={i === activeIndex}
               >
-                <div className="experience-track">
-                  <div className="experience-node">
-                    <span>{anchorYear}</span>
-                  </div>
-                </div>
+                <span className="experience-tab-period">{item.period}</span>
+                <span className="experience-tab-title">{item.title}</span>
+                <span className="experience-tab-company">{item.company}</span>
+              </button>
+            ))}
+          </nav>
 
-                <div className="experience-panel">
-                  <p className="experience-period">{item.period}</p>
-                  <div className="experience-header">
-                    <h3>{item.title}</h3>
-                    <p className="experience-company">{item.company}</p>
-                  </div>
-                  <p className="experience-summary">{summary}</p>
-                  <div className="tag-row experience-tags">
-                    {item.technologies.map((technology) => (
-                      <span key={technology} className="tag tag-outlined">
-                        {technology}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="experience-spacer" aria-hidden="true" />
-              </article>
-            );
-          })}
+          <div key={activeIndex} className="experience-tab-panel">
+            <p className="experience-period">{active.period}</p>
+            <div className="experience-header">
+              <h3>{active.title}</h3>
+              <p className="experience-company">{active.company}</p>
+            </div>
+            <ul className="experience-bullets">
+              {active.description.map((line) => (
+                <li key={line}>{line}</li>
+              ))}
+            </ul>
+            <div className="tag-row experience-tags">
+              {active.technologies.map((tech) => (
+                <span key={tech} className="tag tag-outlined">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
