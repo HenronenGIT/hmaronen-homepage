@@ -122,46 +122,23 @@ export const infoCards: InfoCardItem[] = [
 export const skillGroups: SkillGroup[] = [
   {
     title: "Frontend",
-    skills: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Vite",
-      "Zod",
-      "Styled Components",
-    ],
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vite", "Zod"],
   },
   {
     title: "Backend",
     skills: [
       "Node.js",
       "PostgreSQL",
-      "REST APIs",
+      "Express",
       "Docker",
       "Google Cloud",
       "Python",
       "Go",
-      "MongoDB",
-      "Vercel",
     ],
   },
   {
-    title: "Tools",
-
-    skills: [
-      "Figma",
-      "Git",
-      "AI Dev Tools",
-      "Cursor",
-      "Claude",
-      "Postman",
-      "ESLint",
-      "Prettier",
-      "DataGrip",
-      "Notion",
-      "Perplexity",
-    ],
+    title: "Tools & AI",
+    skills: ["Claude", "Cursor", "Figma", "Git", "DataGrip", "Notion"],
   },
 ];
 

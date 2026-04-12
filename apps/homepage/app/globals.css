@@ -56,6 +56,40 @@ select {
   overflow-x: clip;
 }
 
+/* ── Split-screen layout ──────────────────────────────── */
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 42fr 58fr;
+  align-items: start;
+  min-height: 100dvh;
+}
+
+.split-left {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.split-right {
+  /* normal document flow */
+}
+
+.split-intro {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding-inline: clamp(2rem, 5vw, 5rem);
+}
+
+.split-intro .hero-summary {
+  max-width: 32rem;
+}
+
 .shell {
   width: min(calc(100% - 5rem), var(--shell));
   margin: 0 auto;
@@ -371,11 +405,7 @@ select {
 }
 
 .hero-section {
-  min-height: 100dvh;
-  display: flex;
-  align-items: center;
-  padding-top: clamp(4.5rem, 7dvh, 6rem);
-  padding-bottom: clamp(1.5rem, 3.5dvh, 3rem);
+  width: 100%;
 }
 
 .hero-grid {
@@ -387,15 +417,16 @@ select {
 }
 
 .hero-shell {
-  width: min(calc(100% - 7rem), var(--hero-shell));
+  width: min(calc(100% - 9rem), var(--hero-shell));
 }
 
 .hero-copy {
   display: grid;
-  gap: clamp(0.9rem, 1.8dvh, 1.35rem);
+  gap: clamp(1.5rem, 3.2dvh, 2.5rem);
   align-self: center;
-  max-width: 36rem;
-  padding-top: 0;
+  max-width: 38rem;
+  width: 100%;
+  padding-inline: clamp(2rem, 4vw, 4rem);
 }
 
 .hero-heading-wrap {
@@ -450,7 +481,7 @@ select {
 }
 
 .hero-actions {
-  margin-bottom: 0.6rem;
+  margin-bottom: 1.25rem;
 }
 
 .button {
@@ -458,11 +489,11 @@ select {
   align-items: center;
   justify-content: space-between;
   gap: 0.8rem;
-  min-width: clamp(11.75rem, 16vw, 13.5rem);
-  padding: 0.55rem 0.6rem 0.55rem 1.15rem;
+  min-width: var(--button-md-min-width);
+  padding: var(--button-md-padding);
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
-  font-size: var(--font-size-nav);
+  font-size: var(--button-md-font-size);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-button);
   text-transform: uppercase;
@@ -473,13 +504,29 @@ select {
     background-color 180ms ease;
 }
 
-.button:hover,
+/* .button:hover,
 .button:focus-visible {
   transform: translateY(-1px);
+} */
+
+/* — Size modifiers — */
+
+.button-sm {
+  min-width: var(--button-sm-min-width);
+  padding: var(--button-sm-padding);
+  font-size: var(--button-sm-font-size);
 }
 
-.button-small {
-  padding: 0.78rem 1.15rem;
+.button-md {
+  min-width: var(--button-md-min-width);
+  padding: var(--button-md-padding);
+  font-size: var(--button-md-font-size);
+}
+
+.button-lg {
+  min-width: var(--button-lg-min-width);
+  padding: var(--button-lg-padding);
+  font-size: var(--button-lg-font-size);
 }
 
 .button-label {
@@ -490,8 +537,8 @@ select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.45rem;
-  height: 2.45rem;
+  width: var(--button-md-orb);
+  height: var(--button-md-orb);
   border-radius: 50%;
   flex: 0 0 auto;
   transition:
@@ -501,13 +548,33 @@ select {
 }
 
 .button-orb svg {
-  width: 0.95rem;
-  height: 0.95rem;
+  width: var(--button-md-svg);
+  height: var(--button-md-svg);
   stroke: currentColor;
   stroke-width: 1.9;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
+}
+
+.button-sm .button-orb {
+  width: var(--button-sm-orb);
+  height: var(--button-sm-orb);
+}
+
+.button-sm .button-orb svg {
+  width: var(--button-sm-svg);
+  height: var(--button-sm-svg);
+}
+
+.button-lg .button-orb {
+  width: var(--button-lg-orb);
+  height: var(--button-lg-orb);
+}
+
+.button-lg .button-orb svg {
+  width: var(--button-lg-svg);
+  height: var(--button-lg-svg);
 }
 
 .button-charcoal {
@@ -566,7 +633,6 @@ select {
 
 .hero-social-button:hover,
 .hero-social-button:focus-visible {
-  transform: translateY(-2px);
   color: var(--accent);
   border-color: rgba(196, 92, 46, 0.32);
   background: rgba(255, 255, 255, 0.36);
@@ -678,7 +744,6 @@ select {
 }
 
 .info-card,
-.skill-card,
 .experience-card,
 .project-card,
 .connect-card {
@@ -717,27 +782,31 @@ select {
   position: relative;
   padding: 1.5rem;
   border-radius: 1.5rem;
-  border-color: rgba(155, 106, 62, 0.08);
+  border: none;
   background: linear-gradient(
-    180deg,
-    rgba(245, 238, 229, 0.72),
-    rgba(242, 234, 224, 0.88)
+    160deg,
+    rgba(245, 238, 229, 0.65),
+    rgba(242, 234, 224, 0.9)
   );
   box-shadow: none;
-  overflow: hidden;
 }
 
-.skill-card::after {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 2.35rem;
-  border-top: 1.5px solid rgba(155, 106, 62, 0.82);
-  border-bottom: 1.5px solid rgba(155, 106, 62, 0.82);
-  border-left: 1.5px solid rgba(155, 106, 62, 0.82);
-  border-top-left-radius: inherit;
-  border-bottom-left-radius: inherit;
-  pointer-events: none;
+.skill-card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(155, 106, 62, 0.1);
+}
+
+.skill-card-num {
+  font-family: var(--font-family-display);
+  font-size: 0.65rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  opacity: 0.45;
 }
 
 .skill-card-summary {
@@ -1334,11 +1403,29 @@ select {
   }
 
   .hero-shell {
-    width: min(calc(100% - 4.5rem), var(--hero-shell));
+    width: min(calc(100% - 5.5rem), var(--hero-shell));
   }
 }
 
 @media (max-width: 960px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .split-left {
+    position: static;
+    height: auto;
+    display: block;
+    padding-top: 5.25rem;
+    padding-bottom: 3rem;
+  }
+
+  .split-intro {
+    min-height: auto;
+    padding-block: 3rem;
+  }
+
   .hero-grid,
   .project-grid,
   .skills-grid,
@@ -1484,12 +1571,7 @@ select {
 
   .shell,
   .hero-shell {
-    width: min(calc(100% - 2rem), var(--shell));
-  }
-
-  .hero-section {
-    min-height: auto;
-    padding-top: 5.25rem;
+    width: min(calc(100% - 2.5rem), var(--shell));
   }
 
   .hero-title {
@@ -1546,7 +1628,7 @@ select {
   }
 
   .hero-copy {
-    gap: 0.85rem;
+    gap: clamp(1.1rem, 2.2dvh, 1.65rem);
   }
 
   .hero-summary {
@@ -1563,6 +1645,11 @@ select {
     min-width: 10.8rem;
     padding: 0.5rem 0.55rem 0.5rem 0.95rem;
     font-size: 0.72rem;
+  }
+
+  .button-lg {
+    padding: 0.55rem 0.58rem 0.55rem 1rem;
+    font-size: 0.78rem;
   }
 
   .button-orb {

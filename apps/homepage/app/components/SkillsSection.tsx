@@ -6,7 +6,7 @@ type SkillsSectionProps = {
 
 export default function SkillsSection({ groups }: SkillsSectionProps) {
   return (
-    <section className="section-shell section-surface reveal" id="skills">
+    <section className="section-shell reveal" id="skills">
       <div className="shell">
         <div className="section-heading">
           <p className="section-kicker">Skills</p>
@@ -14,10 +14,12 @@ export default function SkillsSection({ groups }: SkillsSectionProps) {
         </div>
 
         <div className="skills-grid">
-          {groups.map((group) => (
+          {groups.map((group, i) => (
             <article key={group.title} className="skill-card">
-              <p className="eyebrow-label">{group.title}</p>
-              <br />
+              <header className="skill-card-header">
+                <p className="eyebrow-label">{group.title}</p>
+                <span className="skill-card-num">0{i + 1}</span>
+              </header>
               <div className="tag-row skill-tag-row">
                 {group.skills.map((skill) => (
                   <span key={skill} className="tag skill-tag">
