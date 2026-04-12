@@ -236,6 +236,25 @@ export const experiences: ExperienceItem[] = [
       "Google Cloud Platform",
     ],
   },
+  {
+    period: "2021 - 2023",
+    title: "Student",
+    company: "Hive Helsinki",
+    description: [
+      "Sister school of École 42. Rigorous CS curriculum via peer-reviewed projects and self-directed learning.",
+    ],
+    technologies: [
+      "C",
+      "Web",
+      "PHP",
+      "HTML",
+      "CSS",
+      "Unix",
+      "Algorithms",
+      "Git",
+      "Peer Learning",
+    ],
+  },
 ];
 
 export const projects: ProjectItem[] = [
