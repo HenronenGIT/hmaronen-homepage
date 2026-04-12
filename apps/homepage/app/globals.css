@@ -90,6 +90,74 @@ select {
   max-width: 32rem;
 }
 
+.split-intro-type {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: clamp(2rem, 5vw, 5rem);
+  padding-block: 7rem 4rem;
+}
+
+.split-intro-words {
+  display: flex;
+  flex-direction: column;
+}
+
+.split-intro-word {
+  display: block;
+  font-family: var(--font-family-display);
+  font-size: clamp(3.5rem, 8vw, 9rem);
+  font-weight: var(--font-weight-medium);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  animation: intro-word-rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.split-intro-word-1 {
+  color: var(--subtle);
+  animation-delay: 0.08s;
+}
+
+.split-intro-word-2 {
+  color: var(--charcoal);
+  animation-delay: 0.2s;
+}
+
+.split-intro-word-3 {
+  color: var(--accent);
+  animation-delay: 0.32s;
+}
+
+@keyframes intro-word-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.28em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.split-intro-rule {
+  width: 2.5rem;
+  height: 1px;
+  background: var(--accent);
+  margin-block: 2.5rem 2rem;
+  animation: intro-word-rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.46s both;
+}
+
+.split-intro-body {
+  max-width: 28rem;
+  margin: 0;
+  font-size: var(--font-size-body-large);
+  line-height: var(--line-height-body-relaxed);
+  color: var(--charcoal-mid);
+  animation: intro-word-rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.54s both;
+}
+
 .shell {
   width: min(calc(100% - 5rem), var(--shell));
   margin: 0 auto;
@@ -1587,6 +1655,15 @@ select {
   .split-intro {
     min-height: auto;
     padding-block: 3rem;
+  }
+
+  .split-intro-type {
+    min-height: auto;
+    padding-block: 5rem 3.5rem;
+  }
+
+  .split-intro-word {
+    font-size: clamp(3rem, 14vw, 6rem);
   }
 
   .hero-grid,
