@@ -35,14 +35,16 @@ export default function HeroSection({ socialLinks }: HeroSectionProps) {
               return (
                 <a
                   key={link.href}
-                  className="hero-social-button"
+                  className="hero-social-wrapper"
                   href={link.href}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noreferrer" : undefined}
                   aria-label={link.label}
                   title={link.label}
                 >
-                  <SocialIcon icon={link.icon} />
+                  <span className="hero-social-button">
+                    <SocialIcon icon={link.icon} />
+                  </span>
                 </a>
               );
             })}

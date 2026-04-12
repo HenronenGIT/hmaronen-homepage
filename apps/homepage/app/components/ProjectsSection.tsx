@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect } from "react";
 import { useReveal } from "../hooks/use-reveal";
 import type { ProjectItem } from "../homepage-data";
 
@@ -10,6 +11,47 @@ type ProjectsSectionProps = {
 
 export default function ProjectsSection({ items }: ProjectsSectionProps) {
   const ref = useReveal<HTMLElement>();
+
+  useEffect(() => {
+    const buttons = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-conic-btn]")
+    );
+    const cleanups: (() => void)[] = [];
+
+    buttons.forEach((btn) => {
+      let raf: number;
+
+      const onEnter = () => {
+        cancelAnimationFrame(raf);
+        let angle = 135;
+        const step = () => {
+          angle += 4;
+          btn.style.setProperty("--angle", `${angle}deg`);
+          if (angle < 495) {
+            raf = requestAnimationFrame(step);
+          }
+        };
+        raf = requestAnimationFrame(step);
+      };
+
+      const onLeave = () => {
+        cancelAnimationFrame(raf);
+        btn.style.setProperty("--angle", "135deg");
+      };
+
+      btn.addEventListener("mouseenter", onEnter);
+      btn.addEventListener("mouseleave", onLeave);
+
+      cleanups.push(() => {
+        cancelAnimationFrame(raf);
+        btn.removeEventListener("mouseenter", onEnter);
+        btn.removeEventListener("mouseleave", onLeave);
+      });
+    });
+
+    return () => cleanups.forEach((fn) => fn());
+  }, [items]);
+
   return (
     <section
       ref={ref}
@@ -58,12 +100,15 @@ export default function ProjectsSection({ items }: ProjectsSectionProps) {
                 </div>
                 <div className="project-actions">
                   <a
-                    className="button button-charcoal button-sm"
+                    className="button-conic-wrapper"
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
+                    data-conic-btn
                   >
-                    Open project
+                    <div className="button button-charcoal button-sm">
+                      Open project
+                    </div>
                   </a>
                   {item.secondaryHref && item.secondaryLabel ? (
                     <a
