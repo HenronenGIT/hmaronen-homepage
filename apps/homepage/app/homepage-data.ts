@@ -131,6 +131,7 @@ export const skillGroups: SkillGroup[] = [
       "Express",
       "Redis",
       "Elasticsearch",
+      "Zod",
       "Docker",
       "Google Cloud",
       "Python",
@@ -176,6 +177,27 @@ export const experiences: ExperienceItem[] = [
     technologies: ["RAG", "AI Development", "Hackathons", "Event organization"],
   },
   {
+    period: "2025",
+    title: "Full-stack Developer",
+    company: "Slush",
+    description: [
+      "Build and maintain scalable full-stack applications serving Slush's 13,000+ attendees.",
+      "Led App Search to Elasticsearch microservice migration with client-side updates and optimized synchronization, mapping definitions, versioning, and zero-downtime capabilities.",
+      "Developed Meeting Tool search experience which conducted 20,000 accepted meetings, featuring saved search functionality, CSV/JSON export capabilities, and stateful UI components.",
+      "Provided technical support resolving user issues, created Metabase analytics dashboards, and onboarded new team members.",
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Express",
+      "Styled Components",
+      "Google Cloud Platform",
+      "Zod",
+    ],
+  },
+  {
     period: "2024",
     title: "Full-stack Developer",
     company: "Slush",
@@ -194,7 +216,6 @@ export const experiences: ExperienceItem[] = [
       "Express",
       "Google Cloud Platform",
       "Zod",
-      "AI Agent",
     ],
   },
   {
