@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useReveal } from "../hooks/use-reveal";
 import type { ExperienceItem } from "../homepage-data";
 
 type ExperienceSectionProps = {
@@ -8,6 +9,7 @@ type ExperienceSectionProps = {
 };
 
 export default function ExperienceSection({ items }: ExperienceSectionProps) {
+  const ref = useReveal<HTMLElement>();
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState<"down" | "up">("down");
   const active = items[activeIndex];
@@ -18,7 +20,7 @@ export default function ExperienceSection({ items }: ExperienceSectionProps) {
   };
 
   return (
-    <section className="section-shell reveal" id="work">
+    <section ref={ref} className="section-shell reveal" id="work">
       <div className="shell">
         <div className="section-heading section-heading-narrow">
           <p className="section-kicker">Experience</p>

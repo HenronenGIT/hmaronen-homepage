@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useReveal } from "../hooks/use-reveal";
 import type { ProjectItem } from "../homepage-data";
 
 type ProjectsSectionProps = {
@@ -6,8 +9,13 @@ type ProjectsSectionProps = {
 };
 
 export default function ProjectsSection({ items }: ProjectsSectionProps) {
+  const ref = useReveal<HTMLElement>();
   return (
-    <section className="section-shell section-projects reveal" id="projects">
+    <section
+      ref={ref}
+      className="section-shell section-projects reveal"
+      id="projects"
+    >
       <div className="shell">
         <div className="section-heading">
           <p className="section-kicker">Projects</p>

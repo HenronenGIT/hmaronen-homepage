@@ -1,3 +1,6 @@
+"use client";
+
+import { useReveal } from "../hooks/use-reveal";
 import type { ConnectLink } from "../homepage-data";
 
 type ConnectSectionProps = {
@@ -5,8 +8,13 @@ type ConnectSectionProps = {
 };
 
 export default function ConnectSection({ links }: ConnectSectionProps) {
+  const ref = useReveal<HTMLElement>();
   return (
-    <section className="section-shell section-connect reveal" id="connect">
+    <section
+      ref={ref}
+      className="section-shell section-connect reveal"
+      id="connect"
+    >
       <div className="shell connect-shell">
         <div className="connect-copy">
           <p className="section-kicker">Connect</p>

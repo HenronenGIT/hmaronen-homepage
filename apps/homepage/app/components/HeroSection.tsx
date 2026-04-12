@@ -1,4 +1,7 @@
+"use client";
+
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { useReveal } from "../hooks/use-reveal";
 import type { SocialLink } from "../homepage-data";
 
 type HeroSectionProps = {
@@ -6,8 +9,9 @@ type HeroSectionProps = {
 };
 
 export default function HeroSection({ socialLinks }: HeroSectionProps) {
+  const ref = useReveal<HTMLElement>();
   return (
-    <section className="hero-section reveal" id="top">
+    <section ref={ref} className="hero-section reveal" id="top">
       <div className="hero-copy">
         <p className="section-kicker">Henri Maronen</p>
         <div className="hero-heading-wrap">

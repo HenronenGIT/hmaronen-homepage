@@ -265,20 +265,16 @@ select {
 }
 
 .reveal {
-  animation: fade-up var(--motion-reveal-duration) var(--motion-reveal-ease)
-    both;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--motion-reveal-duration) var(--motion-reveal-ease),
+    transform var(--motion-reveal-duration) var(--motion-reveal-ease);
 }
 
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.reveal[data-revealed] {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .site-header {

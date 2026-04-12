@@ -1,3 +1,6 @@
+"use client";
+
+import { useReveal } from "../hooks/use-reveal";
 import type { SkillGroup } from "../homepage-data";
 
 type SkillsSectionProps = {
@@ -5,8 +8,9 @@ type SkillsSectionProps = {
 };
 
 export default function SkillsSection({ groups }: SkillsSectionProps) {
+  const ref = useReveal<HTMLElement>();
   return (
-    <section className="section-shell reveal" id="skills">
+    <section ref={ref} className="section-shell reveal" id="skills">
       <div className="shell">
         <div className="section-heading">
           <p className="section-kicker">Skills</p>
