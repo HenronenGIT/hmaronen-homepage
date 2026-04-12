@@ -1956,6 +1956,7 @@ select {
   }
 
   .experience-tab-btn {
+    width: auto;
     border-left: none;
     border-bottom: 2px solid rgba(155, 106, 62, 0.15);
     padding: 0.75rem 1rem;
@@ -2076,6 +2077,60 @@ select {
   .social-chip {
     min-width: 0;
     flex: 1 1 auto;
+  }
+
+  /* ── Experience section ─────────────────────────────── */
+
+  .experience-tab-nav {
+    padding-bottom: 0;
+    /* Fade hint: signals scrollable content to the right */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      black calc(100% - 2.75rem),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      black calc(100% - 2.75rem),
+      transparent 100%
+    );
+  }
+
+  .experience-tab-btn {
+    padding: 0.55rem 0.8rem;
+    gap: 0.15rem;
+  }
+
+  /* Drop the company label — too much info in a compact tab */
+  .experience-tab-company {
+    display: none;
+  }
+
+  .experience-tab-period {
+    font-size: 0.58rem;
+  }
+
+  .experience-tab-title {
+    font-size: 0.86rem;
+  }
+
+  .experience-tab-panel {
+    padding: 1.1rem 1.1rem 1.25rem;
+    border-radius: 1.2rem;
+  }
+
+  .experience-bullets li {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .experience-tags {
+    gap: 0.4rem;
+  }
+
+  .experience-tags .tag {
+    font-size: 0.72rem;
+    padding: 0.38rem 0.6rem;
   }
 }
 
