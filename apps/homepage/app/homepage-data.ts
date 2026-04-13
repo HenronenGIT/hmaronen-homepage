@@ -62,6 +62,7 @@ export const navItems: NavItem[] = [
   { label: "Experience", href: "#work" },
   { label: "Projects", href: "#projects" },
   { label: "Connect", href: "#connect" },
+  { label: "Thoughts", href: "/thoughts" },
 ];
 
 export const socialLinks: SocialLink[] = [
