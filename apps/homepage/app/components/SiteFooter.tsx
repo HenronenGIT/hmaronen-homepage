@@ -1,3 +1,6 @@
+"use client";
+
+import { useReveal } from "../hooks/use-reveal";
 import type { ArchiveLink, SocialLink } from "../homepage-data";
 
 type SiteFooterProps = {
@@ -9,13 +12,18 @@ export default function SiteFooter({
   archiveLink,
   socialLinks,
 }: SiteFooterProps) {
+  const ref = useReveal<HTMLElement>();
   const year = new Date().getFullYear();
   const footerLinks = socialLinks.filter((link) =>
     link.href.startsWith("http")
   );
 
   return (
-    <footer className="site-footer section-shell reveal" aria-label="Footer">
+    <footer
+      ref={ref}
+      className="site-footer section-shell reveal"
+      aria-label="Footer"
+    >
       <div className="shell footer-shell">
         <div className="footer-copy">
           <p className="footer-signoff">Henri Maronen</p>
