@@ -173,9 +173,16 @@ export const experiences: ExperienceItem[] = [
     title: "Career Development",
     company: "Personal",
     description: [
-      "Ownership mode. Choosing my own learning agenda — AI tooling, side projects, and the fundamentals I want to go deeper on.",
+      "Ownership mode. Choosing my own learning agenda: AI tooling, side projects, and the fundamentals I want to go deeper on.",
     ],
-    technologies: ["RAG", "AI Development", "Hackathons", "Event organization"],
+    technologies: [
+      "RAG",
+      "AI Development",
+      "Hackathons",
+      "Event organization",
+      "Data Science",
+      "Software Literature",
+    ],
   },
   {
     period: "2025",
