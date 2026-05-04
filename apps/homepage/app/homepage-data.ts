@@ -120,7 +120,6 @@ export const skillGroups: SkillGroup[] = [
       "Tailwind CSS",
       "Vite",
       "Zod",
-      "Tailwind CSS",
       "Styled Components",
     ],
   },

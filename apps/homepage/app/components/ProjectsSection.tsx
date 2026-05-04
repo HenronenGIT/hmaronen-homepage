@@ -61,9 +61,7 @@ export default function ProjectsSection({ items }: ProjectsSectionProps) {
       <div className="shell">
         <div className="section-heading">
           <p className="section-kicker">Projects</p>
-          <h2 className="section-title">
-            A few things I&apos;ve built outside the main lane.
-          </h2>
+          <h2 className="section-title">Passion projects.</h2>
         </div>
 
         <div className="project-grid">
